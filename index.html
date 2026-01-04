@@ -284,6 +284,24 @@
                     </div>
                 </div>
 
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">セクター</label>
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" v-model="filters.useSector" :disabled="filters.disableFilters"
+                            class="w-4 h-4 text-accent-600 bg-slate-700 border-slate-600 rounded focus:ring-accent-600 focus:ring-offset-slate-800 cursor-pointer">
+                        <select v-model="filters.sector"
+                            :disabled="filters.disableFilters || !filters.useSector"
+                            class="flex-1 bg-slate-800 border border-slate-700 text-white text-xs rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 px-3 py-2 disabled:opacity-30 disabled:bg-slate-900">
+                            <option value="all">すべて</option>
+                            <option value="__missing__">データなし</option>
+                            <option v-for="sector in sectorOptions" :key="sector" :value="sector">
+                                {{ sector }}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="text-[11px] text-slate-500 mt-2">欠損データは「データなし」で絞り込み可能</div>
+                </div>
+
                 <!-- Saved Conditions -->
                 <div>
                     <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">保存した条件</label>
@@ -405,13 +423,31 @@
 
         <!-- Results -->
         <div class="bg-slate-900 rounded-xl md:rounded-2xl border border-slate-800 shadow-xl overflow-hidden">
-            <div class="p-3 md:p-4 border-b border-slate-800 bg-slate-850/50 flex justify-between items-center">
-                <div class="flex items-center gap-2">
+            <div
+                class="p-3 md:p-4 border-b border-slate-800 bg-slate-850/50 flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center gap-2 flex-wrap">
                     <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
-                    <span class="font-bold text-slate-200 text-sm md:text-base">検索結果</span>
+                    <span class="font-bold text-slate-200 text-sm md:text-base">
+                        {{ viewMode === 'favorites' ? 'お気に入り' : '検索結果' }}
+                    </span>
                     <span
                         class="bg-slate-800 text-slate-400 text-xs font-mono py-0.5 px-2 rounded-full border border-slate-700">{{
                         filteredStocks.length }}</span>
+                    <div class="flex items-center gap-1">
+                        <button type="button" @click="viewMode = 'all'"
+                            class="px-3 py-1 text-xs font-bold rounded-full border transition-colors"
+                            :class="viewMode === 'all' ? 'bg-accent-600 text-white border-accent-500' : 'text-slate-300 border-slate-700 hover:border-slate-500'">
+                            すべて
+                        </button>
+                        <button type="button" @click="viewMode = 'favorites'"
+                            class="px-3 py-1 text-xs font-bold rounded-full border transition-colors flex items-center gap-1"
+                            :class="viewMode === 'favorites' ? 'bg-amber-600 text-white border-amber-500' : 'text-slate-300 border-slate-700 hover:border-slate-500'">
+                            お気に入り
+                            <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-slate-900/60 border border-slate-700">
+                                {{ favoriteTickers.length }}
+                            </span>
+                        </button>
+                    </div>
                 </div>
                 <!-- Mobile Sort Selector -->
                 <div class="md:hidden">
@@ -438,12 +474,25 @@
                                 <div class="text-xs text-slate-500 truncate max-w-[150px]">{{ stock.name }}</div>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <div class="font-mono text-white text-sm">
-                                {{ stock.country === 'JP' ? '¥' : '$' }}{{ stock.price?.toLocaleString() }}
-                            </div>
-                            <div class="text-xs text-slate-500">
-                                {{ stock.mcap_display?.toLocaleString() }}{{ stock.country === 'JP' ? '億' : 'B' }}
+                        <div class="flex items-start gap-2">
+                            <button type="button" @click.stop="toggleFavorite(stock)"
+                                class="p-1.5 rounded-lg border border-slate-700 hover:border-slate-500 transition-colors"
+                                :class="isFavorite(stock) ? 'text-amber-400' : 'text-slate-500'"
+                                aria-label="お気に入りに追加">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.67 1.64 7.03z"
+                                        :fill="isFavorite(stock) ? 'currentColor' : 'none'" stroke="currentColor"
+                                        stroke-width="1.5" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div class="text-right">
+                                <div class="font-mono text-white text-sm">
+                                    {{ stock.country === 'JP' ? '¥' : '$' }}{{ stock.price?.toLocaleString() }}
+                                </div>
+                                <div class="text-xs text-slate-500">
+                                    {{ stock.mcap_display?.toLocaleString() }}{{ stock.country === 'JP' ? '億' : 'B' }}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -485,6 +534,7 @@
                     <thead>
                         <tr
                             class="bg-slate-950 text-xs font-bold text-slate-500 uppercase tracking-wider border-b border-slate-800">
+                            <th class="p-4 w-12 text-center" title="お気に入り">★</th>
                             <th class="p-4 w-16 text-center">市場</th>
                             <th @click="sortBy('ticker')"
                                 class="p-4 cursor-pointer hover:text-accent-400 transition-colors sort-icon"
@@ -519,6 +569,19 @@
                         <tr v-for="stock in filteredStocks" :key="stock.ticker"
                             class="hover:bg-slate-800/50 transition-colors group cursor-pointer"
                             @click="openDetail(stock)">
+                            <td class="p-4 text-center">
+                                <button type="button" @click.stop="toggleFavorite(stock)"
+                                    class="p-1.5 rounded-lg border border-slate-700 hover:border-slate-500 transition-colors"
+                                    :class="isFavorite(stock) ? 'text-amber-400' : 'text-slate-500'"
+                                    aria-label="お気に入りに追加">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.67 1.64 7.03z"
+                                            :fill="isFavorite(stock) ? 'currentColor' : 'none'" stroke="currentColor"
+                                            stroke-width="1.5" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </td>
                             <td class="p-4 text-center text-xl opacity-80 group-hover:opacity-100 transition-opacity">
                                 {{ stock.country === 'JP' ? '🇯🇵' : '🇺🇸' }}
                             </td>
@@ -570,8 +633,12 @@
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                 </div>
-                <h3 class="text-base md:text-lg font-bold text-white mb-1">該当する銘柄が見つかりません</h3>
-                <p class="text-sm md:text-base text-slate-400">フィルター条件を変更して再度検索してください。</p>
+                <h3 class="text-base md:text-lg font-bold text-white mb-1">
+                    {{ viewMode === 'favorites' ? 'お気に入りがありません' : '該当する銘柄が見つかりません' }}
+                </h3>
+                <p class="text-sm md:text-base text-slate-400">
+                    {{ viewMode === 'favorites' ? '☆で追加した銘柄がここに表示されます。' : 'フィルター条件を変更して再度検索してください。' }}
+                </p>
             </div>
         </div>
 
@@ -593,13 +660,26 @@
                             <p class="text-slate-400 text-sm md:text-base truncate">{{ selectedStock.name }}</p>
                         </div>
                     </div>
-                    <button @click="selectedStock = null"
-                        class="p-2 rounded-lg hover:bg-slate-800 transition-colors text-slate-400 hover:text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
+                    <div class="flex items-center gap-2">
+                        <button type="button" @click="toggleFavorite(selectedStock)"
+                            class="p-2 rounded-lg border border-slate-700 hover:border-slate-500 transition-colors"
+                            :class="isFavorite(selectedStock) ? 'text-amber-400' : 'text-slate-500'"
+                            aria-label="お気に入りに追加">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.67 1.64 7.03z"
+                                    :fill="isFavorite(selectedStock) ? 'currentColor' : 'none'" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <button @click="selectedStock = null"
+                            class="p-2 rounded-lg hover:bg-slate-800 transition-colors text-slate-400 hover:text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Modal Body -->
@@ -658,6 +738,86 @@
                             <div class="text-sm md:text-lg font-mono"
                                 :class="selectedStock.revenue_growth > 10 ? 'text-emerald-400' : (selectedStock.revenue_growth < 0 ? 'text-rose-400' : 'text-slate-300')">
                                 {{ selectedStock.revenue_growth }}%
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Financial Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+                        <div class="bg-slate-800/30 rounded-xl p-3 md:p-4 border border-slate-800">
+                            <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-2">収益性</div>
+                            <div class="space-y-1 text-sm">
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">売上総利益率</span>
+                                    <span class="font-mono text-slate-200">{{ formatPercent(selectedStock.gross_margin, 1) }}</span>
+                                </div>
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">営業利益率</span>
+                                    <span class="font-mono text-slate-200">{{ formatPercent(selectedStock.operating_margin, 1) }}</span>
+                                </div>
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">純利益率</span>
+                                    <span class="font-mono text-slate-200">{{ formatPercent(selectedStock.profit_margin, 1) }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/30 rounded-xl p-3 md:p-4 border border-slate-800">
+                            <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-2">収益規模</div>
+                            <div class="space-y-1 text-sm">
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">売上高</span>
+                                    <span class="font-mono text-slate-200">{{ formatLargeNumber(selectedStock.revenue, selectedStock) }}</span>
+                                </div>
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">EBITDA</span>
+                                    <span class="font-mono text-slate-200">{{ formatLargeNumber(selectedStock.ebitda, selectedStock) }}</span>
+                                </div>
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">営業CF</span>
+                                    <span class="font-mono text-slate-200">{{ formatLargeNumber(selectedStock.operating_cashflow, selectedStock) }}</span>
+                                </div>
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">FCF</span>
+                                    <span class="font-mono text-slate-200">{{ formatLargeNumber(selectedStock.free_cashflow, selectedStock) }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/30 rounded-xl p-3 md:p-4 border border-slate-800">
+                            <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-2">安全性</div>
+                            <div class="space-y-1 text-sm">
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">流動比率</span>
+                                    <span class="font-mono text-slate-200">{{ formatRatio(selectedStock.current_ratio, 2) }}</span>
+                                </div>
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">当座比率</span>
+                                    <span class="font-mono text-slate-200">{{ formatRatio(selectedStock.quick_ratio, 2) }}</span>
+                                </div>
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">D/E</span>
+                                    <span class="font-mono text-slate-200">{{ formatRatio(selectedStock.debt_to_equity, 2) }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/30 rounded-xl p-3 md:p-4 border border-slate-800">
+                            <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-2">配当・分類</div>
+                            <div class="space-y-1 text-sm">
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">配当利回り</span>
+                                    <span class="font-mono text-slate-200">{{ formatPercent(selectedStock.dividend_yield, 2) }}</span>
+                                </div>
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">セクター</span>
+                                    <span class="font-mono text-slate-200 truncate max-w-[180px]" :title="selectedStock.sector || 'データなし'">
+                                        {{ selectedStock.sector || 'データなし' }}
+                                    </span>
+                                </div>
+                                <div class="flex justify-between gap-2">
+                                    <span class="text-slate-400">業種</span>
+                                    <span class="font-mono text-slate-200 truncate max-w-[180px]" :title="selectedStock.industry || 'データなし'">
+                                        {{ selectedStock.industry || 'データなし' }}
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -755,6 +915,8 @@
                     showUS: true,
                     showJP: true,
                     disableFilters: false,
+                    useSector: false,
+                    sector: 'all',
 
                     maxCapUSD: 2.0,
                     minFcf: 3.0,
@@ -772,6 +934,8 @@
                 })
 
                 const filtersExpanded = ref(false)
+                const viewMode = ref('all')
+                const favoriteTickers = ref([])
 
                 // 米国株データの読み込み
                 const loadUSStocks = async () => {
@@ -824,12 +988,25 @@
                     await Promise.all([loadUSStocks(), loadJPStocks()])
                     // 保存された条件を読み込む
                     loadSavedConditions()
+                    loadFavorites()
                 })
 
                 // 全銘柄を結合した computed
                 const allStocks = computed(() => {
                     return [...usStocks.value, ...jpStocks.value]
                 })
+
+                const sectorOptions = computed(() => {
+                    const sectors = new Set()
+                    allStocks.value.forEach(stock => {
+                        if (stock.sector) {
+                            sectors.add(stock.sector)
+                        }
+                    })
+                    return Array.from(sectors).sort()
+                })
+
+                const favoriteSet = computed(() => new Set(favoriteTickers.value))
 
                 const sortBy = (key) => {
                     if (sortKey.value === key) {
@@ -882,16 +1059,62 @@
                     return `${num.toFixed(digits)}${suffix}`
                 }
 
+                const formatRatio = (value, digits) => {
+                    const num = Number(value)
+                    if (!Number.isFinite(num)) return '-'
+                    return num.toFixed(digits)
+                }
+
+                const formatPercent = (value, digits) => {
+                    const num = Number(value)
+                    if (!Number.isFinite(num)) return '-'
+                    return `${num.toFixed(digits)}%`
+                }
+
+                const formatLargeNumber = (value, stock) => {
+                    const num = Number(value)
+                    if (!Number.isFinite(num) || num === 0 || !stock) return '-'
+                    const isJP = stock.country === 'JP'
+                    const abs = Math.abs(num)
+                    const sign = num < 0 ? '-' : ''
+                    if (isJP) {
+                        if (abs >= 100_000_000) {
+                            return `${sign}${(abs / 100_000_000).toFixed(1)}億円`
+                        }
+                        if (abs >= 1_000_000) {
+                            return `${sign}${(abs / 1_000_000).toFixed(1)}百万円`
+                        }
+                        return `${sign}${Math.round(abs).toLocaleString()}円`
+                    }
+                    if (abs >= 1_000_000_000) {
+                        return `${sign}$${(abs / 1_000_000_000).toFixed(1)}B`
+                    }
+                    if (abs >= 1_000_000) {
+                        return `${sign}$${(abs / 1_000_000).toFixed(1)}M`
+                    }
+                    return `${sign}$${Math.round(abs).toLocaleString()}`
+                }
+
                 const activeFilters = computed(() => {
-                    if (filters.value.disableFilters) return []
-                    return Object.entries(filterConfigs).flatMap(([key, config]) => {
-                        if (!filters.value[config.toggleKey]) return []
-                        return [{
+                    const items = []
+                    if (filters.value.disableFilters) return items
+                    Object.entries(filterConfigs).forEach(([key, config]) => {
+                        if (!filters.value[config.toggleKey]) return
+                        items.push({
                             key,
                             label: config.label,
                             value: config.format(filters.value[key])
-                        }]
+                        })
                     })
+                    if (filters.value.useSector && filters.value.sector && filters.value.sector !== 'all') {
+                        const sectorLabel = filters.value.sector === '__missing__' ? 'データなし' : filters.value.sector
+                        items.push({
+                            key: 'sector',
+                            label: 'セクター',
+                            value: sectorLabel
+                        })
+                    }
+                    return items
                 })
 
                 // フィルター値のバリデーション
@@ -939,6 +1162,8 @@
                             showUS: filters.value.showUS,
                             showJP: filters.value.showJP,
                             disableFilters: filters.value.disableFilters,
+                            useSector: filters.value.useSector,
+                            sector: filters.value.sector,
                             maxCapUSD: filters.value.maxCapUSD,
                             minFcf: filters.value.minFcf,
                             minRoe: filters.value.minRoe,
@@ -981,6 +1206,45 @@
                     } catch (e) {
                         console.error('Error deleting condition:', e)
                     }
+                }
+
+                const loadFavorites = () => {
+                    try {
+                        const saved = localStorage.getItem('favoriteStocks')
+                        if (saved) {
+                            const parsed = JSON.parse(saved)
+                            if (Array.isArray(parsed)) {
+                                favoriteTickers.value = parsed.filter(item => typeof item === 'string')
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error loading favorites:', e)
+                        favoriteTickers.value = []
+                    }
+                }
+
+                const saveFavorites = () => {
+                    try {
+                        localStorage.setItem('favoriteStocks', JSON.stringify(favoriteTickers.value))
+                    } catch (e) {
+                        console.error('Error saving favorites:', e)
+                    }
+                }
+
+                const isFavorite = (stock) => {
+                    return !!stock && favoriteSet.value.has(stock.ticker)
+                }
+
+                const toggleFavorite = (stock) => {
+                    if (!stock) return
+                    const next = new Set(favoriteTickers.value)
+                    if (next.has(stock.ticker)) {
+                        next.delete(stock.ticker)
+                    } else {
+                        next.add(stock.ticker)
+                    }
+                    favoriteTickers.value = Array.from(next)
+                    saveFavorites()
                 }
 
                 // TradingViewウィジェットの初期化
@@ -1029,6 +1293,7 @@
 
                 const filteredStocks = computed(() => {
                     let result = allStocks.value.filter(s => {
+                        if (viewMode.value === 'favorites' && !favoriteSet.value.has(s.ticker)) return false
                         if (s.country === 'US' && !filters.value.showUS) return false
                         if (s.country === 'JP' && !filters.value.showJP) return false
 
@@ -1039,6 +1304,13 @@
                             if (filters.value.useMaxPe && s.pe && s.pe > filters.value.maxPe) return false
                             if (filters.value.useMaxPbr && s.pbr && s.pbr > filters.value.maxPbr) return false
                             if (filters.value.useMinGrowth && s.revenue_growth < filters.value.minGrowth) return false
+                            if (filters.value.useSector && filters.value.sector && filters.value.sector !== 'all') {
+                                if (filters.value.sector === '__missing__') {
+                                    if (s.sector) return false
+                                } else if (s.sector !== filters.value.sector) {
+                                    return false
+                                }
+                            }
                         }
 
                         if (searchQuery.value) {
@@ -1080,18 +1352,26 @@
                     sortOrder,
                     filtersExpanded,
                     activeFilters,
+                    sectorOptions,
+                    viewMode,
+                    favoriteTickers,
                     selectedStock,
                     openDetail,
                     getTradingViewSymbol,
                     getTradingViewContainerId,
                     toggleFilter,
                     formatDecimal,
+                    formatRatio,
+                    formatPercent,
+                    formatLargeNumber,
                     validateFilterValue,
                     savedConditions,
                     conditionName,
                     saveCondition,
                     loadCondition,
-                    deleteCondition
+                    deleteCondition,
+                    toggleFavorite,
+                    isFavorite
                 }
             }
         }).mount('#app')

@@ -3,10 +3,11 @@ import pandas as pd
 import json
 import time
 import os
+import requests
+import io
 
 # --- 設定 ---
-# 米国株: 本来はS&P600等の全リストを使うが、ここではデモ用リスト
-US_TICKERS = ["RUM", "IONQ", "HIMS", "PLTR", "SOFI", "APPS", "CROX"]
+# 米国株: S&P 600 の銘柄を取得
 
 # 日本株: 取得したい市場区分
 TARGET_JP_MARKETS = ['グロース', 'スタンダード']
@@ -24,6 +25,10 @@ PRODUCTION_LIMIT_STANDARD = 300  # スタンダード市場の上限
 # これを超える時価総額の銘柄は保存しない (単位: USD)
 # ここでは200億ドル(約3兆円)を上限とする
 FILTER_MAX_MARKET_CAP_USD = 20_000_000_000 
+
+def normalize_yahoo_ticker(symbol):
+    # Wikipedia uses dots for class shares (e.g., BRK.B) while Yahoo uses hyphens.
+    return symbol.replace('.', '-')
 
 def normalize_tradingview_ticker(symbol):
     # TradingView uses dots for class shares (e.g., BRK.B) while Yahoo uses hyphens.
@@ -70,6 +75,38 @@ def build_tradingview_symbol(symbol, info, is_jp):
     exchange = infer_tradingview_exchange(info)
     ticker = normalize_tradingview_ticker(symbol)
     return f'{exchange}:{ticker}' if exchange else ticker
+
+def to_percent(value):
+    if value is None:
+        return None
+    return round(value * 100, 2)
+
+def get_sp600_tickers():
+    print("Fetching S&P 600 ticker list...")
+    try:
+        url = "https://en.wikipedia.org/w/api.php"
+        params = {
+            "action": "parse",
+            "page": "List_of_S&P_600_companies",
+            "prop": "text",
+            "format": "json",
+        }
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(url, params=params, headers=headers, timeout=30)
+        response.raise_for_status()
+        payload = response.json()
+        html = payload.get("parse", {}).get("text", {}).get("*", "")
+        tables = pd.read_html(io.StringIO(html))
+        if not tables:
+            return []
+        df = tables[0]
+        if 'Symbol' not in df.columns:
+            return []
+        symbols = df['Symbol'].astype(str).tolist()
+        return [normalize_yahoo_ticker(s) for s in symbols]
+    except Exception as e:
+        print(f"Error fetching S&P 600 list: {e}")
+        return []
 
 def get_jpx_tickers(limit_standard=None):
     """
@@ -121,15 +158,19 @@ def main():
     
     # 1. リスト作成
     if DEBUG_MODE:
+        us_tickers = get_sp600_tickers()
+        print(f"DEBUG MODE: Limiting US tickers to first {DEBUG_LIMIT}")
+        us_tickers = us_tickers[:DEBUG_LIMIT]
         # デバッグ時は上限なしで取得し、後で制限
         jp_tickers = get_jpx_tickers()
         print(f"DEBUG MODE: Limiting JP tickers to first {DEBUG_LIMIT}")
         jp_tickers = jp_tickers[:DEBUG_LIMIT]
     else:
+        us_tickers = get_sp600_tickers()
         # 本番時はスタンダード市場に上限を設ける
         jp_tickers = get_jpx_tickers(limit_standard=PRODUCTION_LIMIT_STANDARD)
         
-    all_tickers = US_TICKERS + jp_tickers
+    all_tickers = us_tickers + jp_tickers
     
     print(f"Processing {len(all_tickers)} tickers...")
 
@@ -172,12 +213,20 @@ def main():
                 # 追加指標
                 pbr = info.get('priceToBook', 0)
                 revenue_growth = round(info.get('revenueGrowth', 0) * 100, 2) if info.get('revenueGrowth') else 0
-                profit_margin = round(info.get('profitMargins', 0) * 100, 2) if info.get('profitMargins') else 0
+                gross_margin = to_percent(info.get('grossMargins'))
+                operating_margin = to_percent(info.get('operatingMargins'))
+                profit_margin = to_percent(info.get('profitMargins'))
+                sector = info.get('sector')
+                industry = info.get('industry')
+                dividend_yield = to_percent(info.get('dividendYield'))
 
                 data_list.append({
                     "ticker": symbol,
                     "name": info.get('shortName', symbol),
                     "country": "JP" if is_jp else "US",
+                    "currency": currency,
+                    "sector": sector,
+                    "industry": industry,
                     "price": info.get('currentPrice'),
                     "tradingview_symbol": build_tradingview_symbol(symbol, info, is_jp),
                     "mcap_display": mcap_display,      # 表示用数値 (単位は国による)
@@ -187,7 +236,17 @@ def main():
                     "pe": info.get('trailingPE', 0),
                     "pbr": pbr,
                     "revenue_growth": revenue_growth,
-                    "profit_margin": profit_margin
+                    "gross_margin": gross_margin,
+                    "operating_margin": operating_margin,
+                    "profit_margin": profit_margin,
+                    "revenue": info.get('totalRevenue'),
+                    "ebitda": info.get('ebitda'),
+                    "operating_cashflow": info.get('operatingCashflow'),
+                    "free_cashflow": fcf,
+                    "current_ratio": info.get('currentRatio'),
+                    "quick_ratio": info.get('quickRatio'),
+                    "debt_to_equity": info.get('debtToEquity'),
+                    "dividend_yield": dividend_yield
                 })
                 print(f"Fetched: {symbol}")
             else:
