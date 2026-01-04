@@ -1,0 +1,72 @@
+[
+  {
+    "ticker": "RUM",
+    "name": "Rumble Inc.",
+    "country": "US",
+    "price": 6.37,
+    "mcap_display": 2.16,
+    "mcap_sort": 2.159884032,
+    "fcf_yield": -0.77,
+    "roe": -122.08,
+    "pe": 0,
+    "pbr": 7.1492705,
+    "revenue_growth": -1.2,
+    "profit_margin": -275.47
+  },
+  {
+    "ticker": "IONQ",
+    "name": "IonQ, Inc.",
+    "country": "US",
+    "price": 46.77,
+    "mcap_display": 16.57,
+    "mcap_sort": 16.56965632,
+    "fcf_yield": -0.06,
+    "roe": -107.76,
+    "pe": 0,
+    "pbr": 6.692902,
+    "revenue_growth": 221.5,
+    "profit_margin": 0
+  },
+  {
+    "ticker": "HIMS",
+    "name": "Hims & Hers Health, Inc.",
+    "country": "US",
+    "price": 33.41,
+    "mcap_display": 7.61,
+    "mcap_sort": 7.60573696,
+    "fcf_yield": 2.57,
+    "roe": 26.21,
+    "pe": 63.03774,
+    "pbr": 13.081441,
+    "revenue_growth": 49.2,
+    "profit_margin": 6.05
+  },
+  {
+    "ticker": "APPS",
+    "name": "Digital Turbine, Inc.",
+    "country": "US",
+    "price": 4.78,
+    "mcap_display": 0.54,
+    "mcap_sort": 0.536071744,
+    "fcf_yield": 8.04,
+    "roe": -46.87,
+    "pe": 0,
+    "pbr": 3.6075473,
+    "revenue_growth": 18.2,
+    "profit_margin": -14.75
+  },
+  {
+    "ticker": "CROX",
+    "name": "Crocs, Inc.",
+    "country": "US",
+    "price": 86.95,
+    "mcap_display": 4.75,
+    "mcap_sort": 4.7489792,
+    "fcf_yield": 11.6,
+    "roe": 11.82,
+    "pe": 30.19097,
+    "pbr": 3.340248,
+    "revenue_growth": -6.2,
+    "profit_margin": 4.48
+  }
+]

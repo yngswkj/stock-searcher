@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小型・割安株サーチャー</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Manrope:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151f32', // Custom dark
+                            950: '#020617',
+                        },
+                        accent: {
+                            500: '#6366f1', // Indigo
+                            600: '#4f46e5',
+                        },
+                        success: '#10b981',
+                        danger: '#f43f5e',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Range Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #6366f1;
+            cursor: pointer;
+            margin-top: -6px;
+            box-shadow: 0 0 0 2px #1e293b;
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #334155;
+            border-radius: 2px;
+        }
+
+        input[type=range]:disabled::-webkit-slider-thumb {
+            background: #475569;
+        }
+
+        input[type=range]:disabled::-webkit-slider-runnable-track {
+            background: #1e293b;
+        }
+
+        /* Sort Icons */
+        .sort-icon::after {
+            content: '↕';
+            margin-left: 6px;
+            opacity: 0.2;
+            font-size: 0.7em;
+            vertical-align: middle;
+        }
+
+        .sort-asc::after {
+            content: '▲';
+            opacity: 1;
+            color: #6366f1;
+        }
+
+        .sort-desc::after {
+            content: '▼';
+            opacity: 1;
+            color: #6366f1;
+        }
+
+        /* Transitions */
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 0.3s ease;
+        }
+
+        .fade-enter-from,
+        .fade-leave-to {
+            opacity: 0;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+
+        /* Mobile Card View */
+        @media (max-width: 768px) {
+            .mobile-card {
+                display: block !important;
+            }
+
+            .desktop-table {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-card {
+                display: none !important;
+            }
+
+            .desktop-table {
+                display: block !important;
+            }
+        }
+
+        /* Better touch targets */
+        @media (max-width: 768px) {
+            input[type=range]::-webkit-slider-thumb {
+                height: 24px;
+                width: 24px;
+                margin-top: -10px;
+            }
+        }
+
+        /* Mobile Modal */
+        @media (max-width: 768px) {
+            .modal-container {
+                padding: 0 !important;
+            }
+
+            .modal-content {
+                max-width: 100% !important;
+                max-height: 100vh !important;
+                height: 100vh !important;
+                border-radius: 0 !important;
+                border: none !important;
+            }
+
+            .modal-header {
+                padding: 1rem !important;
+            }
+
+            .modal-header h2 {
+                font-size: 1.25rem !important;
+            }
+
+            .modal-body {
+                padding: 1rem !important;
+            }
+
+            .chart-container {
+                height: 280px !important;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-950 text-slate-200 font-sans antialiased min-h-screen selection:bg-accent-500 selection:text-white">
+    <div id="app" class="max-w-[1600px] mx-auto p-4 md:p-8" v-cloak>
+
+        <!-- Header -->
+        <header
+            class="mb-6 md:mb-10 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-4 border-b border-slate-800 pb-4 md:pb-6">
+            <div>
+                <div class="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
+                    <span class="text-2xl md:text-3xl"></span>
+                    <h1
+                        class="text-2xl md:text-4xl font-extrabold tracking-tight text-white bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">
+                        小型・割安株サーチャー
+                    </h1>
+                </div>
+                <p class="text-slate-400 font-medium text-sm md:text-base">高ポテンシャル銘柄スクリーナー</p>
+            </div>
+            <div class="text-left md:text-right flex md:block items-center gap-2">
+                <div class="text-xs text-slate-500 uppercase tracking-wider font-bold">更新</div>
+                <div class="font-mono text-accent-400 text-sm">{{ lastUpdate }}</div>
+            </div>
+        </header>
+
+        <!-- Controls Area -->
+        <div class="grid grid-cols-1 xl:grid-cols-4 gap-4 md:gap-8 mb-6 md:mb-8">
+
+            <!-- Search & Market -->
+            <div
+                class="xl:col-span-1 space-y-4 md:space-y-6 bg-slate-900/50 p-4 md:p-6 rounded-xl md:rounded-2xl border border-slate-800 backdrop-blur-sm">
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">検索</label>
+                    <div class="relative">
+                        <input type="text" v-model="searchQuery" placeholder="ティッカーまたは企業名..."
+                            class="w-full bg-slate-800 border border-slate-700 text-white text-sm rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 block p-3 pl-10 placeholder-slate-500 transition-all">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-slate-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">市場</label>
+                    <div class="flex gap-4">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <div class="relative">
+                                <input type="checkbox" v-model="filters.showUS" class="sr-only peer">
+                                <div
+                                    class="w-11 h-6 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-accent-500 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-600">
+                                </div>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">🇺🇸
+                                米国</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <div class="relative">
+                                <input type="checkbox" v-model="filters.showJP" class="sr-only peer">
+                                <div
+                                    class="w-11 h-6 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-accent-500 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-600">
+                                </div>
+                            </div>
+                            <span
+                                class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">🇯🇵
+                                日本</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters Grid -->
+            <div
+                class="xl:col-span-3 bg-slate-900/50 p-4 md:p-6 rounded-xl md:rounded-2xl border border-slate-800 backdrop-blur-sm">
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-4 md:gap-y-6">
+
+                    <!-- Filter Item Component -->
+                    <div v-for="(config, key) in filterConfigs" :key="key" class="group">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="flex items-center gap-2">
+                                <input type="checkbox" v-model="filters[config.toggleKey]"
+                                    class="w-4 h-4 text-accent-600 bg-slate-700 border-slate-600 rounded focus:ring-accent-600 focus:ring-offset-slate-800 cursor-pointer">
+                                <label
+                                    class="text-xs font-bold text-slate-400 uppercase tracking-wider cursor-pointer select-none"
+                                    @click="filters[config.toggleKey] = !filters[config.toggleKey]">
+                                    {{ config.label }}
+                                </label>
+                            </div>
+                            <span class="font-mono text-sm font-bold"
+                                :class="filters[config.toggleKey] ? 'text-accent-400' : 'text-slate-600'">
+                                {{ config.format(filters[key]) }}
+                            </span>
+                        </div>
+                        <input type="range" v-model.number="filters[key]" :min="config.min" :max="config.max"
+                            :step="config.step" :disabled="!filters[config.toggleKey]"
+                            class="w-full transition-opacity duration-200"
+                            :class="filters[config.toggleKey] ? 'opacity-100' : 'opacity-30 grayscale'">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="bg-slate-900 rounded-xl md:rounded-2xl border border-slate-800 shadow-xl overflow-hidden">
+            <div class="p-3 md:p-4 border-b border-slate-800 bg-slate-850/50 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+                    <span class="font-bold text-slate-200 text-sm md:text-base">検索結果</span>
+                    <span
+                        class="bg-slate-800 text-slate-400 text-xs font-mono py-0.5 px-2 rounded-full border border-slate-700">{{
+                        filteredStocks.length }}</span>
+                </div>
+                <!-- Mobile Sort Selector -->
+                <div class="md:hidden">
+                    <select v-model="sortKey" @change="sortOrder = 'desc'"
+                        class="bg-slate-800 border border-slate-700 text-slate-300 text-xs rounded-lg px-2 py-1.5">
+                        <option value="fcf_yield">FCF利回り順</option>
+                        <option value="roe">ROE順</option>
+                        <option value="mcap_sort">時価総額順</option>
+                        <option value="pe">PER順</option>
+                        <option value="revenue_growth">成長率順</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Mobile Card View -->
+            <div class="mobile-card divide-y divide-slate-800/50">
+                <div v-for="stock in filteredStocks" :key="stock.ticker"
+                    class="p-4 active:bg-slate-800/50 transition-colors cursor-pointer" @click="openDetail(stock)">
+                    <div class="flex items-start justify-between mb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg">{{ stock.country === 'JP' ? '🇯🇵' : '🇺🇸' }}</span>
+                            <div>
+                                <div class="font-mono font-bold text-white text-sm">{{ stock.ticker }}</div>
+                                <div class="text-xs text-slate-500 truncate max-w-[150px]">{{ stock.name }}</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-mono text-white text-sm">
+                                {{ stock.country === 'JP' ? '¥' : '$' }}{{ stock.price?.toLocaleString() }}
+                            </div>
+                            <div class="text-xs text-slate-500">
+                                {{ stock.mcap_display?.toLocaleString() }}{{ stock.country === 'JP' ? '億' : 'B' }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2 text-center">
+                        <div class="bg-slate-800/50 rounded-lg py-2 px-1">
+                            <div class="text-[10px] text-slate-500 uppercase">FCF</div>
+                            <div class="font-mono text-xs font-bold"
+                                :class="stock.fcf_yield >= 5 ? 'text-emerald-400' : 'text-accent-400'">
+                                {{ stock.fcf_yield }}%
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 rounded-lg py-2 px-1">
+                            <div class="text-[10px] text-slate-500 uppercase">ROE</div>
+                            <div class="font-mono text-xs"
+                                :class="stock.roe >= 15 ? 'text-emerald-400' : 'text-slate-300'">
+                                {{ stock.roe }}%
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 rounded-lg py-2 px-1">
+                            <div class="text-[10px] text-slate-500 uppercase">PER</div>
+                            <div class="font-mono text-xs text-slate-300">
+                                {{ stock.pe ? stock.pe.toFixed(1) : '-' }}
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 rounded-lg py-2 px-1">
+                            <div class="text-[10px] text-slate-500 uppercase">成長</div>
+                            <div class="font-mono text-xs"
+                                :class="stock.revenue_growth > 10 ? 'text-emerald-400' : (stock.revenue_growth < 0 ? 'text-rose-400' : 'text-slate-300')">
+                                {{ stock.revenue_growth }}%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Table View -->
+            <div class="desktop-table overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr
+                            class="bg-slate-950 text-xs font-bold text-slate-500 uppercase tracking-wider border-b border-slate-800">
+                            <th class="p-4 w-16 text-center">市場</th>
+                            <th @click="sortBy('ticker')"
+                                class="p-4 cursor-pointer hover:text-accent-400 transition-colors sort-icon"
+                                :class="getSortClass('ticker')">コード</th>
+                            <th @click="sortBy('name')"
+                                class="p-4 cursor-pointer hover:text-accent-400 transition-colors sort-icon"
+                                :class="getSortClass('name')">企業名</th>
+                            <th @click="sortBy('price')"
+                                class="p-4 text-right cursor-pointer hover:text-accent-400 transition-colors sort-icon"
+                                :class="getSortClass('price')">株価</th>
+                            <th @click="sortBy('mcap_sort')"
+                                class="p-4 text-right cursor-pointer hover:text-accent-400 transition-colors sort-icon"
+                                :class="getSortClass('mcap_sort')">時価総額</th>
+                            <th @click="sortBy('fcf_yield')"
+                                class="p-4 text-right cursor-pointer hover:text-accent-400 transition-colors sort-icon text-accent-500"
+                                :class="getSortClass('fcf_yield')">FCF利回り</th>
+                            <th @click="sortBy('roe')"
+                                class="p-4 text-right cursor-pointer hover:text-accent-400 transition-colors sort-icon"
+                                :class="getSortClass('roe')">ROE</th>
+                            <th @click="sortBy('pe')"
+                                class="p-4 text-right cursor-pointer hover:text-accent-400 transition-colors sort-icon"
+                                :class="getSortClass('pe')">PER</th>
+                            <th @click="sortBy('pbr')"
+                                class="p-4 text-right cursor-pointer hover:text-accent-400 transition-colors sort-icon"
+                                :class="getSortClass('pbr')">PBR</th>
+                            <th @click="sortBy('revenue_growth')"
+                                class="p-4 text-right cursor-pointer hover:text-accent-400 transition-colors sort-icon"
+                                :class="getSortClass('revenue_growth')">売上成長率</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/50 text-sm">
+                        <tr v-for="stock in filteredStocks" :key="stock.ticker"
+                            class="hover:bg-slate-800/50 transition-colors group cursor-pointer"
+                            @click="openDetail(stock)">
+                            <td class="p-4 text-center text-xl opacity-80 group-hover:opacity-100 transition-opacity">
+                                {{ stock.country === 'JP' ? '🇯🇵' : '🇺🇸' }}
+                            </td>
+                            <td class="p-4 font-mono font-bold text-white">
+                                <span class="hover:text-accent-400 transition-all">
+                                    {{ stock.ticker }}
+                                </span>
+                            </td>
+                            <td class="p-4 text-slate-400 font-medium max-w-[200px] truncate" :title="stock.name">{{
+                                stock.name }}</td>
+                            <td class="p-4 text-right font-mono text-slate-300">
+                                <span class="text-slate-500 mr-1">{{ stock.country === 'JP' ? '¥' : '$' }}</span>{{
+                                stock.price.toLocaleString() }}
+                            </td>
+                            <td class="p-4 text-right font-mono text-slate-300">
+                                {{ stock.mcap_display.toLocaleString() }} <span class="text-slate-500 text-xs">{{
+                                    stock.country === 'JP' ? '億円' : 'B' }}</span>
+                            </td>
+                            <td class="p-4 text-right font-mono font-bold"
+                                :class="stock.fcf_yield >= 5 ? 'text-emerald-400' : 'text-accent-400'">
+                                {{ stock.fcf_yield }}%
+                            </td>
+                            <td class="p-4 text-right font-mono"
+                                :class="stock.roe >= 15 ? 'text-emerald-400' : 'text-slate-300'">
+                                {{ stock.roe }}%
+                            </td>
+                            <td class="p-4 text-right font-mono text-slate-400">
+                                {{ stock.pe ? stock.pe.toFixed(1) : '-' }}
+                            </td>
+                            <td class="p-4 text-right font-mono text-slate-400">
+                                {{ stock.pbr ? stock.pbr.toFixed(2) : '-' }}
+                            </td>
+                            <td class="p-4 text-right font-mono"
+                                :class="stock.revenue_growth > 10 ? 'text-emerald-400' : (stock.revenue_growth < 0 ? 'text-rose-400' : 'text-slate-400')">
+                                {{ stock.revenue_growth }}%
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Empty State -->
+            <div v-if="filteredStocks.length === 0" class="p-8 md:p-16 text-center">
+                <div
+                    class="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-slate-800 mb-3 md:mb-4">
+                    <svg class="w-6 h-6 md:w-8 md:h-8 text-slate-500" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-base md:text-lg font-bold text-white mb-1">該当する銘柄が見つかりません</h3>
+                <p class="text-sm md:text-base text-slate-400">フィルター条件を変更して再度検索してください。</p>
+            </div>
+        </div>
+
+        <!-- Detail Modal -->
+        <div v-if="selectedStock"
+            class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm modal-container"
+            @click.self="selectedStock = null">
+            <div
+                class="modal-content bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
+                <!-- Modal Header -->
+                <div
+                    class="modal-header flex items-center justify-between p-4 md:p-6 border-b border-slate-800 bg-slate-950">
+                    <div class="flex items-center gap-3 md:gap-4 min-w-0">
+                        <span class="text-2xl md:text-3xl flex-shrink-0">{{ selectedStock.country === 'JP' ? '🇯🇵' :
+                            '🇺🇸' }}</span>
+                        <div class="min-w-0">
+                            <h2 class="text-xl md:text-2xl font-bold text-white font-mono">{{ selectedStock.ticker }}
+                            </h2>
+                            <p class="text-slate-400 text-sm md:text-base truncate">{{ selectedStock.name }}</p>
+                        </div>
+                    </div>
+                    <button @click="selectedStock = null"
+                        class="p-2 rounded-lg hover:bg-slate-800 transition-colors text-slate-400 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body flex-1 overflow-y-auto p-4 md:p-6 space-y-4 md:space-y-6">
+                    <!-- Key Metrics Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+                        <div class="bg-slate-800/50 rounded-xl p-3 md:p-4 border border-slate-700">
+                            <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-1">株価</div>
+                            <div class="text-base md:text-xl font-bold font-mono text-white">
+                                {{ selectedStock.country === 'JP' ? '¥' : '$' }}{{ selectedStock.price?.toLocaleString()
+                                }}
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 rounded-xl p-3 md:p-4 border border-slate-700">
+                            <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-1">時価総額</div>
+                            <div class="text-base md:text-xl font-bold font-mono text-white">
+                                {{ selectedStock.mcap_display?.toLocaleString() }}
+                                <span class="text-xs md:text-sm text-slate-400">{{ selectedStock.country === 'JP' ? '億円'
+                                    : 'B'
+                                    }}</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 rounded-xl p-3 md:p-4 border border-slate-700">
+                            <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-1">FCF利回り
+                            </div>
+                            <div class="text-base md:text-xl font-bold font-mono"
+                                :class="selectedStock.fcf_yield >= 5 ? 'text-emerald-400' : 'text-accent-400'">
+                                {{ selectedStock.fcf_yield }}%
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/50 rounded-xl p-3 md:p-4 border border-slate-700">
+                            <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-1">ROE</div>
+                            <div class="text-base md:text-xl font-bold font-mono"
+                                :class="selectedStock.roe >= 15 ? 'text-emerald-400' : 'text-slate-300'">
+                                {{ selectedStock.roe }}%
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Metrics -->
+                    <div class="grid grid-cols-3 gap-2 md:gap-4">
+                        <div class="bg-slate-800/30 rounded-lg p-3 md:p-4 border border-slate-800">
+                            <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-1">PER</div>
+                            <div class="text-sm md:text-lg font-mono text-slate-300">
+                                {{ selectedStock.pe ? selectedStock.pe.toFixed(1) + '倍' : '-' }}
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/30 rounded-lg p-3 md:p-4 border border-slate-800">
+                            <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-1">PBR</div>
+                            <div class="text-sm md:text-lg font-mono text-slate-300">
+                                {{ selectedStock.pbr ? selectedStock.pbr.toFixed(2) + '倍' : '-' }}
+                            </div>
+                        </div>
+                        <div class="bg-slate-800/30 rounded-lg p-3 md:p-4 border border-slate-800">
+                            <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-1">売上成長率</div>
+                            <div class="text-sm md:text-lg font-mono"
+                                :class="selectedStock.revenue_growth > 10 ? 'text-emerald-400' : (selectedStock.revenue_growth < 0 ? 'text-rose-400' : 'text-slate-300')">
+                                {{ selectedStock.revenue_growth }}%
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TradingView Chart -->
+                    <div class="bg-slate-800/30 rounded-xl border border-slate-800 overflow-hidden">
+                        <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+                            <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">チャート</h3>
+                            <a :href="'https://www.tradingview.com/chart/?symbol=' + getTradingViewSymbol(selectedStock)"
+                                target="_blank" class="text-xs text-accent-400 hover:text-accent-300 transition-colors">
+                                TradingViewで開く →
+                            </a>
+                        </div>
+                        <div class="chart-container h-[300px] md:h-[400px] relative">
+                            <!-- TradingView Mini Chart Widget -->
+                            <div :id="'tradingview-widget-' + selectedStock.ticker.replace('.', '-')"
+                                class="w-full h-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- External Links -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-3 pb-4">
+                        <a :href="'https://finance.yahoo.com/quote/' + selectedStock.ticker" target="_blank"
+                            class="flex items-center justify-center gap-2 px-4 py-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 rounded-lg text-sm font-medium text-slate-300 hover:text-white transition-colors border border-slate-700">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.8l6 10.8H6l6-10.8z" />
+                            </svg>
+                            Yahoo Finance
+                        </a>
+                        <a :href="'https://www.tradingview.com/chart/?symbol=' + getTradingViewSymbol(selectedStock)"
+                            target="_blank"
+                            class="flex items-center justify-center gap-2 px-4 py-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 rounded-lg text-sm font-medium text-slate-300 hover:text-white transition-colors border border-slate-700">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h2v10H7V7zm4 4h2v6h-2v-6zm4-2h2v8h-2V9z" />
+                            </svg>
+                            TradingView
+                        </a>
+                        <a v-if="selectedStock.country === 'JP'"
+                            :href="'https://kabutan.jp/stock/?code=' + selectedStock.ticker.replace('.T', '')"
+                            target="_blank"
+                            class="flex items-center justify-center gap-2 px-4 py-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 rounded-lg text-sm font-medium text-slate-300 hover:text-white transition-colors border border-slate-700">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                            </svg>
+                            株探
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp, ref, computed, onMounted, watch } = Vue
+
+        createApp({
+            setup() {
+                const stocks = ref([])
+                const usStocks = ref([])
+                const jpStocks = ref([])
+                const usLoaded = ref(false)
+                const jpLoaded = ref(false)
+                const loading = ref(false)
+                const lastUpdate = ref("-")
+                const searchQuery = ref("")
+                const sortKey = ref("fcf_yield")
+                const sortOrder = ref("desc")
+                const selectedStock = ref(null)
+
+                // フィルタ設定の定義（UI生成用）
+                const filterConfigs = {
+                    maxCapUSD: { label: '最大時価総額', min: 0.1, max: 10, step: 0.1, toggleKey: 'useMaxCapUSD', format: v => `$${v} B` },
+                    minFcf: { label: '最小FCF利回り', min: 0, max: 20, step: 0.5, toggleKey: 'useMinFcf', format: v => `${v}%` },
+                    minRoe: { label: '最小ROE', min: 0, max: 30, step: 1, toggleKey: 'useMinRoe', format: v => `${v}%` },
+                    maxPe: { label: '最大PER', min: 5, max: 100, step: 1, toggleKey: 'useMaxPe', format: v => `${v}倍` },
+                    maxPbr: { label: '最大PBR', min: 0.5, max: 20, step: 0.1, toggleKey: 'useMaxPbr', format: v => `${v}倍` },
+                    minGrowth: { label: '最小売上成長率', min: -20, max: 50, step: 1, toggleKey: 'useMinGrowth', format: v => `${v}%` },
+                }
+
+                const filters = ref({
+                    showUS: true,
+                    showJP: true,
+
+                    maxCapUSD: 2.0,
+                    minFcf: 3.0,
+                    minRoe: 10.0,
+                    maxPe: 30,
+                    maxPbr: 5.0,
+                    minGrowth: 0,
+
+                    useMaxCapUSD: true,
+                    useMinFcf: true,
+                    useMinRoe: true,
+                    useMaxPe: true,
+                    useMaxPbr: true,
+                    useMinGrowth: true
+                })
+
+                // 米国株データの読み込み
+                const loadUSStocks = async () => {
+                    if (usLoaded.value) return
+                    loading.value = true
+                    try {
+                        const res = await fetch('./public/us_stocks.json')
+                        usStocks.value = await res.json()
+                        usLoaded.value = true
+                        console.log(`Loaded ${usStocks.value.length} US stocks`)
+                    } catch (e) {
+                        console.error("US data load error", e)
+                    } finally {
+                        loading.value = false
+                    }
+                }
+
+                // 日本株データの読み込み
+                const loadJPStocks = async () => {
+                    if (jpLoaded.value) return
+                    loading.value = true
+                    try {
+                        const res = await fetch('./public/jp_stocks.json')
+                        jpStocks.value = await res.json()
+                        jpLoaded.value = true
+                        console.log(`Loaded ${jpStocks.value.length} JP stocks`)
+                    } catch (e) {
+                        console.error("JP data load error", e)
+                    } finally {
+                        loading.value = false
+                    }
+                }
+
+                // 市場トグルの変更を監視して必要なデータを読み込む
+                watch(() => filters.value.showUS, async (newVal) => {
+                    if (newVal && !usLoaded.value) {
+                        await loadUSStocks()
+                    }
+                }, { immediate: true })
+
+                watch(() => filters.value.showJP, async (newVal) => {
+                    if (newVal && !jpLoaded.value) {
+                        await loadJPStocks()
+                    }
+                }, { immediate: true })
+
+                onMounted(async () => {
+                    lastUpdate.value = new Date().toLocaleDateString('ja-JP')
+                    // 初期状態で両方ONなので両方読み込む
+                    await Promise.all([loadUSStocks(), loadJPStocks()])
+                })
+
+                // 全銘柄を結合した computed
+                const allStocks = computed(() => {
+                    return [...usStocks.value, ...jpStocks.value]
+                })
+
+                const sortBy = (key) => {
+                    if (sortKey.value === key) {
+                        sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc'
+                    } else {
+                        sortKey.value = key
+                        sortOrder.value = 'desc'
+                    }
+                }
+
+                const getSortClass = (key) => {
+                    if (sortKey.value !== key) return ''
+                    return sortOrder.value === 'asc' ? 'sort-asc' : 'sort-desc'
+                }
+
+                // 銘柄を選択してモーダルを開く
+                const openDetail = (stock) => {
+                    selectedStock.value = stock
+                    // 次のティックでウィジェットを初期化
+                    setTimeout(() => {
+                        initTradingViewWidget(stock)
+                    }, 100)
+                }
+
+                // TradingView用のシンボル変換
+                const getTradingViewSymbol = (stock) => {
+                    if (stock.country === 'JP') {
+                        // 日本株は TSE: プレフィックスを付ける
+                        return 'TSE:' + stock.ticker.replace('.T', '')
+                    }
+                    return stock.ticker
+                }
+
+                // TradingViewウィジェットの初期化
+                const initTradingViewWidget = (stock) => {
+                    const containerId = 'tradingview-widget-' + stock.ticker.replace('.', '-')
+                    const container = document.getElementById(containerId)
+                    if (!container) return
+
+                    // 既存の内容をクリア
+                    container.innerHTML = ''
+
+                    const symbol = getTradingViewSymbol(stock)
+
+                    // TradingView Widget スクリプトを動的に作成
+                    const script = document.createElement('script')
+                    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js'
+                    script.type = 'text/javascript'
+                    script.async = true
+                    script.innerHTML = JSON.stringify({
+                        "autosize": true,
+                        "symbol": symbol,
+                        "interval": "D",
+                        "timezone": "Asia/Tokyo",
+                        "theme": "dark",
+                        "style": "1",
+                        "locale": "ja",
+                        "backgroundColor": "rgba(15, 23, 42, 1)",
+                        "gridColor": "rgba(51, 65, 85, 0.5)",
+                        "hide_top_toolbar": false,
+                        "hide_legend": false,
+                        "allow_symbol_change": false,
+                        "save_image": false,
+                        "calendar": false,
+                        "support_host": "https://www.tradingview.com"
+                    })
+
+                    container.appendChild(script)
+                }
+
+                const filteredStocks = computed(() => {
+                    let result = allStocks.value.filter(s => {
+                        if (s.country === 'US' && !filters.value.showUS) return false
+                        if (s.country === 'JP' && !filters.value.showJP) return false
+
+                        if (filters.value.useMaxCapUSD && s.mcap_sort > filters.value.maxCapUSD) return false
+                        if (filters.value.useMinFcf && s.fcf_yield < filters.value.minFcf) return false
+                        if (filters.value.useMinRoe && s.roe < filters.value.minRoe) return false
+                        if (filters.value.useMaxPe && s.pe && s.pe > filters.value.maxPe) return false
+                        if (filters.value.useMaxPbr && s.pbr && s.pbr > filters.value.maxPbr) return false
+                        if (filters.value.useMinGrowth && s.revenue_growth < filters.value.minGrowth) return false
+
+                        if (searchQuery.value) {
+                            const query = searchQuery.value.toLowerCase()
+                            const matchTicker = s.ticker.toLowerCase().includes(query)
+                            const matchName = s.name.toLowerCase().includes(query)
+                            if (!matchTicker && !matchName) return false
+                        }
+
+                        return true
+                    })
+
+                    result.sort((a, b) => {
+                        let valA = a[sortKey.value]
+                        let valB = b[sortKey.value]
+
+                        if (valA === null || valA === undefined) return 1
+                        if (valB === null || valB === undefined) return -1
+
+                        if (valA < valB) return sortOrder.value === 'asc' ? -1 : 1
+                        if (valA > valB) return sortOrder.value === 'asc' ? 1 : -1
+                        return 0
+                    })
+
+                    return result
+                })
+
+                return {
+                    allStocks,
+                    loading,
+                    filters,
+                    filterConfigs,
+                    filteredStocks,
+                    lastUpdate,
+                    searchQuery,
+                    sortBy,
+                    getSortClass,
+                    selectedStock,
+                    openDetail,
+                    getTradingViewSymbol
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>

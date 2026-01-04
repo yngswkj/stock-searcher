@@ -1,0 +1,31 @@
+name: Update Stock Data
+on:
+  schedule:
+    - cron: '0 0 * * *' # 毎日 AM0:00 (UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write # リポジトリへの書き込み権限を付与
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+      - name: Run Script
+        run: |
+          mkdir -p public
+          python scripts/fetch_data.py
+      - name: Commit & Push
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add public/us_stocks.json public/jp_stocks.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update stock data"
+          git push
