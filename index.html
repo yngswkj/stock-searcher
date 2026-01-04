@@ -314,34 +314,50 @@
             <!-- Filters Grid -->
             <div
                 class="xl:col-span-3 bg-slate-900/50 p-4 md:p-6 rounded-xl md:rounded-2xl border border-slate-800 backdrop-blur-sm">
-                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-4 md:gap-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">検索条件</div>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <div class="relative">
+                            <input type="checkbox" v-model="filters.disableFilters" class="sr-only peer">
+                            <div
+                                class="w-11 h-6 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-accent-500 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600">
+                            </div>
+                        </div>
+                        <span
+                            class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">条件を無効化</span>
+                    </label>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-4 md:gap-y-6"
+                    :class="filters.disableFilters ? 'opacity-60' : ''">
 
                     <!-- Filter Item Component -->
                     <div v-for="(config, key) in filterConfigs" :key="key" class="group">
                         <div class="flex justify-between items-center mb-2">
                             <div class="flex items-center gap-2">
                                 <input type="checkbox" v-model="filters[config.toggleKey]"
+                                    :disabled="filters.disableFilters"
                                     class="w-4 h-4 text-accent-600 bg-slate-700 border-slate-600 rounded focus:ring-accent-600 focus:ring-offset-slate-800 cursor-pointer">
                                 <label
-                                    class="text-xs font-bold text-slate-400 uppercase tracking-wider cursor-pointer select-none"
-                                    @click="filters[config.toggleKey] = !filters[config.toggleKey]">
+                                    class="text-xs font-bold uppercase tracking-wider cursor-pointer select-none"
+                                    :class="filters.disableFilters ? 'text-slate-600' : 'text-slate-400'"
+                                    @click="toggleFilter(config.toggleKey)">
                                     {{ config.label }}
                                 </label>
                             </div>
                             <span class="font-mono text-sm font-bold"
-                                :class="filters[config.toggleKey] ? 'text-accent-400' : 'text-slate-600'">
+                                :class="(!filters.disableFilters && filters[config.toggleKey]) ? 'text-accent-400' : 'text-slate-600'">
                                 {{ config.format(filters[key]) }}
                             </span>
                         </div>
-                        <div class="flex gap-2 items-center">
+                        <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
                             <input type="range" v-model.number="filters[key]" :min="config.min" :max="config.max"
-                                :step="config.step" :disabled="!filters[config.toggleKey]"
-                                class="flex-1 transition-opacity duration-200"
-                                :class="filters[config.toggleKey] ? 'opacity-100' : 'opacity-30 grayscale'">
+                                :step="config.step" :disabled="filters.disableFilters || !filters[config.toggleKey]"
+                                class="w-full sm:flex-1 transition-opacity duration-200"
+                                :class="(filters.disableFilters || !filters[config.toggleKey]) ? 'opacity-30 grayscale' : 'opacity-100'">
                             <input type="number" v-model.number="filters[key]" :min="config.min" :max="config.max"
-                                :step="config.step" :disabled="!filters[config.toggleKey]"
+                                :step="config.step" :disabled="filters.disableFilters || !filters[config.toggleKey]"
                                 @blur="validateFilterValue(key, config)"
-                                class="w-16 md:w-20 bg-slate-800 border border-slate-700 text-white text-xs rounded px-2 py-1 font-mono focus:ring-2 focus:ring-accent-500 focus:border-accent-500 disabled:opacity-30 disabled:bg-slate-900">
+                                class="w-full sm:w-20 bg-slate-800 border border-slate-700 text-white text-xs rounded px-2 py-1 font-mono focus:ring-2 focus:ring-accent-500 focus:border-accent-500 disabled:opacity-30 disabled:bg-slate-900">
                         </div>
                     </div>
 
@@ -618,8 +634,19 @@
                             </a>
                         </div>
                         <div class="chart-container h-[300px] md:h-[400px] relative">
-                            <!-- TradingView Mini Chart Widget -->
-                            <div :id="getTradingViewContainerId(selectedStock)" class="w-full h-full"></div>
+                            <template v-if="selectedStock.country === 'US'">
+                                <!-- TradingView Mini Chart Widget -->
+                                <div :id="getTradingViewContainerId(selectedStock)" class="w-full h-full"></div>
+                            </template>
+                            <template v-else>
+                                <div
+                                    class="h-full w-full flex items-center justify-center p-6 text-center text-sm text-slate-400">
+                                    <div>
+                                        <div class="text-slate-300 font-semibold mb-1">日本株は埋め込みチャート非対応</div>
+                                        <div>TradingViewの埋め込みウィジェットがTSEに対応していないため、リンクのみ表示しています。</div>
+                                    </div>
+                                </div>
+                            </template>
                         </div>
                     </div>
 
@@ -658,7 +685,7 @@
     </div>
 
     <script>
-        const { createApp, ref, computed, onMounted, watch } = Vue
+        const { createApp, ref, computed, onMounted, watch, nextTick } = Vue
 
         createApp({
             setup() {
@@ -689,6 +716,7 @@
                 const filters = ref({
                     showUS: true,
                     showJP: true,
+                    disableFilters: false,
 
                     maxCapUSD: 2.0,
                     minFcf: 3.0,
@@ -778,12 +806,13 @@
                 }
 
                 // 銘柄を選択してモーダルを開く
-                const openDetail = (stock) => {
+                const openDetail = async (stock) => {
                     selectedStock.value = stock
-                    // 次のティックでウィジェットを初期化
-                    setTimeout(() => {
+                    // DOM反映後にウィジェットを初期化
+                    await nextTick()
+                    if (stock && stock.country === 'US') {
                         initTradingViewWidget(stock)
-                    }, 100)
+                    }
                 }
 
                 // TradingView用のシンボル変換
@@ -800,6 +829,11 @@
                 // TradingView用のコンテナID生成
                 const getTradingViewContainerId = (stock) => {
                     return 'tradingview-widget-' + stock.ticker.replace(/\./g, '-')
+                }
+
+                const toggleFilter = (key) => {
+                    if (filters.value.disableFilters) return
+                    filters.value[key] = !filters.value[key]
                 }
 
                 // フィルター値のバリデーション
@@ -846,6 +880,7 @@
                         filters: {
                             showUS: filters.value.showUS,
                             showJP: filters.value.showJP,
+                            disableFilters: filters.value.disableFilters,
                             maxCapUSD: filters.value.maxCapUSD,
                             minFcf: filters.value.minFcf,
                             minRoe: filters.value.minRoe,
@@ -892,6 +927,9 @@
 
                 // TradingViewウィジェットの初期化
                 const initTradingViewWidget = (stock) => {
+                    if (!stock || stock.country !== 'US') {
+                        return
+                    }
                     const containerId = getTradingViewContainerId(stock)
                     const container = document.getElementById(containerId)
                     if (!container) {
@@ -904,9 +942,6 @@
 
                     const symbol = getTradingViewSymbol(stock)
                     console.log('Loading TradingView chart for:', symbol)
-
-                    // iframe埋め込み方式（JSON設定をURLハッシュにエンコード）
-                    const iframe = document.createElement('iframe')
 
                     const settings = {
                         "autosize": true,
@@ -924,20 +959,14 @@
                         "support_host": "https://www.tradingview.com"
                     }
 
-                    // 設定をJSON文字列化してURLエンコード
-                    const hash = encodeURIComponent(JSON.stringify(settings))
+                    // 公式の埋め込みスクリプト方式
+                    const script = document.createElement('script')
+                    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js'
+                    script.type = 'text/javascript'
+                    script.async = true
+                    script.innerHTML = JSON.stringify(settings)
 
-                    // 推奨される埋め込みURL形式
-                    iframe.src = `https://www.tradingview-widget.com/embed-widget/advanced-chart/?locale=ja#${hash}`
-
-                    iframe.style.width = '100%'
-                    iframe.style.height = '100%'
-                    iframe.style.border = 'none'
-                    iframe.setAttribute('frameborder', '0')
-                    iframe.setAttribute('allowtransparency', 'true')
-                    iframe.setAttribute('allowfullscreen', 'true')
-
-                    container.appendChild(iframe)
+                    container.appendChild(script)
                 }
 
                 const filteredStocks = computed(() => {
@@ -945,12 +974,14 @@
                         if (s.country === 'US' && !filters.value.showUS) return false
                         if (s.country === 'JP' && !filters.value.showJP) return false
 
-                        if (filters.value.useMaxCapUSD && s.mcap_sort > filters.value.maxCapUSD) return false
-                        if (filters.value.useMinFcf && s.fcf_yield < filters.value.minFcf) return false
-                        if (filters.value.useMinRoe && s.roe < filters.value.minRoe) return false
-                        if (filters.value.useMaxPe && s.pe && s.pe > filters.value.maxPe) return false
-                        if (filters.value.useMaxPbr && s.pbr && s.pbr > filters.value.maxPbr) return false
-                        if (filters.value.useMinGrowth && s.revenue_growth < filters.value.minGrowth) return false
+                        if (!filters.value.disableFilters) {
+                            if (filters.value.useMaxCapUSD && s.mcap_sort > filters.value.maxCapUSD) return false
+                            if (filters.value.useMinFcf && s.fcf_yield < filters.value.minFcf) return false
+                            if (filters.value.useMinRoe && s.roe < filters.value.minRoe) return false
+                            if (filters.value.useMaxPe && s.pe && s.pe > filters.value.maxPe) return false
+                            if (filters.value.useMaxPbr && s.pbr && s.pbr > filters.value.maxPbr) return false
+                            if (filters.value.useMinGrowth && s.revenue_growth < filters.value.minGrowth) return false
+                        }
 
                         if (searchQuery.value) {
                             const query = searchQuery.value.toLowerCase()
@@ -991,6 +1022,7 @@
                     openDetail,
                     getTradingViewSymbol,
                     getTradingViewContainerId,
+                    toggleFilter,
                     validateFilterValue,
                     savedConditions,
                     conditionName,
