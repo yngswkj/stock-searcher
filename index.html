@@ -42,6 +42,16 @@
         }
     </script>
     <style>
+        html {
+            scrollbar-gutter: stable;
+        }
+
+        @supports not (scrollbar-gutter: stable) {
+            body {
+                overflow-y: scroll;
+            }
+        }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -314,21 +324,48 @@
             <!-- Filters Grid -->
             <div
                 class="xl:col-span-3 bg-slate-900/50 p-4 md:p-6 rounded-xl md:rounded-2xl border border-slate-800 backdrop-blur-sm">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
-                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">検索条件</div>
-                    <label class="flex items-center gap-3 cursor-pointer group">
-                        <div class="relative">
-                            <input type="checkbox" v-model="filters.disableFilters" class="sr-only peer">
-                            <div
-                                class="w-11 h-6 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-accent-500 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600">
+                <div class="flex flex-col gap-3 mb-3 md:mb-4">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">検索条件</div>
+                        <button type="button" @click="filtersExpanded = !filtersExpanded"
+                            class="md:hidden px-3 py-1.5 text-xs font-bold rounded-full border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500 transition-colors">
+                            {{ filtersExpanded ? '閉じる' : '条件を表示' }}
+                        </button>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <div class="relative">
+                                <input type="checkbox" v-model="filters.disableFilters" class="sr-only peer">
+                                <div
+                                    class="w-11 h-6 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-accent-500 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600">
+                                </div>
                             </div>
+                            <span
+                                class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">条件を無効化</span>
+                        </label>
+                        <div class="md:hidden text-xs text-slate-500" v-if="!filters.disableFilters">
+                            有効: {{ activeFilters.length }}件
                         </div>
-                        <span
-                            class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">条件を無効化</span>
-                    </label>
+                    </div>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-4 md:gap-y-6"
-                    :class="filters.disableFilters ? 'opacity-60' : ''">
+                <div v-if="!filtersExpanded" class="md:hidden mb-3">
+                    <div v-if="filters.disableFilters" class="text-xs text-amber-400">
+                        条件は無効化中
+                    </div>
+                    <div v-else class="flex gap-2 overflow-x-auto pb-1">
+                        <span v-for="item in activeFilters" :key="item.key"
+                            class="shrink-0 px-2 py-1 rounded-full bg-slate-800 text-[11px] text-slate-300 border border-slate-700">
+                            {{ item.label }} {{ item.value }}
+                        </span>
+                        <span v-if="activeFilters.length === 0"
+                            class="shrink-0 px-2 py-1 rounded-full bg-slate-800 text-[11px] text-slate-500 border border-slate-700">
+                            条件なし
+                        </span>
+                    </div>
+                </div>
+                <div :class="filtersExpanded ? 'block' : 'hidden md:block'">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-4 md:gap-y-6"
+                        :class="filters.disableFilters ? 'opacity-60' : ''">
 
                     <!-- Filter Item Component -->
                     <div v-for="(config, key) in filterConfigs" :key="key" class="group">
@@ -361,6 +398,7 @@
                         </div>
                     </div>
 
+                    </div>
                 </div>
             </div>
         </div>
@@ -427,7 +465,7 @@
                         <div class="bg-slate-800/50 rounded-lg py-2 px-1">
                             <div class="text-[10px] text-slate-500 uppercase">PER</div>
                             <div class="font-mono text-xs text-slate-300">
-                                {{ stock.pe ? stock.pe.toFixed(1) : '-' }}
+                                {{ formatDecimal(stock.pe, 1) }}
                             </div>
                         </div>
                         <div class="bg-slate-800/50 rounded-lg py-2 px-1">
@@ -508,10 +546,10 @@
                                 {{ stock.roe }}%
                             </td>
                             <td class="p-4 text-right font-mono text-slate-400">
-                                {{ stock.pe ? stock.pe.toFixed(1) : '-' }}
+                                {{ formatDecimal(stock.pe, 1) }}
                             </td>
                             <td class="p-4 text-right font-mono text-slate-400">
-                                {{ stock.pbr ? stock.pbr.toFixed(2) : '-' }}
+                                {{ formatDecimal(stock.pbr, 2) }}
                             </td>
                             <td class="p-4 text-right font-mono"
                                 :class="stock.revenue_growth > 10 ? 'text-emerald-400' : (stock.revenue_growth < 0 ? 'text-rose-400' : 'text-slate-400')">
@@ -606,13 +644,13 @@
                         <div class="bg-slate-800/30 rounded-lg p-3 md:p-4 border border-slate-800">
                             <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-1">PER</div>
                             <div class="text-sm md:text-lg font-mono text-slate-300">
-                                {{ selectedStock.pe ? selectedStock.pe.toFixed(1) + '倍' : '-' }}
+                                {{ formatDecimal(selectedStock.pe, 1, '倍') }}
                             </div>
                         </div>
                         <div class="bg-slate-800/30 rounded-lg p-3 md:p-4 border border-slate-800">
                             <div class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider mb-1">PBR</div>
                             <div class="text-sm md:text-lg font-mono text-slate-300">
-                                {{ selectedStock.pbr ? selectedStock.pbr.toFixed(2) + '倍' : '-' }}
+                                {{ formatDecimal(selectedStock.pbr, 2, '倍') }}
                             </div>
                         </div>
                         <div class="bg-slate-800/30 rounded-lg p-3 md:p-4 border border-slate-800">
@@ -733,6 +771,8 @@
                     useMinGrowth: true
                 })
 
+                const filtersExpanded = ref(false)
+
                 // 米国株データの読み込み
                 const loadUSStocks = async () => {
                     if (usLoaded.value) return
@@ -835,6 +875,24 @@
                     if (filters.value.disableFilters) return
                     filters.value[key] = !filters.value[key]
                 }
+
+                const formatDecimal = (value, digits, suffix = '') => {
+                    const num = Number(value)
+                    if (!Number.isFinite(num) || num === 0) return '-'
+                    return `${num.toFixed(digits)}${suffix}`
+                }
+
+                const activeFilters = computed(() => {
+                    if (filters.value.disableFilters) return []
+                    return Object.entries(filterConfigs).flatMap(([key, config]) => {
+                        if (!filters.value[config.toggleKey]) return []
+                        return [{
+                            key,
+                            label: config.label,
+                            value: config.format(filters.value[key])
+                        }]
+                    })
+                })
 
                 // フィルター値のバリデーション
                 const validateFilterValue = (key, config) => {
@@ -1018,11 +1076,16 @@
                     searchQuery,
                     sortBy,
                     getSortClass,
+                    sortKey,
+                    sortOrder,
+                    filtersExpanded,
+                    activeFilters,
                     selectedStock,
                     openDetail,
                     getTradingViewSymbol,
                     getTradingViewContainerId,
                     toggleFilter,
+                    formatDecimal,
                     validateFilterValue,
                     savedConditions,
                     conditionName,
