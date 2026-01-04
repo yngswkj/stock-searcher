@@ -159,11 +159,11 @@
                 width: 32px;
                 margin-top: -14px;
             }
-            
+
             input[type=range]::-webkit-slider-runnable-track {
                 height: 6px;
             }
-            
+
             input[type=range] {
                 padding: 8px 0;
             }
@@ -619,8 +619,7 @@
                         </div>
                         <div class="chart-container h-[300px] md:h-[400px] relative">
                             <!-- TradingView Mini Chart Widget -->
-                            <div :id="getTradingViewContainerId(selectedStock)"
-                                class="w-full h-full"></div>
+                            <div :id="getTradingViewContainerId(selectedStock)" class="w-full h-full"></div>
                         </div>
                     </div>
 
@@ -789,6 +788,8 @@
 
                 // TradingView用のシンボル変換
                 const getTradingViewSymbol = (stock) => {
+                    if (!stock) return ''
+                    if (stock.tradingview_symbol) return stock.tradingview_symbol
                     if (stock.country === 'JP') {
                         // 日本株は TSE: プレフィックスを付ける
                         return 'TSE:' + stock.ticker.replace('.T', '')
@@ -820,10 +821,10 @@
                             // 配列であることと最大5件であることを検証
                             if (Array.isArray(parsed) && parsed.length <= 5) {
                                 // 各条件の構造を検証
-                                savedConditions.value = parsed.filter(condition => 
-                                    condition && 
-                                    typeof condition.name === 'string' && 
-                                    condition.filters && 
+                                savedConditions.value = parsed.filter(condition =>
+                                    condition &&
+                                    typeof condition.name === 'string' &&
+                                    condition.filters &&
                                     typeof condition.filters === 'object'
                                 )
                             }
@@ -902,13 +903,12 @@
                     container.innerHTML = ''
 
                     const symbol = getTradingViewSymbol(stock)
+                    console.log('Loading TradingView chart for:', symbol)
 
-                    // TradingView Widget スクリプトを動的に作成
-                    const script = document.createElement('script')
-                    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js'
-                    script.type = 'text/javascript'
-                    script.async = true
-                    script.innerHTML = JSON.stringify({
+                    // iframe埋め込み方式（JSON設定をURLハッシュにエンコード）
+                    const iframe = document.createElement('iframe')
+
+                    const settings = {
                         "autosize": true,
                         "symbol": symbol,
                         "interval": "D",
@@ -916,17 +916,28 @@
                         "theme": "dark",
                         "style": "1",
                         "locale": "ja",
-                        "backgroundColor": "rgba(15, 23, 42, 1)",
-                        "gridColor": "rgba(51, 65, 85, 0.5)",
-                        "hide_top_toolbar": false,
-                        "hide_legend": false,
+                        "enable_publishing": false,
                         "allow_symbol_change": false,
-                        "save_image": false,
                         "calendar": false,
+                        "withdateranges": true,
+                        "hide_side_toolbar": false,
                         "support_host": "https://www.tradingview.com"
-                    })
+                    }
 
-                    container.appendChild(script)
+                    // 設定をJSON文字列化してURLエンコード
+                    const hash = encodeURIComponent(JSON.stringify(settings))
+
+                    // 推奨される埋め込みURL形式
+                    iframe.src = `https://www.tradingview-widget.com/embed-widget/advanced-chart/?locale=ja#${hash}`
+
+                    iframe.style.width = '100%'
+                    iframe.style.height = '100%'
+                    iframe.style.border = 'none'
+                    iframe.setAttribute('frameborder', '0')
+                    iframe.setAttribute('allowtransparency', 'true')
+                    iframe.setAttribute('allowfullscreen', 'true')
+
+                    container.appendChild(iframe)
                 }
 
                 const filteredStocks = computed(() => {

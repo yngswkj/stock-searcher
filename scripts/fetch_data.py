@@ -25,6 +25,52 @@ PRODUCTION_LIMIT_STANDARD = 300  # スタンダード市場の上限
 # ここでは200億ドル(約3兆円)を上限とする
 FILTER_MAX_MARKET_CAP_USD = 20_000_000_000 
 
+def normalize_tradingview_ticker(symbol):
+    # TradingView uses dots for class shares (e.g., BRK.B) while Yahoo uses hyphens.
+    return symbol.replace('-', '.')
+
+def infer_tradingview_exchange(info):
+    exchange = (info.get('exchange') or '').upper()
+    exchange_map = {
+        'NYQ': 'NYSE',
+        'NMS': 'NASDAQ',
+        'NCM': 'NASDAQ',
+        'NGM': 'NASDAQ',
+        'NAS': 'NASDAQ',
+        'ASE': 'AMEX',
+        'AMEX': 'AMEX',
+        'PNK': 'OTC',
+        'OBB': 'OTC',
+        'OTC': 'OTC',
+        'BATS': 'BATS',
+        'ARCA': 'ARCA',
+        'IEX': 'IEX',
+    }
+    if exchange in exchange_map:
+        return exchange_map[exchange]
+
+    full_exchange = (info.get('fullExchangeName') or '').upper()
+    if 'NASDAQ' in full_exchange:
+        return 'NASDAQ'
+    if 'NYSE' in full_exchange:
+        return 'NYSE'
+    if 'AMEX' in full_exchange or 'AMERICAN' in full_exchange:
+        return 'AMEX'
+    if 'ARCA' in full_exchange:
+        return 'ARCA'
+    if 'BATS' in full_exchange:
+        return 'BATS'
+    if 'OTC' in full_exchange:
+        return 'OTC'
+    return None
+
+def build_tradingview_symbol(symbol, info, is_jp):
+    if is_jp:
+        return 'TSE:' + symbol.replace('.T', '')
+    exchange = infer_tradingview_exchange(info)
+    ticker = normalize_tradingview_ticker(symbol)
+    return f'{exchange}:{ticker}' if exchange else ticker
+
 def get_jpx_tickers(limit_standard=None):
     """
     JPXから日本株全銘柄を取得し、対象市場のティッカー(.T)を返す
@@ -133,6 +179,7 @@ def main():
                     "name": info.get('shortName', symbol),
                     "country": "JP" if is_jp else "US",
                     "price": info.get('currentPrice'),
+                    "tradingview_symbol": build_tradingview_symbol(symbol, info, is_jp),
                     "mcap_display": mcap_display,      # 表示用数値 (単位は国による)
                     "mcap_sort": mcap_sort_usd,        # フィルタ用数値 (USD統一)
                     "fcf_yield": fcf_yield,
