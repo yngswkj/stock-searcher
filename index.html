@@ -340,6 +340,7 @@
                                 :class="filters[config.toggleKey] ? 'opacity-100' : 'opacity-30 grayscale'">
                             <input type="number" v-model.number="filters[key]" :min="config.min" :max="config.max"
                                 :step="config.step" :disabled="!filters[config.toggleKey]"
+                                @blur="validateFilterValue(key, config)"
                                 class="w-16 md:w-20 bg-slate-800 border border-slate-700 text-white text-xs rounded px-2 py-1 font-mono focus:ring-2 focus:ring-accent-500 focus:border-accent-500 disabled:opacity-30 disabled:bg-slate-900">
                         </div>
                     </div>
@@ -618,7 +619,7 @@
                         </div>
                         <div class="chart-container h-[300px] md:h-[400px] relative">
                             <!-- TradingView Mini Chart Widget -->
-                            <div :id="'tradingview-widget-' + selectedStock.ticker.replace(/\\./g, '-')"
+                            <div :id="getTradingViewContainerId(selectedStock)"
                                 class="w-full h-full"></div>
                         </div>
                     </div>
@@ -795,15 +796,42 @@
                     return stock.ticker
                 }
 
+                // TradingView用のコンテナID生成
+                const getTradingViewContainerId = (stock) => {
+                    return 'tradingview-widget-' + stock.ticker.replace(/\./g, '-')
+                }
+
+                // フィルター値のバリデーション
+                const validateFilterValue = (key, config) => {
+                    const value = filters.value[key]
+                    if (value < config.min) {
+                        filters.value[key] = config.min
+                    } else if (value > config.max) {
+                        filters.value[key] = config.max
+                    }
+                }
+
                 // 保存された条件をローカルストレージから読み込む
                 const loadSavedConditions = () => {
                     try {
                         const saved = localStorage.getItem('stockSearchConditions')
                         if (saved) {
-                            savedConditions.value = JSON.parse(saved)
+                            const parsed = JSON.parse(saved)
+                            // 配列であることと最大5件であることを検証
+                            if (Array.isArray(parsed) && parsed.length <= 5) {
+                                // 各条件の構造を検証
+                                savedConditions.value = parsed.filter(condition => 
+                                    condition && 
+                                    typeof condition.name === 'string' && 
+                                    condition.filters && 
+                                    typeof condition.filters === 'object'
+                                )
+                            }
                         }
                     } catch (e) {
                         console.error('Error loading saved conditions:', e)
+                        // エラー時は空配列にリセット
+                        savedConditions.value = []
                     }
                 }
 
@@ -833,8 +861,14 @@
                     }
 
                     savedConditions.value.push(condition)
-                    localStorage.setItem('stockSearchConditions', JSON.stringify(savedConditions.value))
-                    conditionName.value = ''
+                    try {
+                        localStorage.setItem('stockSearchConditions', JSON.stringify(savedConditions.value))
+                        conditionName.value = ''
+                    } catch (e) {
+                        console.error('Error saving condition:', e)
+                        // ストレージエラー時は追加を元に戻す
+                        savedConditions.value.pop()
+                    }
                 }
 
                 // 保存された条件を適用
@@ -848,12 +882,16 @@
                 // 保存された条件を削除
                 const deleteCondition = (index) => {
                     savedConditions.value.splice(index, 1)
-                    localStorage.setItem('stockSearchConditions', JSON.stringify(savedConditions.value))
+                    try {
+                        localStorage.setItem('stockSearchConditions', JSON.stringify(savedConditions.value))
+                    } catch (e) {
+                        console.error('Error deleting condition:', e)
+                    }
                 }
 
                 // TradingViewウィジェットの初期化
                 const initTradingViewWidget = (stock) => {
-                    const containerId = 'tradingview-widget-' + stock.ticker.replace(/\./g, '-')
+                    const containerId = getTradingViewContainerId(stock)
                     const container = document.getElementById(containerId)
                     if (!container) {
                         console.error('Container not found:', containerId)
@@ -864,7 +902,6 @@
                     container.innerHTML = ''
 
                     const symbol = getTradingViewSymbol(stock)
-                    console.log('Initializing TradingView widget with symbol:', symbol)
 
                     // TradingView Widget スクリプトを動的に作成
                     const script = document.createElement('script')
@@ -942,6 +979,8 @@
                     selectedStock,
                     openDetail,
                     getTradingViewSymbol,
+                    getTradingViewContainerId,
+                    validateFilterValue,
                     savedConditions,
                     conditionName,
                     saveCondition,
