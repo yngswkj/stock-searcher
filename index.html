@@ -155,9 +155,17 @@
         /* Better touch targets */
         @media (max-width: 768px) {
             input[type=range]::-webkit-slider-thumb {
-                height: 24px;
-                width: 24px;
-                margin-top: -10px;
+                height: 32px;
+                width: 32px;
+                margin-top: -14px;
+            }
+            
+            input[type=range]::-webkit-slider-runnable-track {
+                height: 6px;
+            }
+            
+            input[type=range] {
+                padding: 8px 0;
             }
         }
 
@@ -265,6 +273,42 @@
                         </label>
                     </div>
                 </div>
+
+                <!-- Saved Conditions -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">保存した条件</label>
+                    <div class="space-y-2 mb-3 max-h-48 overflow-y-auto">
+                        <div v-for="(condition, index) in savedConditions" :key="index"
+                            class="flex items-center gap-2 p-2 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors group">
+                            <button @click="loadCondition(index)"
+                                class="flex-1 text-left text-sm text-slate-300 hover:text-white transition-colors truncate">
+                                {{ condition.name }}
+                            </button>
+                            <button @click="deleteCondition(index)"
+                                class="p-1 rounded hover:bg-slate-600 text-slate-500 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div v-if="savedConditions.length === 0" class="text-xs text-slate-500 text-center py-2">
+                            保存された条件はありません
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <input type="text" v-model="conditionName" placeholder="条件名..."
+                            class="flex-1 bg-slate-800 border border-slate-700 text-white text-xs rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 px-3 py-2 placeholder-slate-500"
+                            @keyup.enter="saveCondition">
+                        <button @click="saveCondition" :disabled="!conditionName || savedConditions.length >= 5"
+                            class="px-4 py-2 bg-accent-600 hover:bg-accent-500 disabled:bg-slate-700 disabled:text-slate-500 disabled:cursor-not-allowed text-white text-xs font-bold rounded-lg transition-colors">
+                            保存
+                        </button>
+                    </div>
+                    <div v-if="savedConditions.length >= 5" class="text-xs text-amber-400 mt-2">
+                        最大5件まで保存できます
+                    </div>
+                </div>
             </div>
 
             <!-- Filters Grid -->
@@ -289,10 +333,16 @@
                                 {{ config.format(filters[key]) }}
                             </span>
                         </div>
-                        <input type="range" v-model.number="filters[key]" :min="config.min" :max="config.max"
-                            :step="config.step" :disabled="!filters[config.toggleKey]"
-                            class="w-full transition-opacity duration-200"
-                            :class="filters[config.toggleKey] ? 'opacity-100' : 'opacity-30 grayscale'">
+                        <div class="flex gap-2 items-center">
+                            <input type="range" v-model.number="filters[key]" :min="config.min" :max="config.max"
+                                :step="config.step" :disabled="!filters[config.toggleKey]"
+                                class="flex-1 transition-opacity duration-200"
+                                :class="filters[config.toggleKey] ? 'opacity-100' : 'opacity-30 grayscale'">
+                            <input type="number" v-model.number="filters[key]" :min="config.min" :max="config.max"
+                                :step="config.step" :disabled="!filters[config.toggleKey]"
+                                @blur="validateFilterValue(key, config)"
+                                class="w-16 md:w-20 bg-slate-800 border border-slate-700 text-white text-xs rounded px-2 py-1 font-mono focus:ring-2 focus:ring-accent-500 focus:border-accent-500 disabled:opacity-30 disabled:bg-slate-900">
+                        </div>
                     </div>
 
                 </div>
@@ -569,7 +619,7 @@
                         </div>
                         <div class="chart-container h-[300px] md:h-[400px] relative">
                             <!-- TradingView Mini Chart Widget -->
-                            <div :id="'tradingview-widget-' + selectedStock.ticker.replace('.', '-')"
+                            <div :id="getTradingViewContainerId(selectedStock)"
                                 class="w-full h-full"></div>
                         </div>
                     </div>
@@ -624,6 +674,8 @@
                 const sortKey = ref("fcf_yield")
                 const sortOrder = ref("desc")
                 const selectedStock = ref(null)
+                const savedConditions = ref([])
+                const conditionName = ref("")
 
                 // フィルタ設定の定義（UI生成用）
                 const filterConfigs = {
@@ -703,6 +755,8 @@
                     lastUpdate.value = new Date().toLocaleDateString('ja-JP')
                     // 初期状態で両方ONなので両方読み込む
                     await Promise.all([loadUSStocks(), loadJPStocks()])
+                    // 保存された条件を読み込む
+                    loadSavedConditions()
                 })
 
                 // 全銘柄を結合した computed
@@ -742,11 +796,107 @@
                     return stock.ticker
                 }
 
+                // TradingView用のコンテナID生成
+                const getTradingViewContainerId = (stock) => {
+                    return 'tradingview-widget-' + stock.ticker.replace(/\./g, '-')
+                }
+
+                // フィルター値のバリデーション
+                const validateFilterValue = (key, config) => {
+                    const value = filters.value[key]
+                    if (value < config.min) {
+                        filters.value[key] = config.min
+                    } else if (value > config.max) {
+                        filters.value[key] = config.max
+                    }
+                }
+
+                // 保存された条件をローカルストレージから読み込む
+                const loadSavedConditions = () => {
+                    try {
+                        const saved = localStorage.getItem('stockSearchConditions')
+                        if (saved) {
+                            const parsed = JSON.parse(saved)
+                            // 配列であることと最大5件であることを検証
+                            if (Array.isArray(parsed) && parsed.length <= 5) {
+                                // 各条件の構造を検証
+                                savedConditions.value = parsed.filter(condition => 
+                                    condition && 
+                                    typeof condition.name === 'string' && 
+                                    condition.filters && 
+                                    typeof condition.filters === 'object'
+                                )
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error loading saved conditions:', e)
+                        // エラー時は空配列にリセット
+                        savedConditions.value = []
+                    }
+                }
+
+                // 現在の検索条件を保存
+                const saveCondition = () => {
+                    if (!conditionName.value.trim()) return
+                    if (savedConditions.value.length >= 5) return
+
+                    const condition = {
+                        name: conditionName.value.trim(),
+                        filters: {
+                            showUS: filters.value.showUS,
+                            showJP: filters.value.showJP,
+                            maxCapUSD: filters.value.maxCapUSD,
+                            minFcf: filters.value.minFcf,
+                            minRoe: filters.value.minRoe,
+                            maxPe: filters.value.maxPe,
+                            maxPbr: filters.value.maxPbr,
+                            minGrowth: filters.value.minGrowth,
+                            useMaxCapUSD: filters.value.useMaxCapUSD,
+                            useMinFcf: filters.value.useMinFcf,
+                            useMinRoe: filters.value.useMinRoe,
+                            useMaxPe: filters.value.useMaxPe,
+                            useMaxPbr: filters.value.useMaxPbr,
+                            useMinGrowth: filters.value.useMinGrowth
+                        }
+                    }
+
+                    savedConditions.value.push(condition)
+                    try {
+                        localStorage.setItem('stockSearchConditions', JSON.stringify(savedConditions.value))
+                        conditionName.value = ''
+                    } catch (e) {
+                        console.error('Error saving condition:', e)
+                        // ストレージエラー時は追加を元に戻す
+                        savedConditions.value.pop()
+                    }
+                }
+
+                // 保存された条件を適用
+                const loadCondition = (index) => {
+                    const condition = savedConditions.value[index]
+                    if (condition && condition.filters) {
+                        Object.assign(filters.value, condition.filters)
+                    }
+                }
+
+                // 保存された条件を削除
+                const deleteCondition = (index) => {
+                    savedConditions.value.splice(index, 1)
+                    try {
+                        localStorage.setItem('stockSearchConditions', JSON.stringify(savedConditions.value))
+                    } catch (e) {
+                        console.error('Error deleting condition:', e)
+                    }
+                }
+
                 // TradingViewウィジェットの初期化
                 const initTradingViewWidget = (stock) => {
-                    const containerId = 'tradingview-widget-' + stock.ticker.replace('.', '-')
+                    const containerId = getTradingViewContainerId(stock)
                     const container = document.getElementById(containerId)
-                    if (!container) return
+                    if (!container) {
+                        console.error('Container not found:', containerId)
+                        return
+                    }
 
                     // 既存の内容をクリア
                     container.innerHTML = ''
@@ -828,7 +978,14 @@
                     getSortClass,
                     selectedStock,
                     openDetail,
-                    getTradingViewSymbol
+                    getTradingViewSymbol,
+                    getTradingViewContainerId,
+                    validateFilterValue,
+                    savedConditions,
+                    conditionName,
+                    saveCondition,
+                    loadCondition,
+                    deleteCondition
                 }
             }
         }).mount('#app')
