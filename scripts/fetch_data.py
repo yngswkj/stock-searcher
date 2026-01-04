@@ -16,21 +16,56 @@ TARGET_JP_MARKETS = ['グロース', 'スタンダード']
 DEBUG_MODE = os.getenv('GITHUB_ACTIONS') != 'true'
 DEBUG_LIMIT = 50
 
+# 本番での銘柄数上限（yfinanceのAPI制限・時間制約対策）
+# グロース: 全銘柄、スタンダード: 時価総額が小さい順で上限まで
+PRODUCTION_LIMIT_STANDARD = 300  # スタンダード市場の上限
+
 # 事前フィルタリング基準 (JSONサイズ削減のため)
 # これを超える時価総額の銘柄は保存しない (単位: USD)
 # ここでは200億ドル(約3兆円)を上限とする
 FILTER_MAX_MARKET_CAP_USD = 20_000_000_000 
 
-def get_jpx_tickers():
-    """JPXから日本株全銘柄を取得し、対象市場のティッカー(.T)を返す"""
+def get_jpx_tickers(limit_standard=None):
+    """
+    JPXから日本株全銘柄を取得し、対象市場のティッカー(.T)を返す
+    
+    抽出ルール:
+    - グロース市場: 全銘柄（小型成長株が多いため優先）
+    - スタンダード市場: 時価総額の小さい順で上限まで（小型株優先）
+    """
     print("Fetching JPX ticker list...")
     try:
         url = "https://www.jpx.co.jp/markets/statistics-equities/misc/tvdivq0000001vg2-att/data_j.xls"
         df = pd.read_excel(url)
-        # 対象市場でフィルタ
-        mask = df['市場・商品区分'].apply(lambda x: any(m in x for m in TARGET_JP_MARKETS))
-        tickers = df[mask]['コード'].astype(str) + ".T"
-        return tickers.tolist()
+        
+        tickers = []
+        
+        # グロース市場: 全銘柄取得（小型成長株が多い）
+        growth_mask = df['市場・商品区分'].str.contains('グロース', na=False)
+        growth_tickers = (df[growth_mask]['コード'].astype(str) + ".T").tolist()
+        print(f"  Growth market: {len(growth_tickers)} tickers")
+        tickers.extend(growth_tickers)
+        
+        # スタンダード市場: 時価総額順でソートし上限まで取得
+        standard_mask = df['市場・商品区分'].str.contains('スタンダード', na=False)
+        standard_df = df[standard_mask].copy()
+        
+        # 時価総額列があればソート（なければそのまま）
+        if '時価総額' in standard_df.columns:
+            standard_df = standard_df.sort_values('時価総額', ascending=True)
+            print(f"  Standard market: sorted by market cap (ascending)")
+        
+        standard_tickers = (standard_df['コード'].astype(str) + ".T").tolist()
+        
+        if limit_standard and len(standard_tickers) > limit_standard:
+            standard_tickers = standard_tickers[:limit_standard]
+            print(f"  Standard market: {limit_standard} tickers (limited from {len(df[standard_mask])})")
+        else:
+            print(f"  Standard market: {len(standard_tickers)} tickers")
+        
+        tickers.extend(standard_tickers)
+        
+        return tickers
     except Exception as e:
         print(f"Error fetching JPX: {e}")
         return []
@@ -39,11 +74,14 @@ def main():
     data_list = []
     
     # 1. リスト作成
-    jp_tickers = get_jpx_tickers()
-    
     if DEBUG_MODE:
+        # デバッグ時は上限なしで取得し、後で制限
+        jp_tickers = get_jpx_tickers()
         print(f"DEBUG MODE: Limiting JP tickers to first {DEBUG_LIMIT}")
         jp_tickers = jp_tickers[:DEBUG_LIMIT]
+    else:
+        # 本番時はスタンダード市場に上限を設ける
+        jp_tickers = get_jpx_tickers(limit_standard=PRODUCTION_LIMIT_STANDARD)
         
     all_tickers = US_TICKERS + jp_tickers
     
