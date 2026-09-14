@@ -893,7 +893,7 @@
     "current_ratio": 4.391,
     "quick_ratio": 2.419,
     "debt_to_equity": 23.471,
-    "dividend_yield": 79.0
+    "dividend_yield": 78.0
   },
   {
     "ticker": "ALGT",
@@ -1901,7 +1901,7 @@
     "current_ratio": null,
     "quick_ratio": null,
     "debt_to_equity": null,
-    "dividend_yield": 288.0
+    "dividend_yield": 286.0
   },
   {
     "ticker": "BBT",
@@ -2169,7 +2169,7 @@
     "fcf_yield": 6.28,
     "roe": 45.76,
     "pe": 9.37788,
-    "pbr": 4.2132506,
+    "pbr": 4.2136865,
     "revenue_growth": 4.6,
     "gross_margin": 58.93,
     "operating_margin": 17.45,
