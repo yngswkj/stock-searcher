@@ -12,7 +12,7 @@
     "mcap_sort": 3.342105344,
     "fcf_yield": 6.91,
     "roe": 106.77,
-    "pe": 33.27562,
+    "pe": 33.393616,
     "pbr": 36.331017,
     "revenue_growth": 45.3,
     "gross_margin": 40.85,
@@ -40,7 +40,7 @@
     "mcap_sort": 2.336272128,
     "fcf_yield": -2.34,
     "roe": 4.89,
-    "pe": 21.60894,
+    "pe": 21.48889,
     "pbr": 1.0282584,
     "revenue_growth": -0.5,
     "gross_margin": 45.14,
@@ -68,7 +68,7 @@
     "mcap_sort": 1.671972864,
     "fcf_yield": 5.87,
     "roe": 2.16,
-    "pe": 71.83333,
+    "pe": 74.31034,
     "pbr": 1.1791421,
     "revenue_growth": 1.4,
     "gross_margin": 61.82,
@@ -124,7 +124,7 @@
     "mcap_sort": 3.157383168,
     "fcf_yield": 11.42,
     "roe": 13.23,
-    "pe": 6.639487,
+    "pe": 6.548027,
     "pbr": 0.8047734,
     "revenue_growth": 0.3,
     "gross_margin": 17.11,
@@ -137,7 +137,7 @@
     "current_ratio": 0.91,
     "quick_ratio": 0.145,
     "debt_to_equity": 140.969,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ABM",
@@ -208,7 +208,7 @@
     "mcap_sort": 7.194147328,
     "fcf_yield": 0.84,
     "roe": 8.03,
-    "pe": 32.700893,
+    "pe": 36.172836,
     "pbr": 2.411126,
     "revenue_growth": 1.7,
     "gross_margin": 22.81,
@@ -249,7 +249,7 @@
     "current_ratio": 3.388,
     "quick_ratio": 3.107,
     "debt_to_equity": 5.652,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ACHC",
@@ -277,7 +277,7 @@
     "current_ratio": 1.572,
     "quick_ratio": 1.352,
     "debt_to_equity": 118.057,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ACIW",
@@ -292,7 +292,7 @@
     "mcap_sort": 5.062905344,
     "fcf_yield": 5.15,
     "roe": 15.62,
-    "pe": 23.004587,
+    "pe": 22.899544,
     "pbr": 3.391722,
     "revenue_growth": 7.3,
     "gross_margin": 49.08,
@@ -305,7 +305,7 @@
     "current_ratio": 1.582,
     "quick_ratio": 0.866,
     "debt_to_equity": 57.698,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ACLS",
@@ -320,7 +320,7 @@
     "mcap_sort": 4.563357696,
     "fcf_yield": 0.92,
     "roe": 8.89,
-    "pe": 49.421406,
+    "pe": 49.58725,
     "pbr": 4.281451,
     "revenue_growth": 10.6,
     "gross_margin": 43.01,
@@ -333,7 +333,7 @@
     "current_ratio": 4.896,
     "quick_ratio": 2.78,
     "debt_to_equity": 6.55,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ACMR",
@@ -361,7 +361,7 @@
     "current_ratio": 3.656,
     "quick_ratio": 2.6,
     "debt_to_equity": 14.524,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ACT",
@@ -417,7 +417,7 @@
     "current_ratio": 0.844,
     "quick_ratio": 0.818,
     "debt_to_equity": 769.104,
-    "dividend_yield": 1535.0
+    "dividend_yield": 1536.0
   },
   {
     "ticker": "ADEA",
@@ -460,7 +460,7 @@
     "mcap_sort": 1.353710592,
     "fcf_yield": 0,
     "roe": 0,
-    "pe": 32.418182,
+    "pe": 0,
     "pbr": 0.5514149,
     "revenue_growth": 0.7,
     "gross_margin": 21.89,
@@ -473,7 +473,7 @@
     "current_ratio": 2.796,
     "quick_ratio": 0.978,
     "debt_to_equity": 50.835,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ADMA",
@@ -501,7 +501,7 @@
     "current_ratio": 6.972,
     "quick_ratio": 3.62,
     "debt_to_equity": 49.935,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ADNT",
@@ -529,7 +529,7 @@
     "current_ratio": 1.097,
     "quick_ratio": 0.736,
     "debt_to_equity": 126.868,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ADT",
@@ -544,7 +544,7 @@
     "mcap_sort": 4.565995008,
     "fcf_yield": 26.23,
     "roe": 17.21,
-    "pe": 8.680555,
+    "pe": 8.561644,
     "pbr": 1.3185655,
     "revenue_growth": 2.0,
     "gross_margin": 80.66,
@@ -585,7 +585,7 @@
     "current_ratio": 1.69,
     "quick_ratio": 1.462,
     "debt_to_equity": 9.478,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AEO",
@@ -600,7 +600,7 @@
     "mcap_sort": 2.96772352,
     "fcf_yield": 7.1,
     "roe": 20.0,
-    "pe": 9.128865,
+    "pe": 9.08205,
     "pbr": 1.6831399,
     "revenue_growth": 7.5,
     "gross_margin": 37.43,
@@ -641,7 +641,7 @@
     "current_ratio": 1.824,
     "quick_ratio": 1.468,
     "debt_to_equity": 94.273,
-    "dividend_yield": 848.0
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AGNT",
@@ -669,7 +669,7 @@
     "current_ratio": 1.515,
     "quick_ratio": 1.079,
     "debt_to_equity": null,
-    "dividend_yield": 546.0
+    "dividend_yield": 548.0
   },
   {
     "ticker": "AGO",
@@ -684,7 +684,7 @@
     "mcap_sort": 3.01125632,
     "fcf_yield": 0.49,
     "roe": 6.67,
-    "pe": 9.105053,
+    "pe": 9.117177,
     "pbr": 0.54234093,
     "revenue_growth": -0.5,
     "gross_margin": 94.34,
@@ -712,7 +712,7 @@
     "mcap_sort": 5.385074176,
     "fcf_yield": 8.69,
     "roe": 39.85,
-    "pe": 30.294395,
+    "pe": 30.342293,
     "pbr": 10.6271105,
     "revenue_growth": 61.5,
     "gross_margin": 20.71,
@@ -753,7 +753,7 @@
     "current_ratio": 1.741,
     "quick_ratio": 1.604,
     "debt_to_equity": 5.451,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AHCO",
@@ -781,7 +781,7 @@
     "current_ratio": 1.124,
     "quick_ratio": 0.636,
     "debt_to_equity": 148.969,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AIN",
@@ -824,7 +824,7 @@
     "mcap_sort": 4.120308736,
     "fcf_yield": 0.81,
     "roe": 12.93,
-    "pe": 20.877802,
+    "pe": 21.006147,
     "pbr": 2.3349733,
     "revenue_growth": 24.1,
     "gross_margin": 19.06,
@@ -837,7 +837,7 @@
     "current_ratio": 2.827,
     "quick_ratio": 1.058,
     "debt_to_equity": 56.152,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AKR",
@@ -852,7 +852,7 @@
     "mcap_sort": 2.71617792,
     "fcf_yield": 6.91,
     "roe": 5.72,
-    "pe": 53.22857,
+    "pe": 54.794113,
     "pbr": 1.0949162,
     "revenue_growth": 13.4,
     "gross_margin": 70.61,
@@ -908,7 +908,7 @@
     "mcap_sort": 2.1216832,
     "fcf_yield": 9.17,
     "roe": 1.83,
-    "pe": 66.905174,
+    "pe": 66.333336,
     "pbr": 1.1863889,
     "revenue_growth": 36.9,
     "gross_margin": 22.81,
@@ -921,7 +921,7 @@
     "current_ratio": 0.832,
     "quick_ratio": 0.711,
     "debt_to_equity": 160.47,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ALHC",
@@ -949,7 +949,7 @@
     "current_ratio": 1.698,
     "quick_ratio": 1.461,
     "debt_to_equity": 124.655,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ALKS",
@@ -977,7 +977,7 @@
     "current_ratio": 2.3,
     "quick_ratio": 1.681,
     "debt_to_equity": 86.952,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ALRM",
@@ -1005,7 +1005,7 @@
     "current_ratio": 4.96,
     "quick_ratio": 3.98,
     "debt_to_equity": 62.337,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AMN",
@@ -1033,7 +1033,7 @@
     "current_ratio": 1.128,
     "quick_ratio": 1.027,
     "debt_to_equity": 104.658,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AMPH",
@@ -1061,7 +1061,7 @@
     "current_ratio": 2.397,
     "quick_ratio": 1.663,
     "debt_to_equity": 89.607,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AMR",
@@ -1089,7 +1089,7 @@
     "current_ratio": 3.405,
     "quick_ratio": 2.247,
     "debt_to_equity": 0.761,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AMRX",
@@ -1104,7 +1104,7 @@
     "mcap_sort": 7.070409216,
     "fcf_yield": -1.63,
     "roe": 613.02,
-    "pe": 42.291664,
+    "pe": 41.42857,
     "pbr": 197.08737,
     "revenue_growth": 9.9,
     "gross_margin": 39.81,
@@ -1117,7 +1117,7 @@
     "current_ratio": 2.205,
     "quick_ratio": 1.375,
     "debt_to_equity": 2386.528,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AMSF",
@@ -1145,7 +1145,7 @@
     "current_ratio": 2.042,
     "quick_ratio": 1.445,
     "debt_to_equity": null,
-    "dividend_yield": 696.0
+    "dividend_yield": 695.0
   },
   {
     "ticker": "AMTM",
@@ -1173,7 +1173,7 @@
     "current_ratio": 1.523,
     "quick_ratio": 1.438,
     "debt_to_equity": 79.871,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ANDE",
@@ -1188,7 +1188,7 @@
     "mcap_sort": 2.3008256,
     "fcf_yield": -4.74,
     "roe": 12.16,
-    "pe": 13.098646,
+    "pe": 13.0733595,
     "pbr": 1.7306415,
     "revenue_growth": -1.2,
     "gross_margin": 7.18,
@@ -1216,7 +1216,7 @@
     "mcap_sort": 1.658,
     "fcf_yield": 7.97,
     "roe": 20.46,
-    "pe": 15.898679,
+    "pe": 15.72549,
     "pbr": 2.5902534,
     "revenue_growth": 25.9,
     "gross_margin": 60.4,
@@ -1229,7 +1229,7 @@
     "current_ratio": 2.91,
     "quick_ratio": 2.297,
     "debt_to_equity": 104.825,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AORT",
@@ -1257,7 +1257,7 @@
     "current_ratio": 3.473,
     "quick_ratio": 1.759,
     "debt_to_equity": 91.558,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AOSL",
@@ -1285,7 +1285,7 @@
     "current_ratio": 3.438,
     "quick_ratio": 1.779,
     "debt_to_equity": 3.507,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "APAM",
@@ -1384,7 +1384,7 @@
     "mcap_sort": 2.964013056,
     "fcf_yield": 5.01,
     "roe": 1.27,
-    "pe": 184.18054,
+    "pe": 192.1884,
     "pbr": 2.3378525,
     "revenue_growth": 15.9,
     "gross_margin": 8.1,
@@ -1425,7 +1425,7 @@
     "current_ratio": 1.402,
     "quick_ratio": 1.053,
     "debt_to_equity": 4.876,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AROC",
@@ -1468,7 +1468,7 @@
     "mcap_sort": 1.923705856,
     "fcf_yield": 0,
     "roe": 20.33,
-    "pe": 3.0816329,
+    "pe": 3.3472908,
     "pbr": 0.71859133,
     "revenue_growth": 0,
     "gross_margin": 100.0,
@@ -1524,7 +1524,7 @@
     "mcap_sort": 0.965690432,
     "fcf_yield": -0.12,
     "roe": 2.86,
-    "pe": 50.0,
+    "pe": 49.411762,
     "pbr": 1.4014949,
     "revenue_growth": 23.6,
     "gross_margin": 26.16,
@@ -1565,7 +1565,7 @@
     "current_ratio": 1.229,
     "quick_ratio": 1.19,
     "debt_to_equity": 163.623,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ATEN",
@@ -1608,7 +1608,7 @@
     "mcap_sort": 3.728915712,
     "fcf_yield": 2.79,
     "roe": 55.79,
-    "pe": 17.509579,
+    "pe": 17.442749,
     "pbr": 8.19878,
     "revenue_growth": 16.4,
     "gross_margin": 28.79,
@@ -1636,7 +1636,7 @@
     "mcap_sort": 5.54407424,
     "fcf_yield": 0,
     "roe": 9.76,
-    "pe": 11.317784,
+    "pe": 11.485207,
     "pbr": 1.069127,
     "revenue_growth": 35.8,
     "gross_margin": 0.0,
@@ -1692,7 +1692,7 @@
     "mcap_sort": 6.893911552,
     "fcf_yield": 3.2,
     "roe": 36.62,
-    "pe": 22.284151,
+    "pe": 22.314636,
     "pbr": 7.807773,
     "revenue_growth": 11.2,
     "gross_margin": 40.31,
@@ -1720,7 +1720,7 @@
     "mcap_sort": 3.282622464,
     "fcf_yield": -0.78,
     "roe": 13.67,
-    "pe": 22.628414,
+    "pe": 22.69041,
     "pbr": 2.927019,
     "revenue_growth": 11.2,
     "gross_margin": 57.62,
@@ -1744,8 +1744,8 @@
     "industry": "Banks - Regional",
     "price": 88.93,
     "tradingview_symbol": "NYSE:AX",
-    "mcap_display": 5.05,
-    "mcap_sort": 5.045359104,
+    "mcap_display": 5.06,
+    "mcap_sort": 5.056382464,
     "fcf_yield": 0,
     "roe": 16.77,
     "pe": 10.487029,
@@ -1761,7 +1761,7 @@
     "current_ratio": null,
     "quick_ratio": null,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AZTA",
@@ -1789,7 +1789,7 @@
     "current_ratio": 2.5,
     "quick_ratio": 1.85,
     "debt_to_equity": 3.574,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "AZZ",
@@ -1804,7 +1804,7 @@
     "mcap_sort": 4.188878592,
     "fcf_yield": 2.5,
     "roe": 15.31,
-    "pe": 21.216133,
+    "pe": 21.248476,
     "pbr": 3.0406613,
     "revenue_growth": 6.3,
     "gross_margin": 23.81,
@@ -1916,7 +1916,7 @@
     "mcap_sort": 2.375347968,
     "fcf_yield": 0,
     "roe": 8.42,
-    "pe": 9.201299,
+    "pe": 7.6594596,
     "pbr": 0.9352518,
     "revenue_growth": 144.5,
     "gross_margin": 0.0,
@@ -1944,7 +1944,7 @@
     "mcap_sort": 2.616502528,
     "fcf_yield": 1.66,
     "roe": 5.06,
-    "pe": 25.420338,
+    "pe": 25.506802,
     "pbr": 1.2930648,
     "revenue_growth": 5.2,
     "gross_margin": 16.51,
@@ -2000,7 +2000,7 @@
     "mcap_sort": 3.125304832,
     "fcf_yield": 7.68,
     "roe": 14.94,
-    "pe": 20.4,
+    "pe": 20.335443,
     "pbr": 3.3538623,
     "revenue_growth": 6.5,
     "gross_margin": 25.49,
@@ -2013,7 +2013,7 @@
     "current_ratio": 0.479,
     "quick_ratio": 0.384,
     "debt_to_equity": 217.779,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "BFH",
@@ -2028,7 +2028,7 @@
     "mcap_sort": 3.76700928,
     "fcf_yield": 0,
     "roe": 17.42,
-    "pe": 7.606672,
+    "pe": 7.6007757,
     "pbr": 1.1276467,
     "revenue_growth": 3.8,
     "gross_margin": 0.0,
@@ -2056,7 +2056,7 @@
     "mcap_sort": 1.047426752,
     "fcf_yield": 8.07,
     "roe": 9.56,
-    "pe": 31.092783,
+    "pe": 30.775509,
     "pbr": 6.738159,
     "revenue_growth": 8.4,
     "gross_margin": 70.26,
@@ -2140,7 +2140,7 @@
     "mcap_sort": 1.31748416,
     "fcf_yield": 3.75,
     "roe": 10.44,
-    "pe": 32.767197,
+    "pe": 33.117645,
     "pbr": 3.300469,
     "revenue_growth": 6.4,
     "gross_margin": 15.53,
@@ -2153,7 +2153,7 @@
     "current_ratio": 0.289,
     "quick_ratio": 0.167,
     "debt_to_equity": 109.378,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "BKE",
@@ -2237,7 +2237,7 @@
     "current_ratio": 1.721,
     "quick_ratio": 1.652,
     "debt_to_equity": 202.88,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "BLFS",
@@ -2252,7 +2252,7 @@
     "mcap_sort": 1.824840192,
     "fcf_yield": 0.26,
     "roe": 12.83,
-    "pe": 37.3,
+    "pe": 37.676765,
     "pbr": 4.341753,
     "revenue_growth": 21.5,
     "gross_margin": 63.61,
@@ -2265,7 +2265,7 @@
     "current_ratio": 9.694,
     "quick_ratio": 6.673,
     "debt_to_equity": 3.747,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "BLKB",
@@ -2293,7 +2293,7 @@
     "current_ratio": 0.828,
     "quick_ratio": 0.126,
     "debt_to_equity": 1727.037,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "BMI",
@@ -2308,7 +2308,7 @@
     "mcap_sort": 3.703649536,
     "fcf_yield": 3.46,
     "roe": 18.48,
-    "pe": 29.922716,
+    "pe": 29.852802,
     "pbr": 5.423635,
     "revenue_growth": -6.6,
     "gross_margin": 41.31,
@@ -2364,7 +2364,7 @@
     "mcap_sort": 2.733123328,
     "fcf_yield": 0,
     "roe": 13.02,
-    "pe": 12.877323,
+    "pe": 12.901303,
     "pbr": 1.7853369,
     "revenue_growth": 12.9,
     "gross_margin": 0.0,
@@ -2405,7 +2405,7 @@
     "current_ratio": 2.53,
     "quick_ratio": 0.39,
     "debt_to_equity": 59.323,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "BOX",
@@ -2420,7 +2420,7 @@
     "mcap_sort": 4.732054528,
     "fcf_yield": 7.99,
     "roe": 70.23,
-    "pe": 50.72059,
+    "pe": 49.985508,
     "pbr": -13.4779215,
     "revenue_growth": 9.2,
     "gross_margin": 79.55,
@@ -2433,7 +2433,7 @@
     "current_ratio": 1.059,
     "quick_ratio": 0.919,
     "debt_to_equity": 379.52,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "BRC",
@@ -2448,7 +2448,7 @@
     "mcap_sort": 3.976115456,
     "fcf_yield": 4.19,
     "roe": 16.11,
-    "pe": 19.579678,
+    "pe": 19.716278,
     "pbr": 2.9289021,
     "revenue_growth": 10.0,
     "gross_margin": 51.75,
@@ -2545,7 +2545,7 @@
     "current_ratio": 4.833,
     "quick_ratio": 4.552,
     "debt_to_equity": 395.632,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CAG",
@@ -2588,7 +2588,7 @@
     "mcap_sort": 5.45625344,
     "fcf_yield": 3.06,
     "roe": 38.83,
-    "pe": 29.635136,
+    "pe": 29.715446,
     "pbr": 10.516977,
     "revenue_growth": 7.7,
     "gross_margin": 40.7,
@@ -2616,7 +2616,7 @@
     "mcap_sort": 3.11419648,
     "fcf_yield": -5.65,
     "roe": 2.38,
-    "pe": 53.336,
+    "pe": 54.20325,
     "pbr": 1.1897284,
     "revenue_growth": -41.5,
     "gross_margin": 14.28,
@@ -2629,7 +2629,7 @@
     "current_ratio": 7.701,
     "quick_ratio": 5.509,
     "debt_to_equity": null,
-    "dividend_yield": 720.0
+    "dividend_yield": 367.0
   },
   {
     "ticker": "CALX",
@@ -2644,7 +2644,7 @@
     "mcap_sort": 2.191776512,
     "fcf_yield": 2.8,
     "roe": 6.91,
-    "pe": 45.802635,
+    "pe": 46.413334,
     "pbr": 3.086814,
     "revenue_growth": 21.3,
     "gross_margin": 56.58,
@@ -2657,7 +2657,7 @@
     "current_ratio": 2.83,
     "quick_ratio": 1.573,
     "debt_to_equity": 1.969,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CALY",
@@ -2672,7 +2672,7 @@
     "mcap_sort": 2.579476992,
     "fcf_yield": 3.65,
     "roe": 3.47,
-    "pe": 33.60465,
+    "pe": 16.609196,
     "pbr": 1.1967864,
     "revenue_growth": 2.0,
     "gross_margin": 44.3,
@@ -2685,7 +2685,7 @@
     "current_ratio": 3.043,
     "quick_ratio": 1.566,
     "debt_to_equity": 12.643,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CARG",
@@ -2713,7 +2713,7 @@
     "current_ratio": 1.85,
     "quick_ratio": 1.515,
     "debt_to_equity": 70.035,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CASH",
@@ -2756,7 +2756,7 @@
     "mcap_sort": 4.058868736,
     "fcf_yield": 0,
     "roe": 11.71,
-    "pe": 11.906066,
+    "pe": 11.8828125,
     "pbr": 1.334474,
     "revenue_growth": 13.8,
     "gross_margin": 0.0,
@@ -2965,7 +2965,7 @@
     "current_ratio": 3.787,
     "quick_ratio": 2.585,
     "debt_to_equity": 80.634,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CENTA",
@@ -2993,7 +2993,7 @@
     "current_ratio": 3.787,
     "quick_ratio": 2.585,
     "debt_to_equity": 80.634,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CENX",
@@ -3021,7 +3021,7 @@
     "current_ratio": 2.751,
     "quick_ratio": 1.442,
     "debt_to_equity": 31.281,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CERT",
@@ -3049,7 +3049,7 @@
     "current_ratio": 2.551,
     "quick_ratio": 2.441,
     "debt_to_equity": 31.241,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CFFN",
@@ -3092,7 +3092,7 @@
     "mcap_sort": 2.006906752,
     "fcf_yield": 0,
     "roe": 16.75,
-    "pe": 15.642936,
+    "pe": 15.625821,
     "pbr": 2.4808922,
     "revenue_growth": 0.9,
     "gross_margin": 0.0,
@@ -3133,7 +3133,7 @@
     "current_ratio": 2.148,
     "quick_ratio": 1.231,
     "debt_to_equity": 146.029,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CLSK",
@@ -3161,7 +3161,7 @@
     "current_ratio": 5.912,
     "quick_ratio": 1.339,
     "debt_to_equity": 234.725,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CNK",
@@ -3176,7 +3176,7 @@
     "mcap_sort": 4.178622208,
     "fcf_yield": 5.45,
     "roe": 45.82,
-    "pe": 20.139666,
+    "pe": 20.027779,
     "pbr": 8.342976,
     "revenue_growth": 15.5,
     "gross_margin": 49.42,
@@ -3204,7 +3204,7 @@
     "mcap_sort": 1.387341824,
     "fcf_yield": 9.47,
     "roe": 5.53,
-    "pe": 24.770054,
+    "pe": 25.037838,
     "pbr": 1.333794,
     "revenue_growth": 0.3,
     "gross_margin": 55.58,
@@ -3217,7 +3217,7 @@
     "current_ratio": 1.484,
     "quick_ratio": 0.608,
     "debt_to_equity": 80.109,
-    "dividend_yield": 172.0
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CNR",
@@ -3232,7 +3232,7 @@
     "mcap_sort": 4.415641088,
     "fcf_yield": 6.21,
     "roe": 2.67,
-    "pe": 44.703518,
+    "pe": 44.92929,
     "pbr": 1.1924773,
     "revenue_growth": 3.5,
     "gross_margin": 16.86,
@@ -3301,7 +3301,7 @@
     "current_ratio": 1.231,
     "quick_ratio": 0.934,
     "debt_to_equity": 247.372,
-    "dividend_yield": 593.0
+    "dividend_yield": 594.0
   },
   {
     "ticker": "CNXN",
@@ -3329,7 +3329,7 @@
     "current_ratio": 2.88,
     "quick_ratio": 2.376,
     "debt_to_equity": 0.792,
-    "dividend_yield": 86.0
+    "dividend_yield": 87.0
   },
   {
     "ticker": "COCO",
@@ -3357,7 +3357,7 @@
     "current_ratio": 3.356,
     "quick_ratio": 2.578,
     "debt_to_equity": 3.508,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "COHU",
@@ -3385,7 +3385,7 @@
     "current_ratio": 5.742,
     "quick_ratio": 4.521,
     "debt_to_equity": 42.764,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "COLL",
@@ -3396,9 +3396,9 @@
     "industry": "Drug Manufacturers - Specialty & Generic",
     "price": 22.02,
     "tradingview_symbol": "NASDAQ:COLL",
-    "mcap_display": 0.68,
-    "mcap_sort": 0.68260224,
-    "fcf_yield": 47.47,
+    "mcap_display": 0.72,
+    "mcap_sort": 0.71687456,
+    "fcf_yield": 45.2,
     "roe": 17.61,
     "pe": 17.338583,
     "pbr": 2.294228,
@@ -3413,7 +3413,7 @@
     "current_ratio": 1.031,
     "quick_ratio": 0.703,
     "debt_to_equity": 390.461,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CON",
@@ -3469,7 +3469,7 @@
     "current_ratio": 2.859,
     "quick_ratio": 2.504,
     "debt_to_equity": 1.335,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "COTY",
@@ -3497,7 +3497,7 @@
     "current_ratio": 0.755,
     "quick_ratio": 0.276,
     "debt_to_equity": 97.538,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CPB",
@@ -3512,7 +3512,7 @@
     "mcap_sort": 5.851364864,
     "fcf_yield": 10.84,
     "roe": 10.05,
-    "pe": 14.9771,
+    "pe": 14.863636,
     "pbr": 1.5186934,
     "revenue_growth": -7.9,
     "gross_margin": 28.54,
@@ -3525,7 +3525,7 @@
     "current_ratio": 0.815,
     "quick_ratio": 0.291,
     "debt_to_equity": 179.259,
-    "dividend_yield": 510.0
+    "dividend_yield": 513.0
   },
   {
     "ticker": "CPF",
@@ -3540,7 +3540,7 @@
     "mcap_sort": 0.937721408,
     "fcf_yield": 0,
     "roe": 14.25,
-    "pe": 11.71061,
+    "pe": 11.673077,
     "pbr": 1.5760775,
     "revenue_growth": 7.7,
     "gross_margin": 0.0,
@@ -3568,7 +3568,7 @@
     "mcap_sort": 3.216942592,
     "fcf_yield": -6.86,
     "roe": 9.47,
-    "pe": 20.3808,
+    "pe": 20.315788,
     "pbr": 1.8348914,
     "revenue_growth": 4.7,
     "gross_margin": 40.34,
@@ -3624,7 +3624,7 @@
     "mcap_sort": 5.267667456,
     "fcf_yield": 11.42,
     "roe": 1.52,
-    "pe": 167.37502,
+    "pe": 121.72728,
     "pbr": 0.8585535,
     "revenue_growth": 55.3,
     "gross_margin": 62.16,
@@ -3680,7 +3680,7 @@
     "mcap_sort": 3.752470528,
     "fcf_yield": -23.15,
     "roe": 19.02,
-    "pe": 7.220339,
+    "pe": 7.021978,
     "pbr": 1.4549179,
     "revenue_growth": -25.2,
     "gross_margin": 56.85,
@@ -3693,7 +3693,7 @@
     "current_ratio": 0.476,
     "quick_ratio": 0.324,
     "debt_to_equity": 100.201,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CRSR",
@@ -3721,7 +3721,7 @@
     "current_ratio": 1.752,
     "quick_ratio": 0.954,
     "debt_to_equity": 27.173,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CRVL",
@@ -3736,7 +3736,7 @@
     "mcap_sort": 3.812485632,
     "fcf_yield": 2.41,
     "roe": 30.7,
-    "pe": 33.54222,
+    "pe": 33.691963,
     "pbr": 9.3391905,
     "revenue_growth": 10.7,
     "gross_margin": 24.79,
@@ -3749,7 +3749,7 @@
     "current_ratio": 1.941,
     "quick_ratio": 1.411,
     "debt_to_equity": 6.944,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CSR",
@@ -3764,7 +3764,7 @@
     "mcap_sort": 0.9645728,
     "fcf_yield": 11.01,
     "roe": 3.39,
-    "pe": 42.578125,
+    "pe": 43.253967,
     "pbr": 1.3453801,
     "revenue_growth": -4.0,
     "gross_margin": 59.3,
@@ -3792,7 +3792,7 @@
     "mcap_sort": 4.93187584,
     "fcf_yield": 1.47,
     "roe": 10.93,
-    "pe": 41.29468,
+    "pe": 41.464382,
     "pbr": 4.595822,
     "revenue_growth": 33.0,
     "gross_margin": 42.53,
@@ -3848,7 +3848,7 @@
     "mcap_sort": 2.549663488,
     "fcf_yield": 0,
     "roe": 14.32,
-    "pe": 9.136804,
+    "pe": 9.158981,
     "pbr": 1.1555659,
     "revenue_growth": 10.1,
     "gross_margin": 0.0,
@@ -3861,7 +3861,7 @@
     "current_ratio": null,
     "quick_ratio": null,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CURB",
@@ -3876,7 +3876,7 @@
     "mcap_sort": 3.252124928,
     "fcf_yield": 4.68,
     "roe": 1.46,
-    "pe": 104.703705,
+    "pe": 100.96429,
     "pbr": 1.5453154,
     "revenue_growth": 52.9,
     "gross_margin": 75.18,
@@ -3904,7 +3904,7 @@
     "mcap_sort": 3.921223168,
     "fcf_yield": 0,
     "roe": 7.65,
-    "pe": 15.472222,
+    "pe": 15.5804205,
     "pbr": 1.2388791,
     "revenue_growth": 42.0,
     "gross_margin": 0.0,
@@ -3932,7 +3932,7 @@
     "mcap_sort": 4.49929984,
     "fcf_yield": 3.64,
     "roe": 16.66,
-    "pe": 25.440435,
+    "pe": 25.451502,
     "pbr": 4.0625,
     "revenue_growth": 9.5,
     "gross_margin": 21.89,
@@ -3945,7 +3945,7 @@
     "current_ratio": 2.229,
     "quick_ratio": 1.051,
     "debt_to_equity": 3.702,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CVI",
@@ -3960,7 +3960,7 @@
     "mcap_sort": 5.512093184,
     "fcf_yield": 3.89,
     "roe": 24.25,
-    "pe": 78.328575,
+    "pe": 80.632355,
     "pbr": 10.499808,
     "revenue_growth": 55.5,
     "gross_margin": 10.9,
@@ -4001,7 +4001,7 @@
     "current_ratio": 1.093,
     "quick_ratio": 0.965,
     "debt_to_equity": 62.613,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CWEN",
@@ -4016,7 +4016,7 @@
     "mcap_sort": 7.236300288,
     "fcf_yield": 5.83,
     "roe": -3.17,
-    "pe": 34.11628,
+    "pe": 38.103897,
     "pbr": 1.9206599,
     "revenue_growth": 22.7,
     "gross_margin": 64.42,
@@ -4057,7 +4057,7 @@
     "current_ratio": 1.078,
     "quick_ratio": 0.997,
     "debt_to_equity": 149.834,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CWST",
@@ -4072,7 +4072,7 @@
     "mcap_sort": 5.26748672,
     "fcf_yield": 2.31,
     "roe": 0.36,
-    "pe": 1034.625,
+    "pe": 919.66656,
     "pbr": 3.3337362,
     "revenue_growth": 16.9,
     "gross_margin": 33.42,
@@ -4085,7 +4085,7 @@
     "current_ratio": 0.993,
     "quick_ratio": 0.783,
     "debt_to_equity": 91.623,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CWT",
@@ -4128,7 +4128,7 @@
     "mcap_sort": 1.207291008,
     "fcf_yield": 8.33,
     "roe": 4.36,
-    "pe": 51.999996,
+    "pe": 57.777775,
     "pbr": 2.3733454,
     "revenue_growth": 0.8,
     "gross_margin": 65.59,
@@ -4141,7 +4141,7 @@
     "current_ratio": 1.555,
     "quick_ratio": 1.343,
     "debt_to_equity": 7.96,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CXW",
@@ -4156,7 +4156,7 @@
     "mcap_sort": 3.306009344,
     "fcf_yield": 0.74,
     "roe": 8.77,
-    "pe": 26.531746,
+    "pe": 26.744,
     "pbr": 2.2982264,
     "revenue_growth": 27.3,
     "gross_margin": 22.58,
@@ -4169,7 +4169,7 @@
     "current_ratio": 1.319,
     "quick_ratio": 1.131,
     "debt_to_equity": 95.487,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "CZR",
@@ -4197,7 +4197,7 @@
     "current_ratio": 0.851,
     "quick_ratio": 0.624,
     "debt_to_equity": 729.87,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "DAN",
@@ -4240,7 +4240,7 @@
     "mcap_sort": 4.420676096,
     "fcf_yield": 3.78,
     "roe": 104.78,
-    "pe": 22.316164,
+    "pe": 22.344938,
     "pbr": 21.264572,
     "revenue_growth": 29.6,
     "gross_margin": 71.75,
@@ -4253,7 +4253,7 @@
     "current_ratio": 4.223,
     "quick_ratio": 2.178,
     "debt_to_equity": 129.139,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "DBD",
@@ -4281,7 +4281,7 @@
     "current_ratio": 1.267,
     "quick_ratio": 0.681,
     "debt_to_equity": 113.548,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "DCH",
@@ -4309,7 +4309,7 @@
     "current_ratio": 1.398,
     "quick_ratio": 0.9,
     "debt_to_equity": 343.042,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "DCOM",
@@ -4324,7 +4324,7 @@
     "mcap_sort": 1.76096512,
     "fcf_yield": 0,
     "roe": 8.74,
-    "pe": 14.449276,
+    "pe": 14.397113,
     "pbr": 1.2544037,
     "revenue_growth": 12.0,
     "gross_margin": 0.0,
@@ -4408,7 +4408,7 @@
     "mcap_sort": 0.973252544,
     "fcf_yield": -22.37,
     "roe": 9.42,
-    "pe": 7.6241136,
+    "pe": 7.5704226,
     "pbr": 0.68258303,
     "revenue_growth": -7.6,
     "gross_margin": 19.98,
@@ -4421,7 +4421,7 @@
     "current_ratio": 7.59,
     "quick_ratio": 0.534,
     "debt_to_equity": 112.734,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "DFIN",
@@ -4436,7 +4436,7 @@
     "mcap_sort": 1.144695552,
     "fcf_yield": 11.6,
     "roe": 8.59,
-    "pe": 30.233768,
+    "pe": 31.890411,
     "pbr": 2.9686306,
     "revenue_growth": 2.8,
     "gross_margin": 64.21,
@@ -4449,7 +4449,7 @@
     "current_ratio": 1.326,
     "quick_ratio": 1.135,
     "debt_to_equity": 54.646,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "DGII",
@@ -4477,7 +4477,7 @@
     "current_ratio": 1.129,
     "quick_ratio": 0.735,
     "debt_to_equity": 17.279,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "DIOD",
@@ -4492,7 +4492,7 @@
     "mcap_sort": 4.782008832,
     "fcf_yield": 3.7,
     "roe": 4.68,
-    "pe": 55.827953,
+    "pe": 55.52941,
     "pbr": 2.4396775,
     "revenue_growth": 21.7,
     "gross_margin": 31.73,
@@ -4505,7 +4505,7 @@
     "current_ratio": 3.167,
     "quick_ratio": 1.747,
     "debt_to_equity": 4.401,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "DLX",
@@ -4548,7 +4548,7 @@
     "mcap_sort": 1.398828288,
     "fcf_yield": -7.14,
     "roe": 1.77,
-    "pe": 41.788734,
+    "pe": 42.385715,
     "pbr": 0.69683874,
     "revenue_growth": 3.1,
     "gross_margin": 9.28,
@@ -4589,7 +4589,7 @@
     "current_ratio": 2.136,
     "quick_ratio": 1.012,
     "debt_to_equity": 30.934,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "DORM",
@@ -4617,7 +4617,7 @@
     "current_ratio": 3.598,
     "quick_ratio": 1.589,
     "debt_to_equity": 34.867,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "DRH",
@@ -4673,7 +4673,7 @@
     "current_ratio": 4.498,
     "quick_ratio": 4.056,
     "debt_to_equity": 10.218,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "DXC",
@@ -4688,7 +4688,7 @@
     "mcap_sort": 1.773543552,
     "fcf_yield": 49.45,
     "roe": 4.03,
-    "pe": 15.633803,
+    "pe": 14.605264,
     "pbr": 0.5841798,
     "revenue_growth": -5.1,
     "gross_margin": 23.0,
@@ -4701,7 +4701,7 @@
     "current_ratio": 1.408,
     "quick_ratio": 1.238,
     "debt_to_equity": 125.421,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "DXPE",
@@ -4729,7 +4729,7 @@
     "current_ratio": 2.993,
     "quick_ratio": 2.443,
     "debt_to_equity": 166.254,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "EAT",
@@ -4757,7 +4757,7 @@
     "current_ratio": 0.455,
     "quick_ratio": 0.285,
     "debt_to_equity": 395.763,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "EBC",
@@ -4800,7 +4800,7 @@
     "mcap_sort": 6.29598208,
     "fcf_yield": 2.93,
     "roe": 39.53,
-    "pe": 24.769075,
+    "pe": 24.818914,
     "pbr": 8.146215,
     "revenue_growth": 33.7,
     "gross_margin": 13.02,
@@ -4813,7 +4813,7 @@
     "current_ratio": 1.587,
     "quick_ratio": 1.47,
     "debt_to_equity": 47.096,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ECPG",
@@ -4828,7 +4828,7 @@
     "mcap_sort": 2.034402304,
     "fcf_yield": -7.72,
     "roe": 30.54,
-    "pe": 7.2887535,
+    "pe": 7.2832193,
     "pbr": 1.8859243,
     "revenue_growth": 11.3,
     "gross_margin": 100.0,
@@ -4841,7 +4841,7 @@
     "current_ratio": 11.376,
     "quick_ratio": 11.283,
     "debt_to_equity": 388.056,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "EFC",
@@ -4856,7 +4856,7 @@
     "mcap_sort": 1.522040576,
     "fcf_yield": 0,
     "roe": 12.25,
-    "pe": 7.289308,
+    "pe": 7.1987576,
     "pbr": 0.84734607,
     "revenue_growth": 33.8,
     "gross_margin": 100.0,
@@ -4897,7 +4897,7 @@
     "current_ratio": 2.127,
     "quick_ratio": 1.979,
     "debt_to_equity": 82.91,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "EGBN",
@@ -4940,7 +4940,7 @@
     "mcap_sort": 0.88239968,
     "fcf_yield": 2.08,
     "roe": 0.77,
-    "pe": 62.189873,
+    "pe": 65.50667,
     "pbr": 1.0271152,
     "revenue_growth": -10.6,
     "gross_margin": 1.24,
@@ -4968,7 +4968,7 @@
     "mcap_sort": 7.41636864,
     "fcf_yield": 7.34,
     "roe": 7.33,
-    "pe": 16.89323,
+    "pe": 16.937338,
     "pbr": 1.2165939,
     "revenue_growth": 9.9,
     "gross_margin": 19.66,
@@ -5009,7 +5009,7 @@
     "current_ratio": 1.985,
     "quick_ratio": 0.742,
     "debt_to_equity": 92.555,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ENPH",
@@ -5024,7 +5024,7 @@
     "mcap_sort": 4.42288128,
     "fcf_yield": 1.77,
     "roe": 13.0,
-    "pe": 33.138615,
+    "pe": 33.47,
     "pbr": 3.7421737,
     "revenue_growth": -19.6,
     "gross_margin": 30.04,
@@ -5037,7 +5037,7 @@
     "current_ratio": 3.451,
     "quick_ratio": 2.529,
     "debt_to_equity": 51.899,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ENR",
@@ -5093,7 +5093,7 @@
     "current_ratio": 20.146,
     "quick_ratio": 19.122,
     "debt_to_equity": 337.015,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "EPAC",
@@ -5149,7 +5149,7 @@
     "current_ratio": 2.755,
     "quick_ratio": 2.581,
     "debt_to_equity": 4.326,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "EPC",
@@ -5276,7 +5276,7 @@
     "mcap_sort": 6.678957056,
     "fcf_yield": 2.54,
     "roe": 0,
-    "pe": 23.028479,
+    "pe": 21.277777,
     "pbr": -4.818248,
     "revenue_growth": 6.2,
     "gross_margin": 71.4,
@@ -5289,7 +5289,7 @@
     "current_ratio": 1.476,
     "quick_ratio": 0.89,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "EVTC",
@@ -5345,7 +5345,7 @@
     "current_ratio": 0.928,
     "quick_ratio": 0.635,
     "debt_to_equity": 219.625,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "EYE",
@@ -5373,7 +5373,7 @@
     "current_ratio": 0.592,
     "quick_ratio": 0.186,
     "debt_to_equity": 77.705,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "EZPW",
@@ -5401,7 +5401,7 @@
     "current_ratio": 4.811,
     "quick_ratio": 1.673,
     "debt_to_equity": 69.526,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "FA",
@@ -5416,7 +5416,7 @@
     "mcap_sort": 3.107024384,
     "fcf_yield": 6.92,
     "roe": 1.94,
-    "pe": 120.6,
+    "pe": 129.21428,
     "pbr": 2.3985682,
     "revenue_growth": 14.9,
     "gross_margin": 45.22,
@@ -5429,7 +5429,7 @@
     "current_ratio": 2.527,
     "quick_ratio": 2.42,
     "debt_to_equity": 157.74,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "FBK",
@@ -5500,7 +5500,7 @@
     "mcap_sort": 4.128150272,
     "fcf_yield": 0,
     "roe": 19.49,
-    "pe": 11.409284,
+    "pe": 11.361344,
     "pbr": 2.0744152,
     "revenue_growth": 9.4,
     "gross_margin": 0.0,
@@ -5528,7 +5528,7 @@
     "mcap_sort": 0.520694752,
     "fcf_yield": 0,
     "roe": 4.12,
-    "pe": 14.581395,
+    "pe": 14.25,
     "pbr": 0.42462415,
     "revenue_growth": 14.2,
     "gross_margin": 99.64,
@@ -5556,7 +5556,7 @@
     "mcap_sort": 2.077709824,
     "fcf_yield": 0,
     "roe": 10.91,
-    "pe": 12.536585,
+    "pe": 12.613497,
     "pbr": 1.3195558,
     "revenue_growth": 9.6,
     "gross_margin": 0.0,
@@ -5584,7 +5584,7 @@
     "mcap_sort": 2.36525056,
     "fcf_yield": 8.02,
     "roe": 7.65,
-    "pe": 19.414413,
+    "pe": 19.590908,
     "pbr": 1.4597304,
     "revenue_growth": 7.7,
     "gross_margin": 85.6,
@@ -5612,7 +5612,7 @@
     "mcap_sort": 4.361460736,
     "fcf_yield": 3.43,
     "roe": 11.77,
-    "pe": 28.347702,
+    "pe": 28.429396,
     "pbr": 3.0988882,
     "revenue_growth": 6.0,
     "gross_margin": 35.52,
@@ -5668,7 +5668,7 @@
     "mcap_sort": 2.870099712,
     "fcf_yield": 79.04,
     "roe": 9.17,
-    "pe": 7.2105265,
+    "pe": 7.2343235,
     "pbr": 0.6227449,
     "revenue_growth": 4.2,
     "gross_margin": 32.77,
@@ -5724,7 +5724,7 @@
     "mcap_sort": 3.43096576,
     "fcf_yield": 0,
     "roe": 9.62,
-    "pe": 11.076923,
+    "pe": 11.145511,
     "pbr": 1.0352563,
     "revenue_growth": 7.4,
     "gross_margin": 0.0,
@@ -5752,7 +5752,7 @@
     "mcap_sort": 2.567500544,
     "fcf_yield": 10.15,
     "roe": 7.92,
-    "pe": 50.52941,
+    "pe": 49.797104,
     "pbr": 3.2714462,
     "revenue_growth": 10.3,
     "gross_margin": 55.06,
@@ -5765,7 +5765,7 @@
     "current_ratio": 4.149,
     "quick_ratio": 3.495,
     "debt_to_equity": 107.449,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "FIZZ",
@@ -5793,7 +5793,7 @@
     "current_ratio": 2.392,
     "quick_ratio": 1.555,
     "debt_to_equity": 15.983,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "FLO",
@@ -5808,7 +5808,7 @@
     "mcap_sort": 1.181159936,
     "fcf_yield": 25.27,
     "roe": 4.01,
-    "pe": 21.423079,
+    "pe": 20.62963,
     "pbr": 0.8924852,
     "revenue_growth": 0,
     "gross_margin": 48.63,
@@ -5877,7 +5877,7 @@
     "current_ratio": 4.078,
     "quick_ratio": 3.086,
     "debt_to_equity": 2.691,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "FOXF",
@@ -5905,7 +5905,7 @@
     "current_ratio": 3.105,
     "quick_ratio": 1.057,
     "debt_to_equity": 102.0,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "FRPT",
@@ -5920,7 +5920,7 @@
     "mcap_sort": 2.895979264,
     "fcf_yield": 0.67,
     "roe": 17.62,
-    "pe": 15.611399,
+    "pe": 15.899735,
     "pbr": 2.3674078,
     "revenue_growth": 15.5,
     "gross_margin": 41.37,
@@ -5933,7 +5933,7 @@
     "current_ratio": 6.046,
     "quick_ratio": 4.867,
     "debt_to_equity": 39.885,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "FSS",
@@ -5989,7 +5989,7 @@
     "current_ratio": 1.591,
     "quick_ratio": 1.487,
     "debt_to_equity": 416.901,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "FTRE",
@@ -6017,7 +6017,7 @@
     "current_ratio": 0.958,
     "quick_ratio": 0.854,
     "debt_to_equity": 213.239,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "FUL",
@@ -6101,7 +6101,7 @@
     "current_ratio": 0.42,
     "quick_ratio": 0.268,
     "debt_to_equity": 1455.3,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "GBX",
@@ -6157,7 +6157,7 @@
     "current_ratio": 1.653,
     "quick_ratio": 1.528,
     "debt_to_equity": 106.105,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "GFF",
@@ -6172,7 +6172,7 @@
     "mcap_sort": 4.31008768,
     "fcf_yield": 10.32,
     "roe": 227.54,
-    "pe": 19.617954,
+    "pe": 20.252155,
     "pbr": 33.088028,
     "revenue_growth": 7.0,
     "gross_margin": 41.3,
@@ -6200,7 +6200,7 @@
     "mcap_sort": 1.173530112,
     "fcf_yield": 12.9,
     "roe": 7.68,
-    "pe": 9.00329,
+    "pe": 8.91531,
     "pbr": 0.63945615,
     "revenue_growth": -9.6,
     "gross_margin": 39.95,
@@ -6241,7 +6241,7 @@
     "current_ratio": 5.04,
     "quick_ratio": 4.155,
     "debt_to_equity": 15.766,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "GNL",
@@ -6284,7 +6284,7 @@
     "mcap_sort": 3.60847744,
     "fcf_yield": 18.67,
     "roe": 3.4,
-    "pe": 18.365385,
+    "pe": 19.1,
     "pbr": 0.41263396,
     "revenue_growth": 5.3,
     "gross_margin": 6.62,
@@ -6297,7 +6297,7 @@
     "current_ratio": 10.675,
     "quick_ratio": 1.104,
     "debt_to_equity": 23.338,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "GO",
@@ -6325,7 +6325,7 @@
     "current_ratio": 1.291,
     "quick_ratio": 0.222,
     "debt_to_equity": 226.658,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "GOLF",
@@ -6368,7 +6368,7 @@
     "mcap_sort": 2.978648576,
     "fcf_yield": 4.53,
     "roe": 9.49,
-    "pe": 10.34106,
+    "pe": 10.440451,
     "pbr": 0.99838555,
     "revenue_growth": -5.6,
     "gross_margin": 15.95,
@@ -6396,7 +6396,7 @@
     "mcap_sort": 2.730388736,
     "fcf_yield": 3.74,
     "roe": 27.41,
-    "pe": 5.872955,
+    "pe": 6.1318502,
     "pbr": 1.4942127,
     "revenue_growth": -16.2,
     "gross_margin": 68.13,
@@ -6409,7 +6409,7 @@
     "current_ratio": 0.576,
     "quick_ratio": 0.337,
     "debt_to_equity": 50.48,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "GRBK",
@@ -6437,7 +6437,7 @@
     "current_ratio": 7.051,
     "quick_ratio": 0.454,
     "debt_to_equity": 14.244,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "GSHD",
@@ -6452,7 +6452,7 @@
     "mcap_sort": 1.626445056,
     "fcf_yield": 2.27,
     "roe": 0,
-    "pe": 34.47727,
+    "pe": 33.218975,
     "pbr": -9.637865,
     "revenue_growth": 20.7,
     "gross_margin": 49.58,
@@ -6465,7 +6465,7 @@
     "current_ratio": 1.544,
     "quick_ratio": 1.211,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "GT",
@@ -6493,7 +6493,7 @@
     "current_ratio": 1.087,
     "quick_ratio": 0.488,
     "debt_to_equity": 273.675,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "GTES",
@@ -6521,7 +6521,7 @@
     "current_ratio": 3.244,
     "quick_ratio": 2.116,
     "debt_to_equity": 60.695,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "GTM",
@@ -6549,7 +6549,7 @@
     "current_ratio": 0.651,
     "quick_ratio": 0.56,
     "debt_to_equity": 183.227,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "GTY",
@@ -6620,7 +6620,7 @@
     "mcap_sort": 0.938991936,
     "fcf_yield": 0,
     "roe": 11.34,
-    "pe": 10.6633,
+    "pe": 10.699325,
     "pbr": 1.1465083,
     "revenue_growth": 23.3,
     "gross_margin": 0.0,
@@ -6676,7 +6676,7 @@
     "mcap_sort": 2.630282752,
     "fcf_yield": 6.24,
     "roe": 10.41,
-    "pe": 17.222221,
+    "pe": 16.9863,
     "pbr": 1.6568679,
     "revenue_growth": 6.3,
     "gross_margin": 47.95,
@@ -6689,7 +6689,7 @@
     "current_ratio": 3.327,
     "quick_ratio": 2.304,
     "debt_to_equity": 63.255,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "HCC",
@@ -6704,7 +6704,7 @@
     "mcap_sort": 4.717866496,
     "fcf_yield": -1.14,
     "roe": 10.04,
-    "pe": 21.426857,
+    "pe": 21.478365,
     "pbr": 2.0599897,
     "revenue_growth": 71.3,
     "gross_margin": 30.6,
@@ -6773,7 +6773,7 @@
     "current_ratio": 3.022,
     "quick_ratio": 2.599,
     "debt_to_equity": 3.417,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "HE",
@@ -6788,7 +6788,7 @@
     "mcap_sort": 1.539894912,
     "fcf_yield": 21.08,
     "roe": 13.45,
-    "pe": 6.8992248,
+    "pe": 6.8461537,
     "pbr": 0.872036,
     "revenue_growth": 25.9,
     "gross_margin": 17.58,
@@ -6801,7 +6801,7 @@
     "current_ratio": 0.986,
     "quick_ratio": 0.598,
     "debt_to_equity": 158.868,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "HFWA",
@@ -6885,7 +6885,7 @@
     "current_ratio": 3.047,
     "quick_ratio": 2.363,
     "debt_to_equity": 36.111,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "HLX",
@@ -7040,7 +7040,7 @@
     "mcap_sort": 2.308490496,
     "fcf_yield": 7.92,
     "roe": 20.46,
-    "pe": 12.828479,
+    "pe": 12.787097,
     "pbr": 2.3055894,
     "revenue_growth": 30.3,
     "gross_margin": 75.42,
@@ -7053,7 +7053,7 @@
     "current_ratio": 3.479,
     "quick_ratio": 3.327,
     "debt_to_equity": 16.031,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "HSTM",
@@ -7152,7 +7152,7 @@
     "mcap_sort": 2.516849664,
     "fcf_yield": -9.96,
     "roe": 6.46,
-    "pe": 21.172537,
+    "pe": 21.24735,
     "pbr": 1.3648229,
     "revenue_growth": 6.2,
     "gross_margin": 56.91,
@@ -7208,7 +7208,7 @@
     "mcap_sort": 2.743198976,
     "fcf_yield": 2.97,
     "roe": 15.61,
-    "pe": 33.956074,
+    "pe": 34.044044,
     "pbr": 6.2141204,
     "revenue_growth": 7.6,
     "gross_margin": 22.3,
@@ -7249,7 +7249,7 @@
     "current_ratio": 1.234,
     "quick_ratio": 0.311,
     "debt_to_equity": 115.137,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "IART",
@@ -7277,7 +7277,7 @@
     "current_ratio": 3.601,
     "quick_ratio": 1.636,
     "debt_to_equity": 196.489,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "IBP",
@@ -7292,7 +7292,7 @@
     "mcap_sort": 5.129780736,
     "fcf_yield": 5.64,
     "roe": 38.45,
-    "pe": 20.842333,
+    "pe": 20.819847,
     "pbr": 7.972242,
     "revenue_growth": 2.3,
     "gross_margin": 33.63,
@@ -7333,7 +7333,7 @@
     "current_ratio": 3.701,
     "quick_ratio": 2.027,
     "debt_to_equity": 17.81,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ICUI",
@@ -7348,7 +7348,7 @@
     "mcap_sort": 3.98562176,
     "fcf_yield": 4.1,
     "roe": 1.41,
-    "pe": 132.81667,
+    "pe": 133.93277,
     "pbr": 1.8521789,
     "revenue_growth": 0.5,
     "gross_margin": 38.26,
@@ -7361,7 +7361,7 @@
     "current_ratio": 2.43,
     "quick_ratio": 0.996,
     "debt_to_equity": 59.817,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "IIPR",
@@ -7432,7 +7432,7 @@
     "mcap_sort": 4.214920448,
     "fcf_yield": 2.05,
     "roe": 0,
-    "pe": 12.66312,
+    "pe": 12.799283,
     "pbr": -20.255245,
     "revenue_growth": 13.6,
     "gross_margin": 85.72,
@@ -7445,7 +7445,7 @@
     "current_ratio": 0.835,
     "quick_ratio": 0.586,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "INSP",
@@ -7460,7 +7460,7 @@
     "mcap_sort": 2.022859008,
     "fcf_yield": 4.68,
     "roe": 17.97,
-    "pe": 15.445915,
+    "pe": 15.411895,
     "pbr": 2.44993,
     "revenue_growth": -7.6,
     "gross_margin": 86.13,
@@ -7473,7 +7473,7 @@
     "current_ratio": 8.551,
     "quick_ratio": 5.957,
     "debt_to_equity": 3.524,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "INSW",
@@ -7488,7 +7488,7 @@
     "mcap_sort": 5.736221184,
     "fcf_yield": 1.21,
     "roe": 37.41,
-    "pe": 7.4094687,
+    "pe": 7.4047313,
     "pbr": 2.531643,
     "revenue_growth": 140.1,
     "gross_margin": 72.5,
@@ -7516,7 +7516,7 @@
     "mcap_sort": 1.481032448,
     "fcf_yield": 7.45,
     "roe": 36.68,
-    "pe": 4.7563806,
+    "pe": 4.7897196,
     "pbr": 1.2074449,
     "revenue_growth": 19.3,
     "gross_margin": 72.67,
@@ -7529,7 +7529,7 @@
     "current_ratio": 16.007,
     "quick_ratio": 14.654,
     "debt_to_equity": 26.859,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "INVX",
@@ -7557,7 +7557,7 @@
     "current_ratio": 5.006,
     "quick_ratio": 3.214,
     "debt_to_equity": 7.043,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "IOSP",
@@ -7600,7 +7600,7 @@
     "mcap_sort": 3.6493376,
     "fcf_yield": 5.9,
     "roe": 19.11,
-    "pe": 21.787762,
+    "pe": 21.746183,
     "pbr": 4.192421,
     "revenue_growth": 2.1,
     "gross_margin": 58.42,
@@ -7628,7 +7628,7 @@
     "mcap_sort": 5.188856832,
     "fcf_yield": 4.61,
     "roe": 19.71,
-    "pe": 56.27586,
+    "pe": 55.636364,
     "pbr": 10.977578,
     "revenue_growth": 3.8,
     "gross_margin": 71.85,
@@ -7656,7 +7656,7 @@
     "mcap_sort": 4.298929152,
     "fcf_yield": 2.5,
     "roe": 7.5,
-    "pe": 34.643833,
+    "pe": 34.54918,
     "pbr": 2.5008404,
     "revenue_growth": -2.6,
     "gross_margin": 26.13,
@@ -7669,7 +7669,7 @@
     "current_ratio": 3.733,
     "quick_ratio": 2.207,
     "debt_to_equity": 79.391,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ITRI",
@@ -7697,7 +7697,7 @@
     "current_ratio": 2.746,
     "quick_ratio": 1.943,
     "debt_to_equity": 97.754,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "IVT",
@@ -7781,7 +7781,7 @@
     "current_ratio": 0.696,
     "quick_ratio": 0.541,
     "debt_to_equity": 591.43,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "JBSS",
@@ -7796,7 +7796,7 @@
     "mcap_sort": 0.801237248,
     "fcf_yield": 3.63,
     "roe": 16.72,
-    "pe": 13.2023115,
+    "pe": 13.026615,
     "pbr": 2.1088266,
     "revenue_growth": 4.2,
     "gross_margin": 17.96,
@@ -7809,7 +7809,7 @@
     "current_ratio": 2.08,
     "quick_ratio": 0.509,
     "debt_to_equity": 28.779,
-    "dividend_yield": 138.0
+    "dividend_yield": 139.0
   },
   {
     "ticker": "JBTM",
@@ -7824,7 +7824,7 @@
     "mcap_sort": 5.633822208,
     "fcf_yield": 6.05,
     "roe": 4.37,
-    "pe": 28.806366,
+    "pe": 29.430893,
     "pbr": 1.2549255,
     "revenue_growth": 4.9,
     "gross_margin": 35.55,
@@ -7964,7 +7964,7 @@
     "mcap_sort": 2.48547072,
     "fcf_yield": 1.33,
     "roe": 26.4,
-    "pe": 11.269459,
+    "pe": 11.277819,
     "pbr": 2.609244,
     "revenue_growth": 52.7,
     "gross_margin": 14.52,
@@ -7992,7 +7992,7 @@
     "mcap_sort": 4.02456064,
     "fcf_yield": 6.29,
     "roe": 14.51,
-    "pe": 13.621211,
+    "pe": 13.595463,
     "pbr": 1.8315635,
     "revenue_growth": 6.8,
     "gross_margin": 24.73,
@@ -8020,7 +8020,7 @@
     "mcap_sort": 5.492982272,
     "fcf_yield": 0.29,
     "roe": 4.59,
-    "pe": 61.04495,
+    "pe": 63.17442,
     "pbr": 2.5375993,
     "revenue_growth": 21.1,
     "gross_margin": 63.85,
@@ -8132,7 +8132,7 @@
     "mcap_sort": 7.795498496,
     "fcf_yield": 8.11,
     "roe": 4.68,
-    "pe": 25.90566,
+    "pe": 26.028437,
     "pbr": 1.273773,
     "revenue_growth": 17.7,
     "gross_margin": 11.69,
@@ -8145,7 +8145,7 @@
     "current_ratio": 2.329,
     "quick_ratio": 0.18,
     "debt_to_equity": 286.624,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "KN",
@@ -8160,7 +8160,7 @@
     "mcap_sort": 3.42068352,
     "fcf_yield": 1.15,
     "roe": 9.5,
-    "pe": 45.511364,
+    "pe": 47.678574,
     "pbr": 4.2999783,
     "revenue_growth": 14.3,
     "gross_margin": 45.26,
@@ -8173,7 +8173,7 @@
     "current_ratio": 3.201,
     "quick_ratio": 1.64,
     "debt_to_equity": 18.881,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "KNTK",
@@ -8244,7 +8244,7 @@
     "mcap_sort": 4.524700672,
     "fcf_yield": -1.26,
     "roe": 9.5,
-    "pe": 126.444435,
+    "pe": 121.928566,
     "pbr": 10.745986,
     "revenue_growth": 58.2,
     "gross_margin": 41.67,
@@ -8257,7 +8257,7 @@
     "current_ratio": 3.555,
     "quick_ratio": 3.269,
     "debt_to_equity": 207.854,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "KSS",
@@ -8272,7 +8272,7 @@
     "mcap_sort": 2.132610944,
     "fcf_yield": 41.24,
     "roe": 6.67,
-    "pe": 8.1077585,
+    "pe": 8.072962,
     "pbr": 0.5099634,
     "revenue_growth": -0.9,
     "gross_margin": 40.52,
@@ -8300,7 +8300,7 @@
     "mcap_sort": 3.536635648,
     "fcf_yield": 12.46,
     "roe": 49.52,
-    "pe": 13.09919,
+    "pe": 15.821515,
     "pbr": 5.717441,
     "revenue_growth": 18.6,
     "gross_margin": 49.31,
@@ -8328,7 +8328,7 @@
     "mcap_sort": 2.765793792,
     "fcf_yield": 4.7,
     "roe": 7.17,
-    "pe": 28.804659,
+    "pe": 28.650623,
     "pbr": 2.008924,
     "revenue_growth": 10.2,
     "gross_margin": 36.06,
@@ -8356,7 +8356,7 @@
     "mcap_sort": 5.319880192,
     "fcf_yield": 6.46,
     "roe": 29.32,
-    "pe": 17.475113,
+    "pe": 17.554544,
     "pbr": 4.6608734,
     "revenue_growth": 17.5,
     "gross_margin": 36.8,
@@ -8369,7 +8369,7 @@
     "current_ratio": 0.712,
     "quick_ratio": 0.633,
     "debt_to_equity": 64.3,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LAZ",
@@ -8384,7 +8384,7 @@
     "mcap_sort": 3.515042304,
     "fcf_yield": 0,
     "roe": 25.66,
-    "pe": 17.768473,
+    "pe": 17.681374,
     "pbr": 3.844596,
     "revenue_growth": 0.1,
     "gross_margin": 89.51,
@@ -8440,7 +8440,7 @@
     "mcap_sort": 2.013235968,
     "fcf_yield": 13.14,
     "roe": 15.0,
-    "pe": 9.518391,
+    "pe": 9.595596,
     "pbr": 1.4061571,
     "revenue_growth": -12.5,
     "gross_margin": 25.65,
@@ -8496,7 +8496,7 @@
     "mcap_sort": 2.84850432,
     "fcf_yield": -4.47,
     "roe": 8.05,
-    "pe": 73.3,
+    "pe": 65.07944,
     "pbr": 3.2869956,
     "revenue_growth": 14.0,
     "gross_margin": 23.66,
@@ -8509,7 +8509,7 @@
     "current_ratio": 5.395,
     "quick_ratio": 4.41,
     "debt_to_equity": 139.283,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LFST",
@@ -8537,7 +8537,7 @@
     "current_ratio": 1.376,
     "quick_ratio": 1.226,
     "debt_to_equity": 32.099,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LGIH",
@@ -8565,7 +8565,7 @@
     "current_ratio": 33.032,
     "quick_ratio": 0.869,
     "debt_to_equity": 74.344,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LIF",
@@ -8593,7 +8593,7 @@
     "current_ratio": 5.601,
     "quick_ratio": 5.282,
     "debt_to_equity": 50.803,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LGND",
@@ -8608,7 +8608,7 @@
     "mcap_sort": 6.039691776,
     "fcf_yield": 2.31,
     "roe": 21.96,
-    "pe": 31.168722,
+    "pe": 31.924131,
     "pbr": 6.237595,
     "revenue_growth": 33.7,
     "gross_margin": 81.2,
@@ -8621,7 +8621,7 @@
     "current_ratio": 31.178,
     "quick_ratio": 30.826,
     "debt_to_equity": 116.944,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LKFN",
@@ -8636,7 +8636,7 @@
     "mcap_sort": 1.46835264,
     "fcf_yield": 0,
     "roe": 15.0,
-    "pe": 13.334086,
+    "pe": 13.548164,
     "pbr": 1.8989295,
     "revenue_growth": 9.2,
     "gross_margin": 0.0,
@@ -8692,7 +8692,7 @@
     "mcap_sort": 1.805756416,
     "fcf_yield": 2.73,
     "roe": 16.77,
-    "pe": 27.608393,
+    "pe": 27.705263,
     "pbr": 4.2950387,
     "revenue_growth": 9.6,
     "gross_margin": 71.87,
@@ -8804,7 +8804,7 @@
     "mcap_sort": 2.563534592,
     "fcf_yield": 2.9,
     "roe": 131.82,
-    "pe": 20.457142,
+    "pe": 20.604317,
     "pbr": 13.077625,
     "revenue_growth": 1842.7,
     "gross_margin": 92.54,
@@ -8817,7 +8817,7 @@
     "current_ratio": 2.312,
     "quick_ratio": 2.075,
     "debt_to_equity": 93.738,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LQDT",
@@ -8845,7 +8845,7 @@
     "current_ratio": 1.58,
     "quick_ratio": 1.43,
     "debt_to_equity": 5.869,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LRN",
@@ -8873,7 +8873,7 @@
     "current_ratio": 5.941,
     "quick_ratio": 5.618,
     "debt_to_equity": 33.448,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LTC",
@@ -8929,7 +8929,7 @@
     "current_ratio": 0.657,
     "quick_ratio": 0.393,
     "debt_to_equity": 129.478,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LUMN",
@@ -8957,7 +8957,7 @@
     "current_ratio": 0.964,
     "quick_ratio": 0.77,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LW",
@@ -9000,7 +9000,7 @@
     "mcap_sort": 3.593445376,
     "fcf_yield": 5.1,
     "roe": 3.5,
-    "pe": 61.56566,
+    "pe": 60.346535,
     "pbr": 1.9381816,
     "revenue_growth": 0.4,
     "gross_margin": 81.46,
@@ -9028,7 +9028,7 @@
     "mcap_sort": 5.852232192,
     "fcf_yield": 19.7,
     "roe": 152.58,
-    "pe": 2.2148998,
+    "pe": 2.2503638,
     "pbr": 1.9388012,
     "revenue_growth": 16.1,
     "gross_margin": 38.02,
@@ -9041,7 +9041,7 @@
     "current_ratio": 0.586,
     "quick_ratio": 0.437,
     "debt_to_equity": 42.738,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LZ",
@@ -9069,7 +9069,7 @@
     "current_ratio": 0.667,
     "quick_ratio": 0.617,
     "debt_to_equity": 11.903,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "LZB",
@@ -9084,7 +9084,7 @@
     "mcap_sort": 1.199180032,
     "fcf_yield": 15.25,
     "roe": 8.05,
-    "pe": 15.197969,
+    "pe": 15.121212,
     "pbr": 1.183446,
     "revenue_growth": -3.4,
     "gross_margin": 45.16,
@@ -9140,7 +9140,7 @@
     "mcap_sort": 2.518741504,
     "fcf_yield": 4.96,
     "roe": 5.08,
-    "pe": 24.396397,
+    "pe": 24.506786,
     "pbr": 1.1958226,
     "revenue_growth": 7.5,
     "gross_margin": 16.23,
@@ -9181,7 +9181,7 @@
     "current_ratio": 0.891,
     "quick_ratio": 0.758,
     "debt_to_equity": 140.159,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "MATW",
@@ -9224,7 +9224,7 @@
     "mcap_sort": 6.910988288,
     "fcf_yield": 2.13,
     "roe": 17.21,
-    "pe": 15.604997,
+    "pe": 15.542031,
     "pbr": 2.492155,
     "revenue_growth": 16.7,
     "gross_margin": 23.02,
@@ -9265,7 +9265,7 @@
     "current_ratio": 1.759,
     "quick_ratio": 0.81,
     "debt_to_equity": 85.833,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "MBGL",
@@ -9280,7 +9280,7 @@
     "mcap_sort": 5.507199488,
     "fcf_yield": 0,
     "roe": 0,
-    "pe": 40.97619,
+    "pe": 40.023254,
     "pbr": 0.5159027,
     "revenue_growth": 6.6,
     "gross_margin": 70.95,
@@ -9364,7 +9364,7 @@
     "mcap_sort": 2.10679232,
     "fcf_yield": 6.26,
     "roe": 20.54,
-    "pe": 18.86838,
+    "pe": 18.838142,
     "pbr": 3.6527767,
     "revenue_growth": 4.2,
     "gross_margin": 68.02,
@@ -9405,7 +9405,7 @@
     "current_ratio": 1.316,
     "quick_ratio": 1.282,
     "debt_to_equity": 70.371,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "MDU",
@@ -9461,7 +9461,7 @@
     "current_ratio": 1.837,
     "quick_ratio": 0.879,
     "debt_to_equity": 32.922,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "MGEE",
@@ -9504,7 +9504,7 @@
     "mcap_sort": 6.611910144,
     "fcf_yield": 5.03,
     "roe": 20.85,
-    "pe": 10.510917,
+    "pe": 10.557017,
     "pbr": 2.0372407,
     "revenue_growth": 50.1,
     "gross_margin": 82.22,
@@ -9545,7 +9545,7 @@
     "current_ratio": 1.916,
     "quick_ratio": 0.957,
     "debt_to_equity": 27.604,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "MHO",
@@ -9573,7 +9573,7 @@
     "current_ratio": 8.108,
     "quick_ratio": 1.329,
     "debt_to_equity": 31.079,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "MIR",
@@ -9601,7 +9601,7 @@
     "current_ratio": 3.198,
     "quick_ratio": 2.511,
     "debt_to_equity": 65.757,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "MKTX",
@@ -9616,7 +9616,7 @@
     "mcap_sort": 5.777267712,
     "fcf_yield": -7.92,
     "roe": 23.14,
-    "pe": 19.424852,
+    "pe": 19.401892,
     "pbr": 4.6624055,
     "revenue_growth": -0.5,
     "gross_margin": 61.66,
@@ -9713,7 +9713,7 @@
     "current_ratio": 4.198,
     "quick_ratio": 2.641,
     "debt_to_equity": 48.822,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "MPT",
@@ -9769,7 +9769,7 @@
     "current_ratio": 2.963,
     "quick_ratio": 1.733,
     "debt_to_equity": 33.582,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "MRP",
@@ -9840,7 +9840,7 @@
     "mcap_sort": 1.009281792,
     "fcf_yield": -2.81,
     "roe": 9.77,
-    "pe": 20.921877,
+    "pe": 20.679539,
     "pbr": 1.9367905,
     "revenue_growth": 14.3,
     "gross_margin": 53.66,
@@ -9868,7 +9868,7 @@
     "mcap_sort": 9.79933184,
     "fcf_yield": 0.59,
     "roe": 0,
-    "pe": 1233.1818,
+    "pe": 1271.7189,
     "pbr": -37.211964,
     "revenue_growth": 36.7,
     "gross_margin": 33.61,
@@ -9881,7 +9881,7 @@
     "current_ratio": 0.503,
     "quick_ratio": 0.418,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "MTCH",
@@ -9924,7 +9924,7 @@
     "mcap_sort": 4.16136576,
     "fcf_yield": 7.06,
     "roe": 6.38,
-    "pe": 13.302082,
+    "pe": 13.329854,
     "pbr": 0.822735,
     "revenue_growth": -13.8,
     "gross_margin": 18.28,
@@ -9952,7 +9952,7 @@
     "mcap_sort": 6.503455232,
     "fcf_yield": 0.21,
     "roe": 9.46,
-    "pe": 72.93458,
+    "pe": 72.76457,
     "pbr": 6.5369716,
     "revenue_growth": 42.2,
     "gross_margin": 16.01,
@@ -9993,7 +9993,7 @@
     "current_ratio": 1.752,
     "quick_ratio": 0.831,
     "debt_to_equity": 2.123,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "MTX",
@@ -10077,7 +10077,7 @@
     "current_ratio": 1.776,
     "quick_ratio": 0.689,
     "debt_to_equity": 30.566,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "MYRG",
@@ -10092,7 +10092,7 @@
     "mcap_sort": 4.745040384,
     "fcf_yield": 3.74,
     "roe": 24.71,
-    "pe": 28.97053,
+    "pe": 28.94302,
     "pbr": 6.2896233,
     "revenue_growth": 20.1,
     "gross_margin": 12.49,
@@ -10105,7 +10105,7 @@
     "current_ratio": 1.398,
     "quick_ratio": 1.344,
     "debt_to_equity": 8.895,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "NABL",
@@ -10133,7 +10133,7 @@
     "current_ratio": 1.305,
     "quick_ratio": 1.158,
     "debt_to_equity": 54.251,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "NATL",
@@ -10161,7 +10161,7 @@
     "current_ratio": 1.026,
     "quick_ratio": 0.572,
     "debt_to_equity": 634.267,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "NAVI",
@@ -10189,7 +10189,7 @@
     "current_ratio": 10.745,
     "quick_ratio": 10.415,
     "debt_to_equity": 1852.711,
-    "dividend_yield": 697.0
+    "dividend_yield": 696.0
   },
   {
     "ticker": "NBHC",
@@ -10232,7 +10232,7 @@
     "mcap_sort": 2.677501952,
     "fcf_yield": 0,
     "roe": 11.42,
-    "pe": 12.537712,
+    "pe": 12.599021,
     "pbr": 1.3772551,
     "revenue_growth": 17.8,
     "gross_margin": 0.0,
@@ -10245,7 +10245,7 @@
     "current_ratio": null,
     "quick_ratio": null,
     "debt_to_equity": null,
-    "dividend_yield": 310.0
+    "dividend_yield": 311.0
   },
   {
     "ticker": "NE",
@@ -10301,7 +10301,7 @@
     "current_ratio": 3.603,
     "quick_ratio": 3.036,
     "debt_to_equity": 57.064,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "NEOG",
@@ -10329,7 +10329,7 @@
     "current_ratio": 3.822,
     "quick_ratio": 2.101,
     "debt_to_equity": 38.827,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "NGVT",
@@ -10344,7 +10344,7 @@
     "mcap_sort": 2.489305344,
     "fcf_yield": 3.57,
     "roe": 30.07,
-    "pe": 100.56944,
+    "pe": 103.44286,
     "pbr": 53.24265,
     "revenue_growth": -5.2,
     "gross_margin": 41.13,
@@ -10357,7 +10357,7 @@
     "current_ratio": 1.611,
     "quick_ratio": 0.776,
     "debt_to_equity": 2636.034,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "NHC",
@@ -10372,7 +10372,7 @@
     "mcap_sort": 3.56547328,
     "fcf_yield": 1.77,
     "roe": 13.27,
-    "pe": 25.579777,
+    "pe": 25.60855,
     "pbr": 3.1769466,
     "revenue_growth": 8.8,
     "gross_margin": 39.49,
@@ -10428,7 +10428,7 @@
     "mcap_sort": 3.488796928,
     "fcf_yield": 0,
     "roe": 8.91,
-    "pe": 18.662556,
+    "pe": 18.641657,
     "pbr": 1.5368353,
     "revenue_growth": 86.1,
     "gross_margin": 0.0,
@@ -10469,7 +10469,7 @@
     "current_ratio": 2.029,
     "quick_ratio": 0.699,
     "debt_to_equity": 15.753,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "NOG",
@@ -10568,7 +10568,7 @@
     "mcap_sort": 4.715186176,
     "fcf_yield": 9.3,
     "roe": 13.11,
-    "pe": 23.766272,
+    "pe": 23.661266,
     "pbr": 2.954395,
     "revenue_growth": 14.7,
     "gross_margin": 22.1,
@@ -10581,7 +10581,7 @@
     "current_ratio": 1.183,
     "quick_ratio": 1.108,
     "debt_to_equity": 108.517,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "NSP",
@@ -10637,7 +10637,7 @@
     "current_ratio": 4.899,
     "quick_ratio": 4.088,
     "debt_to_equity": 2.711,
-    "dividend_yield": 168.0
+    "dividend_yield": 169.0
   },
   {
     "ticker": "NTCT",
@@ -10652,7 +10652,7 @@
     "mcap_sort": 2.97809152,
     "fcf_yield": 7.6,
     "roe": 7.54,
-    "pe": 24.975609,
+    "pe": 25.128834,
     "pbr": 1.790601,
     "revenue_growth": 12.7,
     "gross_margin": 79.84,
@@ -10665,7 +10665,7 @@
     "current_ratio": 1.825,
     "quick_ratio": 1.677,
     "debt_to_equity": 2.404,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "NTST",
@@ -10708,7 +10708,7 @@
     "mcap_sort": 2.223762944,
     "fcf_yield": 0,
     "roe": 8.57,
-    "pe": 14.747573,
+    "pe": 14.605769,
     "pbr": 1.1537292,
     "revenue_growth": 23.2,
     "gross_margin": 0.0,
@@ -10764,7 +10764,7 @@
     "mcap_sort": 1.994391808,
     "fcf_yield": -13.47,
     "roe": 8.35,
-    "pe": 15.585526,
+    "pe": 15.740864,
     "pbr": 1.2790196,
     "revenue_growth": 3.1,
     "gross_margin": 44.98,
@@ -10917,7 +10917,7 @@
     "current_ratio": 1.261,
     "quick_ratio": 0.629,
     "debt_to_equity": 925.046,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "OII",
@@ -10945,7 +10945,7 @@
     "current_ratio": 2.176,
     "quick_ratio": 1.765,
     "debt_to_equity": 70.343,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "OMCL",
@@ -10973,7 +10973,7 @@
     "current_ratio": 1.644,
     "quick_ratio": 1.194,
     "debt_to_equity": 15.484,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "OPLN",
@@ -11001,7 +11001,7 @@
     "current_ratio": 1.168,
     "quick_ratio": 1.123,
     "debt_to_equity": 157.364,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "OSIS",
@@ -11029,7 +11029,7 @@
     "current_ratio": 3.153,
     "quick_ratio": 2.232,
     "debt_to_equity": 126.037,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "OSW",
@@ -11100,7 +11100,7 @@
     "mcap_sort": 5.055081984,
     "fcf_yield": 3.83,
     "roe": 35.02,
-    "pe": 20.21127,
+    "pe": 20.647482,
     "pbr": 7.2916665,
     "revenue_growth": 13.5,
     "gross_margin": 51.41,
@@ -11156,7 +11156,7 @@
     "mcap_sort": 4.20836864,
     "fcf_yield": 1.96,
     "roe": 53.49,
-    "pe": 4.9295774,
+    "pe": 4.903678,
     "pbr": 2.0878382,
     "revenue_growth": 56.8,
     "gross_margin": 23.06,
@@ -11169,7 +11169,7 @@
     "current_ratio": 1.84,
     "quick_ratio": 0.524,
     "debt_to_equity": 56.166,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PAYC",
@@ -11184,7 +11184,7 @@
     "mcap_sort": 9.960377344,
     "fcf_yield": 4.25,
     "roe": 41.09,
-    "pe": 23.360466,
+    "pe": 23.385187,
     "pbr": 16.820673,
     "revenue_growth": 9.8,
     "gross_margin": 88.06,
@@ -11225,7 +11225,7 @@
     "current_ratio": 1.003,
     "quick_ratio": 0.991,
     "debt_to_equity": 13.184,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PATK",
@@ -11281,7 +11281,7 @@
     "current_ratio": 3.23,
     "quick_ratio": 1.798,
     "debt_to_equity": 107.864,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PBI",
@@ -11337,7 +11337,7 @@
     "current_ratio": 5.042,
     "quick_ratio": 3.213,
     "debt_to_equity": 61.329,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PDFS",
@@ -11365,7 +11365,7 @@
     "current_ratio": 3.447,
     "quick_ratio": 3.313,
     "debt_to_equity": 19.21,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PEB",
@@ -11436,7 +11436,7 @@
     "mcap_sort": 3.14425216,
     "fcf_yield": -3.42,
     "roe": 16.19,
-    "pe": 44.143887,
+    "pe": 43.82857,
     "pbr": 7.1606956,
     "revenue_growth": 47.6,
     "gross_margin": 27.92,
@@ -11449,7 +11449,7 @@
     "current_ratio": 1.544,
     "quick_ratio": 1.022,
     "debt_to_equity": 77.496,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PENN",
@@ -11477,7 +11477,7 @@
     "current_ratio": 0.885,
     "quick_ratio": 0.758,
     "debt_to_equity": 596.731,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PFBC",
@@ -11492,7 +11492,7 @@
     "mcap_sort": 1.262119808,
     "fcf_yield": 0,
     "roe": 17.58,
-    "pe": 9.94211,
+    "pe": 9.932836,
     "pbr": 1.590512,
     "revenue_growth": 4.7,
     "gross_margin": 0.0,
@@ -11561,7 +11561,7 @@
     "current_ratio": 2.137,
     "quick_ratio": 2.059,
     "debt_to_equity": 5.95,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PHIN",
@@ -11576,7 +11576,7 @@
     "mcap_sort": 2.190224896,
     "fcf_yield": 12.29,
     "roe": 8.52,
-    "pe": 17.128939,
+    "pe": 17.17816,
     "pbr": 1.4213028,
     "revenue_growth": 5.6,
     "gross_margin": 21.8,
@@ -11617,7 +11617,7 @@
     "current_ratio": 3.277,
     "quick_ratio": 2.196,
     "debt_to_equity": 115.143,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PIPR",
@@ -11632,7 +11632,7 @@
     "mcap_sort": 4.619010048,
     "fcf_yield": 0,
     "roe": 24.53,
-    "pe": 15.164734,
+    "pe": 15.129629,
     "pbr": 3.2162187,
     "revenue_growth": 24.9,
     "gross_margin": 91.82,
@@ -11660,7 +11660,7 @@
     "mcap_sort": 5.907806208,
     "fcf_yield": 0,
     "roe": 37.63,
-    "pe": 18.895096,
+    "pe": 18.946722,
     "pbr": 11.371761,
     "revenue_growth": 19.5,
     "gross_margin": 95.25,
@@ -11701,7 +11701,7 @@
     "current_ratio": 4.941,
     "quick_ratio": 4.43,
     "debt_to_equity": 0.223,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PLMR",
@@ -11716,7 +11716,7 @@
     "mcap_sort": 3.352474624,
     "fcf_yield": 17.0,
     "roe": 22.23,
-    "pe": 17.001343,
+    "pe": 17.024227,
     "pbr": 3.3767586,
     "revenue_growth": 54.7,
     "gross_margin": 27.35,
@@ -11785,7 +11785,7 @@
     "current_ratio": 1.488,
     "quick_ratio": 0.67,
     "debt_to_equity": 20.079,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "POOL",
@@ -11884,7 +11884,7 @@
     "mcap_sort": 3.073870848,
     "fcf_yield": 2.49,
     "roe": 9.04,
-    "pe": 6.9847717,
+    "pe": 7.6303144,
     "pbr": 0.6047288,
     "revenue_growth": -1.5,
     "gross_margin": 66.35,
@@ -11897,7 +11897,7 @@
     "current_ratio": 3.691,
     "quick_ratio": 3.432,
     "debt_to_equity": 27.577,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PRDO",
@@ -11940,7 +11940,7 @@
     "mcap_sort": 1.234780544,
     "fcf_yield": 124.39,
     "roe": 17.07,
-    "pe": 10.0,
+    "pe": 9.935898,
     "pbr": 1.5332114,
     "revenue_growth": 22.3,
     "gross_margin": 36.15,
@@ -12009,7 +12009,7 @@
     "current_ratio": 0.796,
     "quick_ratio": 0.682,
     "debt_to_equity": 238.695,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PRIM",
@@ -12024,7 +12024,7 @@
     "mcap_sort": 4.290480384,
     "fcf_yield": 1.87,
     "roe": 8.89,
-    "pe": 31.011766,
+    "pe": 30.890627,
     "pbr": 2.6500454,
     "revenue_growth": -10.7,
     "gross_margin": 8.62,
@@ -12093,7 +12093,7 @@
     "current_ratio": 0.478,
     "quick_ratio": 0.234,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PRLB",
@@ -12108,7 +12108,7 @@
     "mcap_sort": 2.349369344,
     "fcf_yield": 1.78,
     "roe": 4.49,
-    "pe": 74.40151,
+    "pe": 77.94444,
     "pbr": 3.3963895,
     "revenue_growth": 10.6,
     "gross_margin": 45.42,
@@ -12121,7 +12121,7 @@
     "current_ratio": 3.637,
     "quick_ratio": 3.268,
     "debt_to_equity": 0.324,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PRSU",
@@ -12136,7 +12136,7 @@
     "mcap_sort": 1.437792512,
     "fcf_yield": -3.82,
     "roe": 8.91,
-    "pe": 35.39189,
+    "pe": 35.632652,
     "pbr": 2.6629386,
     "revenue_growth": 14.3,
     "gross_margin": 92.54,
@@ -12149,7 +12149,7 @@
     "current_ratio": 1.606,
     "quick_ratio": 0.408,
     "debt_to_equity": 39.955,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PRVA",
@@ -12164,7 +12164,7 @@
     "mcap_sort": 2.593004288,
     "fcf_yield": 3.69,
     "roe": 4.31,
-    "pe": 92.27273,
+    "pe": 96.666664,
     "pbr": 3.276836,
     "revenue_growth": 21.4,
     "gross_margin": 10.03,
@@ -12177,7 +12177,7 @@
     "current_ratio": 1.616,
     "quick_ratio": 1.555,
     "debt_to_equity": 1.042,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PSMT",
@@ -12192,7 +12192,7 @@
     "mcap_sort": 5.26727424,
     "fcf_yield": 1.11,
     "roe": 12.31,
-    "pe": 32.760075,
+    "pe": 32.82308,
     "pbr": 3.6895807,
     "revenue_growth": 12.5,
     "gross_margin": 17.64,
@@ -12233,7 +12233,7 @@
     "current_ratio": 3.394,
     "quick_ratio": 3.201,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PTEN",
@@ -12276,7 +12276,7 @@
     "mcap_sort": 9.063042048,
     "fcf_yield": 1.06,
     "roe": 10.98,
-    "pe": 134.67308,
+    "pe": 135.98059,
     "pbr": 10.76391,
     "revenue_growth": 3749.2,
     "gross_margin": 100.0,
@@ -12289,7 +12289,7 @@
     "current_ratio": 21.709,
     "quick_ratio": 21.576,
     "debt_to_equity": 1.095,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PTON",
@@ -12317,7 +12317,7 @@
     "current_ratio": 2.837,
     "quick_ratio": 2.455,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "PZZA",
@@ -12345,7 +12345,7 @@
     "current_ratio": 0.829,
     "quick_ratio": 0.441,
     "debt_to_equity": null,
-    "dividend_yield": 747.0
+    "dividend_yield": 0.0
   },
   {
     "ticker": "QDEL",
@@ -12373,7 +12373,7 @@
     "current_ratio": 1.386,
     "quick_ratio": 0.596,
     "debt_to_equity": 173.277,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "QNST",
@@ -12401,7 +12401,7 @@
     "current_ratio": 1.218,
     "quick_ratio": 1.191,
     "debt_to_equity": 24.036,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "QRVO",
@@ -12416,7 +12416,7 @@
     "mcap_sort": 10.07226368,
     "fcf_yield": 4.73,
     "roe": 11.56,
-    "pe": 26.42824,
+    "pe": 26.48956,
     "pbr": 2.9009554,
     "revenue_growth": -4.2,
     "gross_margin": 48.54,
@@ -12429,7 +12429,7 @@
     "current_ratio": 3.543,
     "quick_ratio": 2.508,
     "debt_to_equity": 44.619,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "QTWO",
@@ -12444,7 +12444,7 @@
     "mcap_sort": 3.515557888,
     "fcf_yield": 5.41,
     "roe": 14.98,
-    "pe": 39.704227,
+    "pe": 39.985817,
     "pbr": 5.464237,
     "revenue_growth": 12.6,
     "gross_margin": 56.99,
@@ -12457,7 +12457,7 @@
     "current_ratio": 0.945,
     "quick_ratio": 0.72,
     "debt_to_equity": 6.361,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "RAMP",
@@ -12472,7 +12472,7 @@
     "mcap_sort": 2.288931328,
     "fcf_yield": 7.4,
     "roe": 16.05,
-    "pe": 15.753138,
+    "pe": 15.557852,
     "pbr": 2.3417094,
     "revenue_growth": 9.8,
     "gross_margin": 70.82,
@@ -12485,7 +12485,7 @@
     "current_ratio": 2.657,
     "quick_ratio": 2.483,
     "debt_to_equity": 3.388,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "RAL",
@@ -12541,7 +12541,7 @@
     "current_ratio": 3.818,
     "quick_ratio": 3.753,
     "debt_to_equity": 51.293,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "RDN",
@@ -12597,7 +12597,7 @@
     "current_ratio": 1.484,
     "quick_ratio": 1.39,
     "debt_to_equity": 156.668,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "RELY",
@@ -12612,7 +12612,7 @@
     "mcap_sort": 4.608361984,
     "fcf_yield": 4.26,
     "roe": 32.25,
-    "pe": 15.661871,
+    "pe": 15.775363,
     "pbr": 4.0890307,
     "revenue_growth": 20.2,
     "gross_margin": 61.55,
@@ -12625,7 +12625,7 @@
     "current_ratio": 3.181,
     "quick_ratio": 2.524,
     "debt_to_equity": 3.396,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "RES",
@@ -12668,7 +12668,7 @@
     "mcap_sort": 4.704854528,
     "fcf_yield": 5.19,
     "roe": 15.43,
-    "pe": 13.693252,
+    "pe": 13.609756,
     "pbr": 2.036868,
     "revenue_growth": 0.6,
     "gross_margin": 25.14,
@@ -12709,7 +12709,7 @@
     "current_ratio": 6.884,
     "quick_ratio": 6.186,
     "debt_to_equity": 2.309,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "REZI",
@@ -12724,7 +12724,7 @@
     "mcap_sort": 2.786399488,
     "fcf_yield": -68.29,
     "roe": 15.2,
-    "pe": 7.167969,
+    "pe": 7.710084,
     "pbr": 1.1015067,
     "revenue_growth": 2.0,
     "gross_margin": 29.21,
@@ -12737,7 +12737,7 @@
     "current_ratio": 2.223,
     "quick_ratio": 1.026,
     "debt_to_equity": 129.907,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "RHI",
@@ -12780,7 +12780,7 @@
     "mcap_sort": 8.392628736,
     "fcf_yield": 6.77,
     "roe": 22.58,
-    "pe": 29.673172,
+    "pe": 29.600973,
     "pbr": 10.141714,
     "revenue_growth": 13.6,
     "gross_margin": 35.16,
@@ -12864,7 +12864,7 @@
     "mcap_sort": 3.648866048,
     "fcf_yield": 0,
     "roe": 8.21,
-    "pe": 11.672514,
+    "pe": 11.81065,
     "pbr": 0.9425097,
     "revenue_growth": 45.3,
     "gross_margin": 0.0,
@@ -12892,7 +12892,7 @@
     "mcap_sort": 5.169296384,
     "fcf_yield": 1.01,
     "roe": 15.05,
-    "pe": 35.302326,
+    "pe": 35.717648,
     "pbr": 4.9422107,
     "revenue_growth": 28.2,
     "gross_margin": 15.76,
@@ -12905,7 +12905,7 @@
     "current_ratio": 1.566,
     "quick_ratio": 1.22,
     "debt_to_equity": 181.754,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ROCK",
@@ -12933,7 +12933,7 @@
     "current_ratio": 1.457,
     "quick_ratio": 0.611,
     "debt_to_equity": 153.722,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ROG",
@@ -12961,7 +12961,7 @@
     "current_ratio": 3.988,
     "quick_ratio": 2.844,
     "debt_to_equity": 2.366,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "RRR",
@@ -13004,7 +13004,7 @@
     "mcap_sort": 4.88738304,
     "fcf_yield": 2.6,
     "roe": 30.28,
-    "pe": 64.548386,
+    "pe": 66.7,
     "pbr": 12.482844,
     "revenue_growth": 46.3,
     "gross_margin": 34.97,
@@ -13017,7 +13017,7 @@
     "current_ratio": 2.116,
     "quick_ratio": 1.922,
     "debt_to_equity": 1.519,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "RUN",
@@ -13032,7 +13032,7 @@
     "mcap_sort": 1.839214976,
     "fcf_yield": -107.17,
     "roe": -19.86,
-    "pe": 5.244898,
+    "pe": 5.2094593,
     "pbr": 0.53048027,
     "revenue_growth": 52.8,
     "gross_margin": 35.29,
@@ -13045,7 +13045,7 @@
     "current_ratio": 1.422,
     "quick_ratio": 0.631,
     "debt_to_equity": 292.511,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "RUSHA",
@@ -13060,7 +13060,7 @@
     "mcap_sort": 5.507341312,
     "fcf_yield": 5.7,
     "roe": 11.79,
-    "pe": 20.876106,
+    "pe": 21.348415,
     "pbr": 2.359,
     "revenue_growth": -1.6,
     "gross_margin": 19.85,
@@ -13101,7 +13101,7 @@
     "current_ratio": 1.268,
     "quick_ratio": 1.189,
     "debt_to_equity": 48.34,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SAFE",
@@ -13157,7 +13157,7 @@
     "current_ratio": 1.025,
     "quick_ratio": 0.924,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SAFT",
@@ -13172,7 +13172,7 @@
     "mcap_sort": 1.525595648,
     "fcf_yield": 10.52,
     "roe": 7.84,
-    "pe": 22.348387,
+    "pe": 22.30043,
     "pbr": 1.7405577,
     "revenue_growth": 3.0,
     "gross_margin": 7.65,
@@ -13200,7 +13200,7 @@
     "mcap_sort": 1.986358016,
     "fcf_yield": -5.84,
     "roe": 20.63,
-    "pe": 10.004777,
+    "pe": 10.020734,
     "pbr": 1.9363887,
     "revenue_growth": 7.6,
     "gross_margin": 15.7,
@@ -13269,7 +13269,7 @@
     "current_ratio": 2.367,
     "quick_ratio": 0.486,
     "debt_to_equity": 173.89,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SBSI",
@@ -13284,7 +13284,7 @@
     "mcap_sort": 0.915999232,
     "fcf_yield": 0,
     "roe": 8.99,
-    "pe": 12.050981,
+    "pe": 12.098425,
     "pbr": 1.037825,
     "revenue_growth": 8.3,
     "gross_margin": 0.0,
@@ -13312,7 +13312,7 @@
     "mcap_sort": 0.666421888,
     "fcf_yield": 5.26,
     "roe": 7.38,
-    "pe": 25.857143,
+    "pe": 25.49296,
     "pbr": 0.9039604,
     "revenue_growth": -3.9,
     "gross_margin": 56.49,
@@ -13325,7 +13325,7 @@
     "current_ratio": 1.253,
     "quick_ratio": 0.62,
     "debt_to_equity": 77.639,
-    "dividend_yield": 277.0
+    "dividend_yield": 276.0
   },
   {
     "ticker": "SCL",
@@ -13381,7 +13381,7 @@
     "current_ratio": 1.755,
     "quick_ratio": 1.108,
     "debt_to_equity": 12.176,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SDGR",
@@ -13409,7 +13409,7 @@
     "current_ratio": 2.706,
     "quick_ratio": 2.616,
     "debt_to_equity": 32.832,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SEDG",
@@ -13437,7 +13437,7 @@
     "current_ratio": 2.03,
     "quick_ratio": 1.26,
     "debt_to_equity": 98.852,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SEI",
@@ -13452,7 +13452,7 @@
     "mcap_sort": 7.539933184,
     "fcf_yield": -10.7,
     "roe": 8.1,
-    "pe": 94.8481,
+    "pe": 93.6625,
     "pbr": 5.21833,
     "revenue_growth": 46.9,
     "gross_margin": 49.94,
@@ -13480,7 +13480,7 @@
     "mcap_sort": 3.617033472,
     "fcf_yield": 2.78,
     "roe": 88.85,
-    "pe": 24.029085,
+    "pe": 23.554825,
     "pbr": 15.521677,
     "revenue_growth": 51.7,
     "gross_margin": 74.97,
@@ -13493,7 +13493,7 @@
     "current_ratio": 4.017,
     "quick_ratio": 3.835,
     "debt_to_equity": 52.416,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SFBS",
@@ -13508,7 +13508,7 @@
     "mcap_sort": 4.39020288,
     "fcf_yield": 0,
     "roe": 17.33,
-    "pe": 13.703072,
+    "pe": 13.656463,
     "pbr": 2.219581,
     "revenue_growth": 30.1,
     "gross_margin": 0.0,
@@ -13577,7 +13577,7 @@
     "current_ratio": 1.668,
     "quick_ratio": 1.533,
     "debt_to_equity": 166.579,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SHEN",
@@ -13620,7 +13620,7 @@
     "mcap_sort": 2.11790144,
     "fcf_yield": -5.32,
     "roe": 2.75,
-    "pe": 51.772728,
+    "pe": 54.2381,
     "pbr": 1.2949069,
     "revenue_growth": 6.2,
     "gross_margin": 43.71,
@@ -13648,7 +13648,7 @@
     "mcap_sort": 3.363951104,
     "fcf_yield": 6.51,
     "roe": 15.91,
-    "pe": 22.534315,
+    "pe": 22.985,
     "pbr": 3.5796607,
     "revenue_growth": 19.1,
     "gross_margin": 46.95,
@@ -13676,7 +13676,7 @@
     "mcap_sort": 3.853948416,
     "fcf_yield": 10.95,
     "roe": 19.86,
-    "pe": 11.6817665,
+    "pe": 11.668214,
     "pbr": 2.1047125,
     "revenue_growth": -0.5,
     "gross_margin": 39.29,
@@ -13732,7 +13732,7 @@
     "mcap_sort": 4.78208,
     "fcf_yield": 3.85,
     "roe": 12.65,
-    "pe": 25.760233,
+    "pe": 25.685131,
     "pbr": 3.0400276,
     "revenue_growth": 1.3,
     "gross_margin": 25.96,
@@ -13745,7 +13745,7 @@
     "current_ratio": 2.738,
     "quick_ratio": 1.867,
     "debt_to_equity": 7.833,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SKYW",
@@ -13760,7 +13760,7 @@
     "mcap_sort": 3.744215296,
     "fcf_yield": 3.88,
     "roe": 15.34,
-    "pe": 9.701208,
+    "pe": 9.585486,
     "pbr": 1.3595668,
     "revenue_growth": 6.5,
     "gross_margin": 30.89,
@@ -13773,7 +13773,7 @@
     "current_ratio": 0.569,
     "quick_ratio": 0.44,
     "debt_to_equity": 86.333,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SLG",
@@ -13816,7 +13816,7 @@
     "mcap_sort": 1.291412736,
     "fcf_yield": -1.27,
     "roe": 7.94,
-    "pe": 17.368984,
+    "pe": 17.276596,
     "pbr": 1.3536153,
     "revenue_growth": 1.5,
     "gross_margin": 20.59,
@@ -13913,7 +13913,7 @@
     "current_ratio": 4.796,
     "quick_ratio": 2.893,
     "debt_to_equity": 31.624,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SNDR",
@@ -13928,7 +13928,7 @@
     "mcap_sort": 5.765646336,
     "fcf_yield": 1.51,
     "roe": 3.68,
-    "pe": 51.390625,
+    "pe": 52.20635,
     "pbr": 1.8845978,
     "revenue_growth": 10.4,
     "gross_margin": 16.02,
@@ -13956,7 +13956,7 @@
     "mcap_sort": 7.93778688,
     "fcf_yield": 0,
     "roe": 21.85,
-    "pe": 17.980873,
+    "pe": 21.79139,
     "pbr": 2.776676,
     "revenue_growth": 15.2,
     "gross_margin": 1.73,
@@ -13969,7 +13969,7 @@
     "current_ratio": 1.065,
     "quick_ratio": 1.042,
     "debt_to_equity": 823.47,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SONO",
@@ -13997,7 +13997,7 @@
     "current_ratio": 1.615,
     "quick_ratio": 1.031,
     "debt_to_equity": 14.081,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SPHR",
@@ -14025,7 +14025,7 @@
     "current_ratio": 1.224,
     "quick_ratio": 1.118,
     "debt_to_equity": 40.995,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SPNT",
@@ -14053,7 +14053,7 @@
     "current_ratio": 0.655,
     "quick_ratio": 0.354,
     "debt_to_equity": 30.786,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SPSC",
@@ -14068,7 +14068,7 @@
     "mcap_sort": 2.9646144,
     "fcf_yield": 5.96,
     "roe": 8.26,
-    "pe": 39.591347,
+    "pe": 39.782608,
     "pbr": 3.1759803,
     "revenue_growth": 5.6,
     "gross_margin": 69.82,
@@ -14081,7 +14081,7 @@
     "current_ratio": 2.259,
     "quick_ratio": 1.619,
     "debt_to_equity": 0.672,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SRPT",
@@ -14109,7 +14109,7 @@
     "current_ratio": 4.422,
     "quick_ratio": 2.44,
     "debt_to_equity": 69.539,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "STAA",
@@ -14137,7 +14137,7 @@
     "current_ratio": 4.665,
     "quick_ratio": 3.863,
     "debt_to_equity": 9.836,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "STBA",
@@ -14236,7 +14236,7 @@
     "mcap_sort": 1.770386688,
     "fcf_yield": 8.75,
     "roe": 8.15,
-    "pe": 13.155116,
+    "pe": 13.308848,
     "pbr": 1.0718367,
     "revenue_growth": 4.9,
     "gross_margin": 49.06,
@@ -14277,7 +14277,7 @@
     "current_ratio": 2.083,
     "quick_ratio": 1.68,
     "debt_to_equity": 3.895,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "SXI",
@@ -14292,7 +14292,7 @@
     "mcap_sort": 3.544307968,
     "fcf_yield": 4.66,
     "roe": 17.22,
-    "pe": 33.20944,
+    "pe": 33.247696,
     "pbr": 4.6062374,
     "revenue_growth": 2.8,
     "gross_margin": 41.73,
@@ -14320,7 +14320,7 @@
     "mcap_sort": 5.473152,
     "fcf_yield": -0.05,
     "roe": 13.07,
-    "pe": 34.567204,
+    "pe": 34.660378,
     "pbr": 4.3226438,
     "revenue_growth": 11.6,
     "gross_margin": 34.88,
@@ -14361,7 +14361,7 @@
     "current_ratio": 1.613,
     "quick_ratio": 1.336,
     "debt_to_equity": 66.094,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "TBBK",
@@ -14389,7 +14389,7 @@
     "current_ratio": null,
     "quick_ratio": null,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "TDC",
@@ -14404,7 +14404,7 @@
     "mcap_sort": 2.803020032,
     "fcf_yield": 12.43,
     "roe": 119.12,
-    "pe": 6.345263,
+    "pe": 6.3319325,
     "pbr": 4.7472043,
     "revenue_growth": 0.5,
     "gross_margin": 61.32,
@@ -14417,7 +14417,7 @@
     "current_ratio": 0.915,
     "quick_ratio": 0.799,
     "debt_to_equity": 16.695,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "TDS",
@@ -14460,7 +14460,7 @@
     "mcap_sort": 4.100908544,
     "fcf_yield": 8.96,
     "roe": 19.45,
-    "pe": 16.718054,
+    "pe": 16.78615,
     "pbr": 2.9434662,
     "revenue_growth": 0.3,
     "gross_margin": 48.09,
@@ -14473,7 +14473,7 @@
     "current_ratio": 3.582,
     "quick_ratio": 3.407,
     "debt_to_equity": 47.051,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "TFIN",
@@ -14501,7 +14501,7 @@
     "current_ratio": null,
     "quick_ratio": null,
     "debt_to_equity": null,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "TFX",
@@ -14544,7 +14544,7 @@
     "mcap_sort": 8.310907904,
     "fcf_yield": 0.71,
     "roe": 100.28,
-    "pe": 19.81387,
+    "pe": 19.74182,
     "pbr": 13.1964035,
     "revenue_growth": 70.3,
     "gross_margin": 82.37,
@@ -14557,7 +14557,7 @@
     "current_ratio": 4.267,
     "quick_ratio": 3.552,
     "debt_to_equity": 124.89,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "THRM",
@@ -14568,9 +14568,9 @@
     "industry": "Auto Parts",
     "price": 31.3,
     "tradingview_symbol": "NASDAQ:THRM",
-    "mcap_display": 0.96,
-    "mcap_sort": 0.962131328,
-    "fcf_yield": 8.77,
+    "mcap_display": 1.71,
+    "mcap_sort": 1.70506688,
+    "fcf_yield": 4.95,
     "roe": 3.74,
     "pe": 36.395348,
     "pbr": 1.329087,
@@ -14585,7 +14585,7 @@
     "current_ratio": 2.064,
     "quick_ratio": 1.403,
     "debt_to_equity": 44.955,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "TILE",
@@ -14641,7 +14641,7 @@
     "current_ratio": 6.625,
     "quick_ratio": 5.869,
     "debt_to_equity": 167.496,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "TMP",
@@ -14725,7 +14725,7 @@
     "current_ratio": 3.18,
     "quick_ratio": 2.443,
     "debt_to_equity": 566.964,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "TPC",
@@ -14768,7 +14768,7 @@
     "mcap_sort": 2.855444736,
     "fcf_yield": 2.08,
     "roe": 10.34,
-    "pe": 29.913387,
+    "pe": 30.150795,
     "pbr": 2.9903967,
     "revenue_growth": -0.6,
     "gross_margin": 34.49,
@@ -14796,7 +14796,7 @@
     "mcap_sort": 0.990233536,
     "fcf_yield": -10.25,
     "roe": -0.23,
-    "pe": 0,
+    "pe": 85.1,
     "pbr": 1.4906288,
     "revenue_growth": -7.2,
     "gross_margin": 63.97,
@@ -14809,7 +14809,7 @@
     "current_ratio": 1.561,
     "quick_ratio": 1.195,
     "debt_to_equity": 134.928,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "TRMK",
@@ -14824,7 +14824,7 @@
     "mcap_sort": 2.674305792,
     "fcf_yield": 0,
     "roe": 11.12,
-    "pe": 11.687023,
+    "pe": 11.65736,
     "pbr": 1.2475554,
     "revenue_growth": 9.0,
     "gross_margin": 0.0,
@@ -14880,7 +14880,7 @@
     "mcap_sort": 7.032944128,
     "fcf_yield": 4.54,
     "roe": 9.28,
-    "pe": 17.210667,
+    "pe": 17.349463,
     "pbr": 1.5685607,
     "revenue_growth": 11.1,
     "gross_margin": 76.21,
@@ -14908,7 +14908,7 @@
     "mcap_sort": 0.948274816,
     "fcf_yield": 0,
     "roe": 9.65,
-    "pe": 15.469444,
+    "pe": 15.512535,
     "pbr": 1.4455547,
     "revenue_growth": 10.7,
     "gross_margin": 0.0,
@@ -14949,7 +14949,7 @@
     "current_ratio": 1.774,
     "quick_ratio": 1.728,
     "debt_to_equity": 26.096,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "UA",
@@ -14977,7 +14977,7 @@
     "current_ratio": 1.81,
     "quick_ratio": 0.806,
     "debt_to_equity": 96.356,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "UAA",
@@ -15005,7 +15005,7 @@
     "current_ratio": 1.81,
     "quick_ratio": 0.806,
     "debt_to_equity": 96.356,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "UCB",
@@ -15061,7 +15061,7 @@
     "current_ratio": 2.733,
     "quick_ratio": 1.092,
     "debt_to_equity": 108.2,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "UE",
@@ -15132,7 +15132,7 @@
     "mcap_sort": 2.329159168,
     "fcf_yield": 1.5,
     "roe": 17.05,
-    "pe": 32.543293,
+    "pe": 32.473003,
     "pbr": 5.036851,
     "revenue_growth": 15.1,
     "gross_margin": 28.5,
@@ -15145,7 +15145,7 @@
     "current_ratio": 3.0,
     "quick_ratio": 1.614,
     "debt_to_equity": 29.483,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "UNF",
@@ -15160,7 +15160,7 @@
     "mcap_sort": 4.553232896,
     "fcf_yield": 2.17,
     "roe": 5.3,
-    "pe": 39.838608,
+    "pe": 39.775673,
     "pbr": 2.0714622,
     "revenue_growth": 3.9,
     "gross_margin": 36.68,
@@ -15201,7 +15201,7 @@
     "current_ratio": 1.287,
     "quick_ratio": 0.393,
     "debt_to_equity": 187.115,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "UNIT",
@@ -15216,7 +15216,7 @@
     "mcap_sort": 1.951510144,
     "fcf_yield": -12.51,
     "roe": 0,
-    "pe": 2.09375,
+    "pe": 5.1538463,
     "pbr": 6.1047835,
     "revenue_growth": 202.5,
     "gross_margin": 59.09,
@@ -15229,7 +15229,7 @@
     "current_ratio": 1.222,
     "quick_ratio": 0.847,
     "debt_to_equity": 6869.969,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "UPBD",
@@ -15272,7 +15272,7 @@
     "mcap_sort": 1.005472128,
     "fcf_yield": 15.55,
     "roe": 16.7,
-    "pe": 10.320514,
+    "pe": 10.454546,
     "pbr": 1.782551,
     "revenue_growth": -1.7,
     "gross_margin": 77.24,
@@ -15285,7 +15285,7 @@
     "current_ratio": 1.424,
     "quick_ratio": 1.082,
     "debt_to_equity": 62.069,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "URBN",
@@ -15313,7 +15313,7 @@
     "current_ratio": 1.581,
     "quick_ratio": 0.71,
     "debt_to_equity": 42.512,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "USLM",
@@ -15397,7 +15397,7 @@
     "current_ratio": 1.302,
     "quick_ratio": 1.112,
     "debt_to_equity": 104.405,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "UTL",
@@ -15412,7 +15412,7 @@
     "mcap_sort": 0.933717696,
     "fcf_yield": -7.06,
     "roe": 9.62,
-    "pe": 16.305733,
+    "pe": 16.151419,
     "pbr": 1.5055282,
     "revenue_growth": 14.0,
     "gross_margin": 40.22,
@@ -15496,7 +15496,7 @@
     "mcap_sort": 2.055945728,
     "fcf_yield": 2.7,
     "roe": 7.16,
-    "pe": 83.645836,
+    "pe": 85.42554,
     "pbr": 5.5524826,
     "revenue_growth": 22.5,
     "gross_margin": 74.56,
@@ -15509,7 +15509,7 @@
     "current_ratio": 5.039,
     "quick_ratio": 4.534,
     "debt_to_equity": 25.168,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "VCTR",
@@ -15524,7 +15524,7 @@
     "mcap_sort": 6.964728832,
     "fcf_yield": 7.47,
     "roe": 19.05,
-    "pe": 20.587273,
+    "pe": 20.700184,
     "pbr": 2.9351687,
     "revenue_growth": 24.0,
     "gross_margin": 57.34,
@@ -15565,7 +15565,7 @@
     "current_ratio": 9.162,
     "quick_ratio": 8.598,
     "debt_to_equity": 2.889,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "VECO",
@@ -15593,7 +15593,7 @@
     "current_ratio": 3.926,
     "quick_ratio": 2.537,
     "debt_to_equity": 28.931,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "VGNT",
@@ -15608,7 +15608,7 @@
     "mcap_sort": 3.288881408,
     "fcf_yield": 0,
     "roe": 0,
-    "pe": 6.7682214,
+    "pe": 6.7880116,
     "pbr": 38.691666,
     "revenue_growth": 10.8,
     "gross_margin": 12.35,
@@ -15649,7 +15649,7 @@
     "current_ratio": 6.042,
     "quick_ratio": 5.669,
     "debt_to_equity": 9.494,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "VIRT",
@@ -15705,7 +15705,7 @@
     "current_ratio": 2.058,
     "quick_ratio": 1.771,
     "debt_to_equity": 486.398,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "VRTS",
@@ -15761,7 +15761,7 @@
     "current_ratio": 1.675,
     "quick_ratio": 1.338,
     "debt_to_equity": 146.805,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "VSEC",
@@ -15873,7 +15873,7 @@
     "current_ratio": 2.166,
     "quick_ratio": 0.522,
     "debt_to_equity": 152.545,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "VSXY",
@@ -15901,7 +15901,7 @@
     "current_ratio": 1.36,
     "quick_ratio": 0.48,
     "debt_to_equity": 275.833,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "VTOL",
@@ -15916,7 +15916,7 @@
     "mcap_sort": 1.19338688,
     "fcf_yield": -2.88,
     "roe": 10.08,
-    "pe": 11.568965,
+    "pe": 11.602304,
     "pbr": 1.0955995,
     "revenue_growth": 9.4,
     "gross_margin": 27.2,
@@ -15957,7 +15957,7 @@
     "current_ratio": 1.318,
     "quick_ratio": 1.135,
     "debt_to_equity": 97.529,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "VYX",
@@ -15985,7 +15985,7 @@
     "current_ratio": 1.072,
     "quick_ratio": 0.661,
     "debt_to_equity": 115.799,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "WABC",
@@ -16000,7 +16000,7 @@
     "mcap_sort": 1.37742464,
     "fcf_yield": 0,
     "roe": 12.49,
-    "pe": 13.156732,
+    "pe": 13.127753,
     "pbr": 1.6069021,
     "revenue_growth": -2.7,
     "gross_margin": 0.0,
@@ -16069,7 +16069,7 @@
     "current_ratio": 1.847,
     "quick_ratio": 1.596,
     "debt_to_equity": 37.171,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "WD",
@@ -16112,7 +16112,7 @@
     "mcap_sort": 2.724750848,
     "fcf_yield": 2.52,
     "roe": 33.31,
-    "pe": 30.760607,
+    "pe": 30.854105,
     "pbr": 9.78787,
     "revenue_growth": 24.3,
     "gross_margin": 55.82,
@@ -16377,7 +16377,7 @@
     "current_ratio": 2.268,
     "quick_ratio": 1.803,
     "debt_to_equity": 64.028,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "WRLD",
@@ -16392,7 +16392,7 @@
     "mcap_sort": 0.812962432,
     "fcf_yield": 7.47,
     "roe": 9.9,
-    "pe": 22.053099,
+    "pe": 21.969774,
     "pbr": 2.1763377,
     "revenue_growth": 4.8,
     "gross_margin": 69.24,
@@ -16405,7 +16405,7 @@
     "current_ratio": 10.382,
     "quick_ratio": 10.175,
     "debt_to_equity": 178.936,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "WS",
@@ -16504,7 +16504,7 @@
     "mcap_sort": 4.009805568,
     "fcf_yield": 0,
     "roe": 11.9,
-    "pe": 13.092281,
+    "pe": 13.070352,
     "pbr": 1.4935687,
     "revenue_growth": 8.8,
     "gross_margin": 0.0,
@@ -16560,7 +16560,7 @@
     "mcap_sort": 1.871273856,
     "fcf_yield": 19.09,
     "roe": 43.97,
-    "pe": 4.83871,
+    "pe": 4.878049,
     "pbr": 2.0449898,
     "revenue_growth": -1.3,
     "gross_margin": 35.09,
@@ -16588,7 +16588,7 @@
     "mcap_sort": 1.575673728,
     "fcf_yield": 8.33,
     "roe": 27.65,
-    "pe": 15.000001,
+    "pe": 14.883722,
     "pbr": 3.5074902,
     "revenue_growth": 6.8,
     "gross_margin": 47.12,
@@ -16657,7 +16657,7 @@
     "current_ratio": 6.391,
     "quick_ratio": 6.092,
     "debt_to_equity": 33.803,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "XPEL",
@@ -16685,7 +16685,7 @@
     "current_ratio": 2.61,
     "quick_ratio": 1.085,
     "debt_to_equity": 19.949,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "YELP",
@@ -16700,7 +16700,7 @@
     "mcap_sort": 0.990853696,
     "fcf_yield": 28.64,
     "roe": 18.19,
-    "pe": 8.821257,
+    "pe": 8.778847,
     "pbr": 1.6177905,
     "revenue_growth": 1.4,
     "gross_margin": 89.65,
@@ -16713,7 +16713,7 @@
     "current_ratio": 1.749,
     "quick_ratio": 1.501,
     "debt_to_equity": 19.131,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "YOU",
@@ -16724,11 +16724,11 @@
     "industry": "Software - Application",
     "price": 41.55,
     "tradingview_symbol": "NYSE:YOU",
-    "mcap_display": 5.64,
-    "mcap_sort": 5.641994752,
-    "fcf_yield": 7.42,
+    "mcap_display": 4.28,
+    "mcap_sort": 4.27595392,
+    "fcf_yield": 9.79,
     "roe": 119.17,
-    "pe": 28.074324,
+    "pe": 27.885906,
     "pbr": 20.569307,
     "revenue_growth": 26.6,
     "gross_margin": 66.66,
@@ -16769,7 +16769,7 @@
     "current_ratio": 2.164,
     "quick_ratio": 2.09,
     "debt_to_equity": 39.98,
-    "dividend_yield": null
+    "dividend_yield": 0.0
   },
   {
     "ticker": "ZWS",
